@@ -1,0 +1,134 @@
+.root {
+
+    -fx-font-family: sans-serif;
+	-fx-font-size: 14px;
+
+	-fx-background-color: #272727;
+	
+	-fx-accent: #8282ce;
+	-fx-focus-color: transparent;
+}
+
+/* Menü Leiste oben */
+
+.menu-bar {
+	-fx-background-color: #202020;
+}
+
+.menu:hover {
+	-fx-background-color: #2d2d2d;
+}
+
+.menu-item {
+	-fx-background-color: #202020;
+}
+
+.menu-item:hover {
+	-fx-background-color: #2d2d2d;
+}
+
+/* Liste an der linken Seite */
+
+.tree-view {
+	-fx-background-color: #202020;
+}
+
+.tree-cell:hover {
+	-fx-background-color: #2d2d2d;
+}
+
+.tree-cell:selected {
+	-fx-background-color: #454545;
+	-fx-text-fill: #76b9ed;
+}
+
+/* Tabellen */
+
+.table-view {
+	-fx-background-radius: 10px;
+	-fx-effect: dropshadow(gaussian, grey, 10, 0.0, 0, 5);
+}
+
+.table-row-cell:even:filled {
+	-fx-background-color: #a8a8d9;
+}
+
+.column-header {
+	-fx-background-radius: 10px;
+}
+
+.column-header-background {
+	-fx-background-color: linear-gradient(#a8a8d9, white);
+	-fx-background-radius: 10px 10px 0px 0px;
+}
+
+.column-overlay {
+	-fx-background-color: rgba(128, 128, 128, 0.8);
+}
+
+/* Reiter */
+
+.tab-header-area {
+	-fx-padding: 0px 5px 0px 5px;
+}
+
+.tab {
+	-fx-background-color: linear-gradient(to bottom right, #5c5cd3, #8282ce);
+	-fx-border-radius: 10px 10px 10px 10px;
+	-fx-background-radius: 10px 10px 10px 10px;
+	-fx-background-insets: 5px 0px 5px 5px;
+	-fx-pref-height: 40px;
+	-fx-padding: 10px 10px 10px 15px;
+	-fx-effect: dropshadow(gaussian, grey, 10, 0.0, 0, 2);
+}
+
+.label {
+}
+
+.split-pane-divider {
+	-fx-background-color: #202020;
+	-fx-background-insets: 0px 5px 0px 5px;
+	-fx-pref-width: 18px;
+}
+
+.split-pane-divider:hover {
+	-fx-background-color: #2d2d2d;
+}
+
+.title-label {
+	-fx-font-size: 20px;
+	-fx-text-fill: #ff7716;
+	-fx-font-weight: bold;
+}
+
+.button {
+	-fx-pref-with: 100px;
+	-fx-background-color: #5c5cd3;
+	-fx-border-radius: 25px;
+	-fx-background-radius: 25px;
+	-fx-effect: dropshadow(gaussian, grey, 10, 0.0, 0, 5);
+}
+
+.button:hover {
+	-fx-background-color: #5c5cd3;
+}
+
+.button:pressed {
+	-fx-background-color: #5c5cd3;
+}
+
+.text-field {
+	-fx-border-color: white;
+	-fx-border-width: 1px;
+	-fx-border-radius: 0px;
+	-fx-background-radius: 0px;
+	-fx-pref-column-count: 20;
+}
+
+.tree-cell, .column-header, .placeholder, .filler, .tab-header-background, .split-pane, .behaelter {
+	-fx-background-color: transparent;
+}
+
+.behaelter, .szene {
+	-fx-padding: 5px;
+}
