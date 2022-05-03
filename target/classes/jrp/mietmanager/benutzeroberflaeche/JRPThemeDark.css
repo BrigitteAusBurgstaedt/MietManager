@@ -1,12 +1,23 @@
-.root {
+/*
+Dunkles Design inspiriert vom Windows 11 Anwendungen.
 
-	--farbe: red;
+Hintergrundfarbe:
+Hauptcontainerfarbe:
+Schatten:
+
+Schriftart: Segoe UI Variable
+
+-fx-effect: dropshadow(gaussian, black, 5, 0.0, 0, 3);
+ */
+
+
+.root {
+	-fx-background-color: #202020;
 
     -fx-font-family: sans-serif;
 	-fx-font-size: 14px;
+	-fx-text-fill: white;
 
-	-fx-background-color: var(--farbe);
-	
 	-fx-accent: #8282ce;
 	-fx-focus-color: transparent;
 }
@@ -46,49 +57,50 @@
 
 /* Tabellen */
 
-.table-view {
-	-fx-background-radius: 10px;
-	-fx-effect: dropshadow(gaussian, grey, 10, 0.0, 0, 5);
-}
-
-.table-row-cell:even:filled {
-	-fx-background-color: #a8a8d9;
-}
-
-.column-header {
-	-fx-background-radius: 10px;
-}
-
 .column-header-background {
-	-fx-background-color: linear-gradient(#a8a8d9, white);
-	-fx-background-radius: 10px 10px 0px 0px;
+	-fx-background-color: red;
 }
 
-.column-overlay {
-	-fx-background-color: rgba(128, 128, 128, 0.8);
+.table-view {
+	-fx-background-color: transparent;
+}
+
+.table-row-cell:even {
+	-fx-background-color: red;
 }
 
 /* Reiter */
 
 .tab-header-area {
-	-fx-padding: 0px 5px 0px 5px;
+	-fx-padding: 0px 5px 0px 0px;
 }
 
 .tab {
-	-fx-background-color: linear-gradient(to bottom right, #5c5cd3, #8282ce);
+	-fx-background-color: #323232;
 	-fx-border-radius: 10px 10px 10px 10px;
 	-fx-background-radius: 10px 10px 10px 10px;
-	-fx-background-insets: 5px 0px 5px 5px;
+	-fx-background-insets: 2px 2px 5px 2px;
 	-fx-pref-height: 40px;
-	-fx-padding: 10px 10px 10px 15px;
-	-fx-effect: dropshadow(gaussian, grey, 10, 0.0, 0, 2);
+	-fx-padding: 10px 10px 10px 10px;
+	-fx-effect: dropshadow(gaussian, black, 5, 0.0, 0, 1);
+}
+
+.tab:pressed {
+	-fx-background-color: #2c2c2c;
+	-fx-translate-y: 3px;
+}
+
+.tab-label {
+	-fx-text-fill: white;
 }
 
 .label {
+	-fx-text-fill: white;
 }
 
 .split-pane-divider {
 	-fx-background-color: #202020;
+	-fx-background-radius: 5px 5px 0px 0px;
 	-fx-background-insets: 0px 5px 0px 5px;
 	-fx-pref-width: 18px;
 }
@@ -106,9 +118,9 @@
 .button {
 	-fx-pref-with: 100px;
 	-fx-background-color: #5c5cd3;
-	-fx-border-radius: 25px;
-	-fx-background-radius: 25px;
-	-fx-effect: dropshadow(gaussian, grey, 10, 0.0, 0, 5);
+	-fx-border-radius: 10px;
+	-fx-background-radius: 10px;
+	-fx-effect: dropshadow(gaussian, black, 5, 0.0, 0, 1);
 }
 
 .button:hover {
@@ -117,6 +129,8 @@
 
 .button:pressed {
 	-fx-background-color: #5c5cd3;
+	-fx-translate-y: 1;
+	-fx-effect: dropshadow(gaussian, black, 5, 0.0, 0, 0);
 }
 
 .text-field {
@@ -127,10 +141,36 @@
 	-fx-pref-column-count: 20;
 }
 
-.tree-cell, .column-header, .placeholder, .filler, .tab-header-background, .split-pane, .behaelter {
+.tree-cell, .column-header, .placeholder, .filler, .tab-header-background, .split-pane, .platzhalter, .behaelter {
 	-fx-background-color: transparent;
 }
 
-.behaelter, .szene {
-	-fx-padding: 5px;
+.platzhalter {
+	-fx-padding: 2px 2px 5px 2px;
 }
+
+.hauptbehaelter {
+	-fx-padding: 10px;
+	-fx-background-color: #272727;
+	-fx-background-radius: 10px 10px 0px 0px;
+}
+
+.behaelter {
+	-fx-background-color: #323232;
+	-fx-background-radius: 10px;
+	-fx-border-radius: 10px;
+	-fx-padding: 10px;
+	-fx-effect: dropshadow(gaussian, black, 5, 0.0, 0, 1);
+}
+
+/*
+Nicht jeder Behälter kann gedrückt werden.
+
+.behaelter:pressed {
+	-fx-translate-y: 1;
+	-fx-background-color: #2c2c2c;
+	-fx-effect: dropshadow(gaussian, black, 5, 0.0, 0, 0);
+}
+ */
+
+
