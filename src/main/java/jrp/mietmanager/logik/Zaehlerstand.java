@@ -1,9 +1,13 @@
 package jrp.mietmanager.logik;
 
+import javafx.beans.binding.Bindings;
 import javafx.beans.property.*;
 import javafx.scene.chart.XYChart;
+import javafx.util.StringConverter;
+import javafx.util.converter.NumberStringConverter;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Zaehlerstand implements Comparable<Zaehlerstand> {
 
@@ -11,7 +15,7 @@ public class Zaehlerstand implements Comparable<Zaehlerstand> {
     private final DoubleProperty differenz;
     private final DoubleProperty wert;
     private final Zaehlermodus modus;
-    private final XYChart.Data<LocalDate, Number> datenpunkt;
+    private final XYChart.Data<Number, Number> datenpunkt;
 
     public Zaehlerstand(LocalDate datum, double wert, Zaehlermodus modus) {
         this.datum = new SimpleObjectProperty<>(datum);
@@ -19,12 +23,26 @@ public class Zaehlerstand implements Comparable<Zaehlerstand> {
         this.modus = modus;
         this.differenz = new SimpleDoubleProperty();
 
+        StringProperty datumString = new SimpleStringProperty(datum.format(DateTimeFormatter.ISO_ORDINAL_DATE).replace("-", "."));
+
+        Bindings.bindBidirectional(datumString, this.datum, new StringConverter<>() {
+            @Override
+            public String toString(LocalDate localDate) {
+                return localDate.format(DateTimeFormatter.ISO_ORDINAL_DATE).replace("-",".");
+            }
+
+            @Override
+            public LocalDate fromString(String s) {
+                return s.equals("") ? datum : LocalDate.parse(s.replace(".","-"), DateTimeFormatter.ISO_ORDINAL_DATE);
+            }
+        });
+
         this.datenpunkt = new XYChart.Data<>();
-        datenpunkt.XValueProperty().bind(datumProperty());
-        datenpunkt.YValueProperty().bind(differenzProperty());
+        Bindings.bindBidirectional(datumString, datenpunkt.XValueProperty(), new NumberStringConverter());
+        this.datenpunkt.YValueProperty().bind(differenzProperty());
     }
 
-    public XYChart.Data<LocalDate, Number> getDatenpunkt() {
+    public XYChart.Data<Number, Number> getDatenpunkt() {
         return datenpunkt;
     }
 

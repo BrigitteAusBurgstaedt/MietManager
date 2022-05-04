@@ -46,7 +46,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox fx:id="szene" prefHeight="600.0" prefWidth="900.0" styleClass="szene" stylesheets="@../JRPThemeDark.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jrp.mietmanager.benutzeroberflaeche.hauptfenster.HauptansichtController">
+<VBox fx:id="szene" prefHeight="600.0" prefWidth="900.0" styleClass="szene" stylesheets="@../JRPThemeDark.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jrp.mietmanager.benutzeroberflaeche.hauptfenster.HauptansichtController">
   <MenuBar>
     <menus>
       <Menu mnemonicParsing="false" text="Datei">
@@ -81,16 +81,16 @@
       </Menu>
     </menus>
   </MenuBar>
-  <SplitPane dividerPositions="0.25" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+  <SplitPane fx:id="spaltenfenster" dividerPositions="0.05" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
     <items>
       <TreeView fx:id="objektBaum" editable="true" prefHeight="900.0" prefWidth="0.0" />
          <VBox styleClass="hauptbehaelter">
             <children>
-               <TabPane fx:id="objektReiterMeister" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="SELECTED_TAB" tabDragPolicy="REORDER">
+               <TabPane fx:id="objektReiterMeister" prefHeight="-1" prefWidth="-1" tabClosingPolicy="SELECTED_TAB" tabDragPolicy="REORDER">
                   <tabs>
                      <Tab text="Test Tab">
                        <content>
-                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                         <AnchorPane minHeight="0.0" minWidth="0.2" prefHeight="180.0" prefWidth="200.0">
                               <children>
                                  <TableView layoutX="171.0" layoutY="101.0" prefHeight="200.0" prefWidth="200.0">
                                    <columns>
@@ -98,9 +98,6 @@
                                      <TableColumn prefWidth="75.0" text="C2" />
                                    </columns>
                                  </TableView>
-                                 <HBox prefHeight="100.0" prefWidth="200.0" />
-                                 <HBox prefHeight="100.0" prefWidth="200.0" />
-                                 <HBox prefHeight="100.0" prefWidth="200.0" />
                               </children>
                            </AnchorPane>
                        </content>

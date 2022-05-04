@@ -6,6 +6,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.layout.VBox;
 import jrp.mietmanager.benutzeroberflaeche.hauptfenster.ImmobilienReiter;
 
 import java.util.logging.Logger;
@@ -68,8 +69,18 @@ public class Immobilie implements Visualisierbar {
     }
 
     @Override
+    public VBox oeffnePdfAnsicht() {
+        return null;
+    }
+
+    @Override
     public boolean istGeoeffnet() {
         return istGeoeffnet;
+    }
+
+    @Override
+    public boolean brauchtPdfAnsicht() {
+        return false;
     }
 
     // Setter und Getter

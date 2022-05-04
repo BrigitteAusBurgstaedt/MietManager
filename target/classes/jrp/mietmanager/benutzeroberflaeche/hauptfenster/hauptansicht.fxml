@@ -46,7 +46,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<?import javafx.scene.layout.HBox?>
 <VBox fx:id="szene" prefHeight="600.0" prefWidth="900.0" styleClass="szene" stylesheets="@../JRPThemeDark.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jrp.mietmanager.benutzeroberflaeche.hauptfenster.HauptansichtController">
   <MenuBar>
     <menus>
@@ -82,49 +81,63 @@
       </Menu>
     </menus>
   </MenuBar>
-  <SplitPane dividerPositions="0.25" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+  <SplitPane fx:id="spaltenfenster" dividerPositions="0.05" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
     <items>
       <TreeView fx:id="objektBaum" editable="true" prefHeight="900.0" prefWidth="0.0" />
-         <TabPane fx:id="objektReiterMeister" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="SELECTED_TAB" tabDragPolicy="REORDER">
-            <tabs>
-               <Tab text="Test Tab">
-                 <content>
-                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                        <children>
-                           <TableView layoutX="171.0" layoutY="101.0" prefHeight="200.0" prefWidth="200.0">
-                             <columns>
-                               <TableColumn prefWidth="75.0" text="Datum" />
-                               <TableColumn prefWidth="75.0" text="C2" />
-                             </columns>
-                           </TableView>
-                           <HBox prefHeight="100.0" prefWidth="200.0" />
-                           <HBox prefHeight="100.0" prefWidth="200.0" />
-                           <HBox prefHeight="100.0" prefWidth="200.0" />
-                        </children>
-                     </AnchorPane>
-                 </content>
-                  <content>
-                     <VBox prefHeight="200.0" prefWidth="100.0" styleClass="behaelter">
-                        <children>
-                           <TableView prefHeight="200.0" prefWidth="647.0">
-                             <columns>
-                               <TableColumn prefWidth="75.0" text="C1" />
-                               <TableColumn prefWidth="75.0" text="C2" />
-                             </columns>
-                           </TableView>
-                        </children>
-                     </VBox>
-                  </content>
-               </Tab>
-               <Tab text="Langer Test Text wird Getestet">
-                 <content>
-                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                 </content>
-               </Tab>
-            </tabs>
-            <padding>
-               <Insets bottom="5.0" />
-            </padding></TabPane>
+         <VBox styleClass="hauptbehaelter">
+            <children>
+               <TabPane fx:id="objektReiterMeister" prefHeight="-1" prefWidth="-1" tabClosingPolicy="SELECTED_TAB" tabDragPolicy="REORDER">
+                  <tabs>
+                     <Tab text="Test Tab">
+                       <content>
+                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                              <children>
+                                 <TableView layoutX="171.0" layoutY="101.0" prefHeight="200.0" prefWidth="200.0">
+                                   <columns>
+                                     <TableColumn prefWidth="75.0" text="Datum" />
+                                     <TableColumn prefWidth="75.0" text="C2" />
+                                   </columns>
+                                 </TableView>
+                              </children>
+                           </AnchorPane>
+                       </content>
+                        <content>
+                           <VBox styleClass="platzhalter">
+                              <children>
+                                 <VBox prefHeight="200.0" prefWidth="100.0" styleClass="behaelter">
+                                    <children>
+                                       <TableView prefHeight="200.0" prefWidth="647.0">
+                                         <columns>
+                                           <TableColumn prefWidth="75.0" text="C1" />
+                                           <TableColumn prefWidth="75.0" text="C2" />
+                                         </columns>
+                                       </TableView>
+                                    </children>
+                                 </VBox>
+                              </children>
+                           </VBox>
+                        </content>
+                     </Tab>
+                     <Tab text="Langer Test Text wird Getestet">
+                       <content>
+                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                              <children>
+                                 <VBox layoutX="196.0" layoutY="131.0" prefHeight="200.0" prefWidth="100.0" styleClass="platzhalter">
+                                    <children>
+                                       <VBox prefHeight="200.0" prefWidth="100.0" styleClass="behaelter" />
+                                    </children>
+                                 </VBox>
+                              </children>
+                           </AnchorPane>
+                       </content>
+                     </Tab>
+                  </tabs>
+                  <padding>
+                     <Insets bottom="5.0" />
+                  </padding>
+               </TabPane>
+            </children>
+         </VBox>
     </items>
   </SplitPane>
 </VBox>

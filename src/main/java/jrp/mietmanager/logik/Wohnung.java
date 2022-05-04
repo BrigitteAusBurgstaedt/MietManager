@@ -5,13 +5,11 @@ import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
+import javafx.scene.layout.VBox;
+import jrp.mietmanager.benutzeroberflaeche.hauptfenster.PdfAnsicht;
 import jrp.mietmanager.benutzeroberflaeche.hauptfenster.WohnungsReiter;
 
-import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Wohnung implements Visualisierbar {
@@ -86,8 +84,23 @@ public class Wohnung implements Visualisierbar {
     }
 
     @Override
+    public VBox oeffnePdfAnsicht() {
+        return new PdfAnsicht(this);
+    }
+
+    @Override
     public boolean istGeoeffnet() {
         return istGeoffnet;
+    }
+
+    /**
+     * Wahrheitswert welcher widerspiegelt, ob ein PDF gezeigt werden soll.
+     *
+     * @return Gibt wahr zurück, wenn eine PDF-Ansicht benötigt wird.
+     */
+    @Override
+    public boolean brauchtPdfAnsicht() {
+        return true;
     }
 
     // Getter und Setter

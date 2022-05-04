@@ -2,6 +2,9 @@ package jrp.mietmanager.benutzeroberflaeche.hauptfenster;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.geometry.Pos;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
@@ -14,8 +17,6 @@ import jrp.mietmanager.logik.Zaehlermodus;
 import jrp.mietmanager.logik.Zaehlerstand;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -41,17 +42,32 @@ public class WohnungsReiter extends Tab {
     private void erzeugeReiter() {
         textProperty().bind(wohnung.bezeichnungProperty());
 
-        VBox container = new VBox();
+        //
+        // Behälter
+        //
+        VBox platzhalter = new VBox();
+        VBox behaelter = new VBox();
         HBox fuerEingabe = new HBox();
-        HBox fuerTaster = new HBox();
+        HBox fuerTaster = new HBox(5);
 
+        platzhalter.getStyleClass().add("platzhalter");
+        fuerEingabe.getStyleClass().add("platzhalter");
+        fuerTaster.getStyleClass().add("platzhalter");
+        behaelter.getStyleClass().add("behaelter");
+
+        fuerTaster.setAlignment(Pos.TOP_RIGHT);
+
+        //
+        // Steuerelemente
+        //
         DatePicker datumsFeld = new DatePicker();
+        TextField wertFeld = new TextField();
+        Button hinzufuegen = new Button("Hinzufügen");
+        Button entfernen = new Button("Entfernen");
+
         datumsFeld.setPromptText("tt.mm.jjjj");
 
-        TextField wertFeld = new TextField();
-        fuerEingabe.getChildren().addAll(datumsFeld, wertFeld);
-
-        Button hinzufuegen = new Button("Hinzufügen");
+        // Beim drücken des Hinzufügen-Tasters werden die eingegeben werte als Objekt erstellt
         hinzufuegen.setOnAction(actionEvent -> {
             try {
                 datumsFeld.setValue(datumsFeld.getConverter().fromString(datumsFeld.getEditor().getText()));
@@ -65,19 +81,23 @@ public class WohnungsReiter extends Tab {
             }
         });
 
-        Button entfernen = new Button("Entfernen");
+        // Beim drücken des Entfernen-Tasters wird die Ausgewählte Reihe gelöscht TODO: Ist sie auch als Objekt gelöscht?
         entfernen.setOnAction(actionEvent -> {
-
             tabelle.getItems().removeAll(
                     tabelle.getSelectionModel().getSelectedItems()
             );
         });
 
-        fuerTaster.getChildren().addAll(hinzufuegen, entfernen);
-
         erstelleTabelle();
-        container.getChildren().addAll(tabelle, fuerEingabe, fuerTaster);
-        setContent(container);
+
+        //
+        // Elemente in Container packen
+        //
+        fuerEingabe.getChildren().addAll(datumsFeld, wertFeld);
+        fuerTaster.getChildren().addAll(hinzufuegen, entfernen);
+        behaelter.getChildren().addAll(tabelle, fuerEingabe, fuerTaster);
+        platzhalter.getChildren().add(behaelter);
+        setContent(platzhalter);
     }
 
     /**
@@ -101,42 +121,5 @@ public class WohnungsReiter extends Tab {
         tabelle.getColumns().add(c3);
 
     }
-
-    private LineChart<Number, Number> erstelleDiagramm() {
-        NumberAxis xAchse = new NumberAxis("Monat", 0, 13, 1);
-        NumberAxis yAchse = new NumberAxis();
-        LineChart<Number, Number> diagramm = new LineChart<>(xAchse, yAchse);
-        XYChart.Series<Number, Number> serie = new XYChart.Series<>(); // TODO: 19.04.2022 Datenpunkte 
-
-        // Beschriftung der Achse
-        xAchse.setTickLabelFormatter(new StringConverter<>() {
-            @Override
-            public String toString(Number number) {
-                return switch (number.toString()) {
-                    case "0.0" -> "Jan";
-                    case "1.0" -> "Feb";
-                    case "2.0" -> "Mär";
-                    case "3.0" -> "Apr";
-                    case "4.0" -> "Mai";
-                    case "5.0" -> "Jun";
-                    case "6.0" -> "Jul";
-                    case "7.0" -> "Aug";
-                    case "8.0" -> "Sep";
-                    case "9.0" -> "Okt";
-                    case "10.0" -> "Nov";
-                    case "11.0" -> "Dez";
-                    default -> null;
-                };
-            }
-
-            @Override
-            public Number fromString(String s) {
-                return null;
-            }
-        });
-
-        return diagramm;
-    }
-
 
 }

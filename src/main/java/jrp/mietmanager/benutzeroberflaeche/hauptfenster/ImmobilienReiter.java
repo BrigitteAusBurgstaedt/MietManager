@@ -20,12 +20,17 @@ public class ImmobilienReiter extends Tab {
     private void erzeugeReiter() {
         textProperty().bind(immobilie.bezeichnungProperty());
 
-        VBox container = new VBox();
+        VBox platzhalter = new VBox();
+        VBox behaelter = new VBox();
+
+        platzhalter.getStyleClass().add("platzhalter");
+        behaelter.getStyleClass().add("behaelter");
 
         erstelleTabelle();
 
-        container.getChildren().add(tabelle);
-        setContent(container);
+        behaelter.getChildren().add(tabelle);
+        platzhalter.getChildren().add(behaelter);
+        setContent(platzhalter);
 
     }
 

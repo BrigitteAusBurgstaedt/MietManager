@@ -31,7 +31,7 @@ public class Hauptfenster extends Stage {
 
         setScene(hauptansicht);
         setTitle("MietManager");
-        // setMaximized(true); // Für Fullscreen Fenster
+        setMaximized(true); // Für Fullscreen Fenster
         show();
     }
 
