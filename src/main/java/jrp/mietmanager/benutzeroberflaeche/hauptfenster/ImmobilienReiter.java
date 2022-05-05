@@ -2,8 +2,8 @@ package jrp.mietmanager.benutzeroberflaeche.hauptfenster;
 
 import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
-import javafx.util.Callback;
 import javafx.util.converter.NumberStringConverter;
 import jrp.mietmanager.logik.Immobilie;
 import jrp.mietmanager.logik.Wohnung;
@@ -59,5 +59,7 @@ public class ImmobilienReiter extends Tab {
         c3.setCellValueFactory(wohnungNumberTableColumn -> wohnungNumberTableColumn.getValue().mieteranzahlProperty());
         c3.setCellFactory(TextFieldTableCell.forTableColumn(new NumberStringConverter()));
         tabelle.getColumns().add(c3);
+
+        tabelle.setPrefHeight(1080); // TODO: 05.05.2022 bessere Lösung (zeige (wenn möglich) nur die gefüllten Zeilen
     }
 }

@@ -2,10 +2,12 @@ package jrp.mietmanager.benutzeroberflaeche.hauptfenster;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import jrp.mietmanager.logik.Immobilie;
 
 import java.io.IOException;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -29,9 +31,11 @@ public class Hauptfenster extends Stage {
             log.log(Level.SEVERE, "Die Hauptansicht konnte nicht geladen werden.", e);
         }
 
+
+        getIcons().add(new Image(Objects.requireNonNull(getClass().getResource("iconIMsmall.png")).toString()));
+        setTitle("ImmoMa - " + aktuelleImmobilie.toString());
+        setMaximized(true);
         setScene(hauptansicht);
-        setTitle("MietManager");
-        setMaximized(true); // Für Fullscreen Fenster
         show();
     }
 

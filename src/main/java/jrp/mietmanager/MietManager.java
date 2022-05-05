@@ -7,6 +7,7 @@ import jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster;
 import java.io.IOException;
 import java.util.logging.*;
 
+// Alternativer Name: ImmoMa (für Immobilien Manager)
 public class MietManager extends Application {
     private final static Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 

@@ -5,19 +5,30 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import jrp.mietmanager.benutzeroberflaeche.hauptfenster.Hauptfenster;
 import jrp.mietmanager.logik.Immobilie;
 
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class NeueImmobilieAnsichtController {
+public class StartfensterController {
     private final static Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     @FXML public Button immobilieErstellenTaster;
     @FXML public TextField bezeichnungFeld;
     @FXML public TextField anzahlFeld;
+    @FXML public ImageView iconAnsicht;
+
+    /**
+     * Diese Methode wird automatisch aufgerufen, nachdem der FXML Loader "startansicht.fxml" geladen hat.
+     */
+    public void initialize() {
+        iconAnsicht.setImage(new Image(Objects.requireNonNull(getClass().getResource("iconIM2.png")).toString()));
+    }
 
     @FXML
     public void hauptfensterOeffnen(ActionEvent actionEvent) {

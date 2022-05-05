@@ -159,10 +159,16 @@
 	-fx-text-fill: white;
 }
 
-.title-label {
-	-fx-font-size: 20px;
+.titel-label {
+	-fx-font-size: 22px;
 	-fx-text-fill: #76b9ed;
 	-fx-font-weight: bold;
+}
+
+.haupttitel-label {
+	-fx-font-size: 50px;
+	-fx-text-fill: white;
+	-fx-font-family: "Wide Latin";
 }
 
 /*******************************************************************************
@@ -229,6 +235,6 @@
 
 
 /* Sachen die keiner sehen möchte */
-.tree-cell, .column-header, .placeholder, .filler, .tab-header-background, .split-pane, .platzhalter, .behaelter {
+.tree-cell, .column-header, .placeholder, .filler, .tab-header-background, .split-pane, .platzhalter {
 	-fx-background-color: transparent;
 }

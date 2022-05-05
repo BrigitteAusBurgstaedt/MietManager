@@ -2,9 +2,11 @@ package jrp.mietmanager.benutzeroberflaeche.nebenfenster;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,19 +18,18 @@ public class Startfenster extends Stage {
     }
 
     private void oeffneFenster() {
-        FXMLLoader startansichtlader = new FXMLLoader(getClass().getResource("startansicht.fxml"));
+        FXMLLoader startfensterAnsichtLader = new FXMLLoader(getClass().getResource("startfensterAnsicht.fxml"));
 
-
-        Scene startansicht = null;
+        Scene startfensterAnsicht = null;
         try {
-            startansicht = new Scene(startansichtlader.load());
+            startfensterAnsicht = new Scene(startfensterAnsichtLader.load());
         } catch (IOException e) {
-            System.out.println(getClass());
-            log.log(Level.SEVERE, "Die Startansicht konnte nicht geladen werden.", e);
+            log.log(Level.SEVERE, "Die Startfensteransicht konnte nicht geladen werden.", e);
         }
 
-        setScene(startansicht);
-        setTitle("MietManager");
+        getIcons().add(new Image(Objects.requireNonNull(getClass().getResource("iconIMsmall.png")).toString()));
+        setTitle("ImmoMa - Startfenster");
+        setScene(startfensterAnsicht);
         show();
     }
 }

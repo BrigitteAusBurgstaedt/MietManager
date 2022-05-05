@@ -3,22 +3,42 @@ package jrp.mietmanager.benutzeroberflaeche.hauptfenster;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
+import javafx.geometry.Pos;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.util.StringConverter;
 import jrp.mietmanager.logik.Wohnung;
 import jrp.mietmanager.logik.Zaehlerstand;
 
 public class PdfAnsicht extends VBox {
+    private Wohnung wohnung;
 
     public PdfAnsicht(Wohnung wohnung) {
+        this.wohnung = wohnung;
+
+        VBox platzhalter = new VBox();
+        VBox fuerTitel = new VBox();
+        Label titel = new Label();
+
+        platzhalter.getStyleClass().add("platzhalter");
+        fuerTitel.getStyleClass().add("behaelter");
+        titel.getStyleClass().add("titel-label");
+
+        fuerTitel.setAlignment(Pos.CENTER);
+        titel.textProperty().bind(wohnung.bezeichnungProperty());
+
+        fuerTitel.getChildren().add(titel);
+        platzhalter.getChildren().add(fuerTitel);
+        getChildren().add(platzhalter);
+
         getStyleClass().add("hauptbehaelter");
-        erstelleDiagramm(wohnung);
+        erstelleDiagramm();
     }
 
-    private void erstelleDiagramm(Wohnung wohnung) {
+    private void erstelleDiagramm() {
 
         //
         // Diagrammelemente
@@ -29,7 +49,7 @@ public class PdfAnsicht extends VBox {
         ObservableList<XYChart.Data<Number, Number>> daten = FXCollections.observableArrayList();
         XYChart.Series<Number, Number> serie = new XYChart.Series<>(daten);
 
-        // Füllen der Datenreihe Todo: Unnötig?
+        // Füllen der Datenreihe (nötig, wenn zwischen Wohnungen gewechselt wird)
         for (Zaehlerstand z : wohnung.getZaehlerstaende()) {
             daten.add(z.getDatenpunkt());
             System.out.println("Datum des Zählerstandes: " + z.getDatenpunkt().XValueProperty().toString());
@@ -87,5 +107,15 @@ public class PdfAnsicht extends VBox {
         diagramm.getData().add(serie);
 
         getChildren().add(diagramm);
+    }
+
+    // Getter und Setter
+
+    public Wohnung getWohnung() {
+        return wohnung;
+    }
+
+    public void setWohnung(Wohnung wohnung) {
+        this.wohnung = wohnung;
     }
 }

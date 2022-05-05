@@ -6,6 +6,8 @@ import javafx.scene.control.SplitPane;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.VBox;
 import jrp.mietmanager.logik.Immobilie;
 import jrp.mietmanager.logik.Visualisierbar;
 import jrp.mietmanager.logik.Wohnung;
@@ -59,11 +61,17 @@ public class HauptansichtController {
                 objektReiterMeister.getTabs().add(newValue.getValue().oeffneReiter()); // Erstellt Reiter und fügt ihn dem Objektreitermeister hinzu
             }
 
+            // Braucht das Ausgewählte Objekt die PDF-Ansicht?
             if (newValue.getValue().brauchtPdfAnsicht()) {
-                spaltenfenster.getItems().add(newValue.getValue().oeffnePdfAnsicht());
-                spaltenfenster.setDividerPosition(1, 0.6);
-            } else {
-                // spaltenfenster.getItems().remove(pdfAnsicht); Todo evtl. wieder schließen
+                // Ist diese noch nicht geöffnet?
+                if (!spaltenfenster.getItems().contains(newValue.getValue().oeffnePdfAnsicht())) {
+                    // Ist bereits eine andere PDF-Ansicht geöffnet?
+                    if (spaltenfenster.getItems().size() == 3)
+                        spaltenfenster.getItems().remove(2); // dann entferne diese
+                    // öffne die PDF-Ansicht
+                    spaltenfenster.getItems().add(newValue.getValue().oeffnePdfAnsicht());
+                    spaltenfenster.setDividerPosition(1, 0.55);
+                }
             }
         });
 

@@ -20,6 +20,7 @@ public class Wohnung implements Visualisierbar {
     private final DoubleProperty flaeche;
     private final ObservableList<Zaehlerstand> zaehlerstaende = FXCollections.observableArrayList();
 
+    private PdfAnsicht pdfAnsicht;
     private boolean istGeoffnet;
 
     /**
@@ -85,7 +86,9 @@ public class Wohnung implements Visualisierbar {
 
     @Override
     public VBox oeffnePdfAnsicht() {
-        return new PdfAnsicht(this);
+        if (pdfAnsicht == null)
+            pdfAnsicht = new PdfAnsicht(this);
+        return pdfAnsicht;
     }
 
     @Override
@@ -145,4 +148,5 @@ public class Wohnung implements Visualisierbar {
     public ObservableList<Zaehlerstand> getZaehlerstaende() {
         return zaehlerstaende;
     }
+
 }

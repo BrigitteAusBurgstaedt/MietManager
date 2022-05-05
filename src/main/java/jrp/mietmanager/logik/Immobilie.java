@@ -83,7 +83,7 @@ public class Immobilie implements Visualisierbar {
         return false;
     }
 
-    // Setter und Getter
+    // Getter und Setter
 
     @Override
     public String toString() {

@@ -179,7 +179,7 @@ javafx.fxml.LoadException:
 	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516)
 	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.hauptfenster.Hauptfenster.oeffneFenster(Hauptfenster.java:23)
 	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.hauptfenster.Hauptfenster.<init>(Hauptfenster.java:15)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.NeueImmobilieAnsichtController.hauptfensterOeffnen(NeueImmobilieAnsichtController.java:19)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartfensterController.hauptfensterOeffnen(NeueImmobilieAnsichtController.java:19)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
@@ -254,7 +254,7 @@ javafx.fxml.LoadException:
 	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516)
 	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.hauptfenster.Hauptfenster.oeffneFenster(Hauptfenster.java:23)
 	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.hauptfenster.Hauptfenster.<init>(Hauptfenster.java:15)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.NeueImmobilieAnsichtController.hauptfensterOeffnen(NeueImmobilieAnsichtController.java:19)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartfensterController.hauptfensterOeffnen(NeueImmobilieAnsichtController.java:19)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
@@ -496,13 +496,13 @@ java.lang.NullPointerException: Cannot invoke "java.time.LocalDate.format(java.t
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 
-Apr. 11, 2022 12:53:32 PM jrp.mietmanager.benutzeroberflaeche.nebenfenster.NeueImmobilieAnsichtController hauptfensterOeffnen
+Apr. 11, 2022 12:53:32 PM jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartfensterController hauptfensterOeffnen
 WARNUNG: Es wurde eine falsche Eingabe getroffen.
 java.lang.NumberFormatException: For input string: "asdfsa"
 	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
 	at java.base/java.lang.Integer.parseInt(Integer.java:668)
 	at java.base/java.lang.Integer.parseInt(Integer.java:784)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.NeueImmobilieAnsichtController.hauptfensterOeffnen(NeueImmobilieAnsichtController.java:37)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartfensterController.hauptfensterOeffnen(NeueImmobilieAnsichtController.java:37)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
@@ -558,13 +558,13 @@ java.lang.NumberFormatException: For input string: "asdfsa"
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 
-Apr. 11, 2022 12:53:44 PM jrp.mietmanager.benutzeroberflaeche.nebenfenster.NeueImmobilieAnsichtController hauptfensterOeffnen
+Apr. 11, 2022 12:53:44 PM jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartfensterController hauptfensterOeffnen
 WARNUNG: Es wurde eine falsche Eingabe getroffen.
 java.lang.NumberFormatException: For input string: "asdfsa"
 	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
 	at java.base/java.lang.Integer.parseInt(Integer.java:668)
 	at java.base/java.lang.Integer.parseInt(Integer.java:784)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.NeueImmobilieAnsichtController.hauptfensterOeffnen(NeueImmobilieAnsichtController.java:37)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartfensterController.hauptfensterOeffnen(NeueImmobilieAnsichtController.java:37)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
@@ -21837,7 +21837,7 @@ javafx.fxml.LoadException: HBox is not a valid type.
 	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516)
 	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.hauptfenster.Hauptfenster.oeffneFenster(Hauptfenster.java:27)
 	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.hauptfenster.Hauptfenster.<init>(Hauptfenster.java:19)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.NeueImmobilieAnsichtController.hauptfensterOeffnen(NeueImmobilieAnsichtController.java:53)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartfensterController.hauptfensterOeffnen(NeueImmobilieAnsichtController.java:53)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
@@ -21970,7 +21970,7 @@ javafx.fxml.LoadException: HBox is not a valid type.
 	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516)
 	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.hauptfenster.Hauptfenster.oeffneFenster(Hauptfenster.java:27)
 	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.hauptfenster.Hauptfenster.<init>(Hauptfenster.java:19)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.NeueImmobilieAnsichtController.hauptfensterOeffnen(NeueImmobilieAnsichtController.java:53)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartfensterController.hauptfensterOeffnen(NeueImmobilieAnsichtController.java:53)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
@@ -22258,7 +22258,7 @@ javafx.fxml.LoadException:
 	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516)
 	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.hauptfenster.Hauptfenster.oeffneFenster(Hauptfenster.java:27)
 	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.hauptfenster.Hauptfenster.<init>(Hauptfenster.java:19)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.NeueImmobilieAnsichtController.hauptfensterOeffnen(NeueImmobilieAnsichtController.java:53)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartfensterController.hauptfensterOeffnen(NeueImmobilieAnsichtController.java:53)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
@@ -22490,4 +22490,86 @@ INFORMATION: Der ListChangeListener ist angesprungen
 Mai 04, 2022 7:02:28 PM jrp.mietmanager.logik.Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
 Mai 04, 2022 7:09:06 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 04, 2022 9:58:03 PM jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster oeffneFenster
+SCHWERWIEGEND: Die Startfensteransicht konnte nicht geladen werden.
+javafx.fxml.LoadException: 
+/F:/Workspace/IDEA-Projects/MietManager/target/classes/jrp/mietmanager/benutzeroberflaeche/nebenfenster/startfensterAnsicht.fxml:11
+
+	at javafx.fxml/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2707)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ValueElement.processAttribute(FXMLLoader.java:933)
+	at javafx.fxml/javafx.fxml.FXMLLoader$InstanceDeclarationElement.processAttribute(FXMLLoader.java:981)
+	at javafx.fxml/javafx.fxml.FXMLLoader$Element.processStartElement(FXMLLoader.java:230)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:755)
+	at javafx.fxml/javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2808)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2634)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
+	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster.oeffneFenster(Startfenster.java:25)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster.<init>(Startfenster.java:17)
+	at jrp.mietmanager/jrp.mietmanager.MietManager.start(MietManager.java:16)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.ClassNotFoundException: jrp.mietmanager.benutzeroberflaeche.nebenfenster.NeueImmobilieAnsichtController
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ValueElement.processAttribute(FXMLLoader.java:931)
+	... 19 more
+
+Mai 04, 2022 10:01:01 PM jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster oeffneFenster
+SCHWERWIEGEND: Die Startfensteransicht konnte nicht geladen werden.
+javafx.fxml.LoadException: 
+/F:/Workspace/IDEA-Projects/MietManager/target/classes/jrp/mietmanager/benutzeroberflaeche/nebenfenster/startfensterAnsicht.fxml
+
+	at javafx.fxml/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2707)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2677)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
+	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster.oeffneFenster(Startfenster.java:25)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster.<init>(Startfenster.java:17)
+	at jrp.mietmanager/jrp.mietmanager.MietManager.start(MietManager.java:16)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:116)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2673)
+	... 14 more
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartfensterController.initialize(StartfensterController.java:30)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	... 21 more
+
+Mai 05, 2022 9:44:24 AM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 05, 2022 9:44:36 AM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 05, 2022 9:44:44 AM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 05, 2022 9:44:56 AM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 05, 2022 9:45:08 AM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 05, 2022 9:45:20 AM jrp.mietmanager.logik.Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
