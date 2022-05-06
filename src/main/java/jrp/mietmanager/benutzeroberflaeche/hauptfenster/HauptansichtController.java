@@ -6,8 +6,6 @@ import javafx.scene.control.SplitPane;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.VBox;
 import jrp.mietmanager.logik.Immobilie;
 import jrp.mietmanager.logik.Visualisierbar;
 import jrp.mietmanager.logik.Wohnung;

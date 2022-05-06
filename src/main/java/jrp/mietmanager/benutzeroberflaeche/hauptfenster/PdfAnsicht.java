@@ -43,7 +43,7 @@ public class PdfAnsicht extends VBox {
         //
         // Diagrammelemente
         //
-        NumberAxis xAchse = new NumberAxis("Monat", 0, 13, 1); // X-Achse mit Datum
+        NumberAxis xAchse = new NumberAxis("Monat", 2022.0, 2022.366, 0.0305); // X-Achse mit Datum
         NumberAxis yAchse = new NumberAxis(); // Y-Achse mit Zählerwerten
         LineChart<Number, Number> diagramm = new LineChart<>(xAchse, yAchse);
         ObservableList<XYChart.Data<Number, Number>> daten = FXCollections.observableArrayList();
@@ -78,21 +78,21 @@ public class PdfAnsicht extends VBox {
             @Override
             public String toString(Number number) {
 
-                float tag = number.floatValue() % 1;
+                double tag = number.doubleValue() % 1;
 
-                return switch (Float.toString(tag)) {
-                    case "0.0" -> "Jan";
-                    case "1.0" -> "Feb";
-                    case "2.0" -> "Mär";
-                    case "3.0" -> "Apr";
-                    case "4.0" -> "Mai";
-                    case "5.0" -> "Jun";
-                    case "6.0" -> "Jul";
-                    case "7.0" -> "Aug";
-                    case "8.0" -> "Sep";
-                    case "9.0" -> "Okt";
-                    case "10.0" -> "Nov";
-                    case "11.0" -> "Dez";
+                return switch (Double.toString(tag)) {
+                    case "2022.0" -> "Jan";
+                    case "2022.0305" -> "Feb";
+                    case "2022.061" -> "Mär";
+                    case "2022.0915" -> "Apr";
+                    case "2022.122" -> "Mai";
+                    case "2022.1525" -> "Jun";
+                    case "2022.183" -> "Jul";
+                    case "2022.2135" -> "Aug";
+                    case "2022.244" -> "Sep";
+                    case "2022.2745" -> "Okt";
+                    case "2022.305" -> "Nov";
+                    case "2022.3355" -> "Dez";
                     default -> null;
                 };
             }

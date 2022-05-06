@@ -22573,3 +22573,13 @@ Mai 05, 2022 9:45:08 AM jrp.mietmanager.logik.Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
 Mai 05, 2022 9:45:20 AM jrp.mietmanager.logik.Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
+Mai 06, 2022 11:38:46 AM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 06, 2022 11:38:52 AM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 06, 2022 11:38:57 AM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 06, 2022 11:39:04 AM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 06, 2022 11:45:51 AM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
