@@ -13,6 +13,8 @@ import javafx.util.StringConverter;
 import jrp.mietmanager.logik.Wohnung;
 import jrp.mietmanager.logik.Zaehlerstand;
 
+import java.text.DecimalFormat;
+
 public class PdfAnsicht extends VBox {
     private Wohnung wohnung;
 
@@ -43,7 +45,7 @@ public class PdfAnsicht extends VBox {
         //
         // Diagrammelemente
         //
-        NumberAxis xAchse = new NumberAxis("Monat", 2022.0, 2022.366, 0.0305); // X-Achse mit Datum
+        NumberAxis xAchse = new NumberAxis("Monat", 0.0, 1.0, (1.0/12.0)); // X-Achse mit Datum
         NumberAxis yAchse = new NumberAxis(); // Y-Achse mit Zählerwerten
         LineChart<Number, Number> diagramm = new LineChart<>(xAchse, yAchse);
         ObservableList<XYChart.Data<Number, Number>> daten = FXCollections.observableArrayList();
@@ -55,7 +57,7 @@ public class PdfAnsicht extends VBox {
             System.out.println("Datum des Zählerstandes: " + z.getDatenpunkt().XValueProperty().toString());
         }
 
-        // TODO: 04.05.2022 Durchleuchten  
+        // TODO: 04.05.2022 Durchleuchten (definitiv fehlerhaft)
         wohnung.getZaehlerstaende().addListener((ListChangeListener<Zaehlerstand>) veraenderung -> {
             while (veraenderung.next()) {
 
@@ -67,9 +69,24 @@ public class PdfAnsicht extends VBox {
                     for (int i = veraenderung.getFrom(); veraenderung.getTo() != wohnung.getZaehlerstaende().size() ? i <= veraenderung.getTo() : i < veraenderung.getTo(); i++) {
                         if (i < wohnung.getZaehlerstaende().size())
                             daten.remove(i);
-                        daten.add(i, wohnung.getZaehlerstaende().get(i).getDatenpunkt());
+                        daten.add(i, wohnung.getZaehlerstaende().get(i).getDatenpunkt()); // TODO: 08.05.2022 Fix Duplicate data added error 
                     }
                 }
+
+                // obere und untere Schwelle angleichen
+                double min = wohnung.getZaehlerstaende().get(0).getDatumAlsDouble();
+                double max = wohnung.getZaehlerstaende().get(wohnung.getZaehlerstaende().size() - 1).getDatumAlsDouble();
+                double obereSchwelle;
+
+                if ((max - min) > 1)
+                    obereSchwelle = max + ((1.0/12.0) - (max % (1.0/12.0)));
+                else
+                    obereSchwelle = min - (min % (1.0/12.0)) + 1;
+
+                double untereSchwelle = obereSchwelle - 1;
+
+                xAchse.setLowerBound(untereSchwelle);
+                xAchse.setUpperBound(obereSchwelle);
             }
         });
 
@@ -77,22 +94,20 @@ public class PdfAnsicht extends VBox {
         xAchse.setTickLabelFormatter(new StringConverter<>() {
             @Override
             public String toString(Number number) {
-
-                double tag = number.doubleValue() % 1;
-
-                return switch (Double.toString(tag)) {
-                    case "2022.0" -> "Jan";
-                    case "2022.0305" -> "Feb";
-                    case "2022.061" -> "Mär";
-                    case "2022.0915" -> "Apr";
-                    case "2022.122" -> "Mai";
-                    case "2022.1525" -> "Jun";
-                    case "2022.183" -> "Jul";
-                    case "2022.2135" -> "Aug";
-                    case "2022.244" -> "Sep";
-                    case "2022.2745" -> "Okt";
-                    case "2022.305" -> "Nov";
-                    case "2022.3355" -> "Dez";
+                DecimalFormat df = new DecimalFormat("#.00");
+                return switch (df.format(number.doubleValue() % 1.0)) {
+                    case ",00", "1,00" -> "Jan";
+                    case ",08" -> "Feb";
+                    case ",17" -> "Mär";
+                    case ",25" -> "Apr";
+                    case ",33" -> "Mai";
+                    case ",42" -> "Jun";
+                    case ",50" -> "Jul";
+                    case ",58" -> "Aug";
+                    case ",67" -> "Sep";
+                    case ",75" -> "Okt";
+                    case ",83" -> "Nov";
+                    case ",92" -> "Dez";
                     default -> null;
                 };
             }
@@ -102,6 +117,11 @@ public class PdfAnsicht extends VBox {
                 return null;
             }
         });
+
+        xAchse.setMinorTickCount(4); // pro Woche ein Strich
+        yAchse.setForceZeroInRange(false);
+        yAchse.setLabel("Zählerwert");
+        serie.setName("Serie 1");
 
         // Serie hinzufügen
         diagramm.getData().add(serie);

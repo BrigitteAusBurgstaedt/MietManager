@@ -2,6 +2,8 @@ package jrp.mietmanager.logik;
 
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.*;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.scene.chart.XYChart;
 import javafx.util.StringConverter;
 import javafx.util.converter.NumberStringConverter;
@@ -12,6 +14,7 @@ import java.time.format.DateTimeFormatter;
 public class Zaehlerstand implements Comparable<Zaehlerstand> {
 
     private final ObjectProperty<LocalDate> datum;
+    private final DoubleProperty datumAlsDouble;
     private final DoubleProperty differenz;
     private final DoubleProperty wert;
     private final Zaehlermodus modus;
@@ -19,27 +22,21 @@ public class Zaehlerstand implements Comparable<Zaehlerstand> {
 
     public Zaehlerstand(LocalDate datum, double wert, Zaehlermodus modus) {
         this.datum = new SimpleObjectProperty<>(datum);
+        double tageImJahr = datum.isLeapYear() ? 366 : 365;
+        this.datumAlsDouble = new SimpleDoubleProperty((double) datum.getYear() + ((double) datum.getDayOfYear() / tageImJahr));
+        System.out.println(datum + "Datum als Double: " + datumAlsDouble.get());
+        this.datum.addListener((observableValue, altesDatum, neuesDatum) -> {
+            double tageImJahr1 = neuesDatum.isLeapYear() ? 366 : 365;
+            this.datumAlsDouble.set((double) neuesDatum.getYear() + ((double) neuesDatum.getDayOfYear() / tageImJahr1));
+        });
+
         this.wert = new SimpleDoubleProperty(wert);
         this.modus = modus;
         this.differenz = new SimpleDoubleProperty();
 
-        StringProperty datumString = new SimpleStringProperty(datum.format(DateTimeFormatter.ISO_ORDINAL_DATE).replace("-", "."));
-
-        Bindings.bindBidirectional(datumString, this.datum, new StringConverter<>() {
-            @Override
-            public String toString(LocalDate localDate) {
-                return localDate.format(DateTimeFormatter.ISO_ORDINAL_DATE).replace("-",".");
-            }
-
-            @Override
-            public LocalDate fromString(String s) {
-                return s.equals("") ? datum : LocalDate.parse(s.replace(".","-"), DateTimeFormatter.ISO_ORDINAL_DATE);
-            }
-        });
-
         this.datenpunkt = new XYChart.Data<>();
-        Bindings.bindBidirectional(datumString, datenpunkt.XValueProperty(), new NumberStringConverter());
-        this.datenpunkt.YValueProperty().bind(differenzProperty());
+        this.datenpunkt.XValueProperty().bind(datumAlsDoubleProperty());
+        this.datenpunkt.YValueProperty().bind(wertProperty());
     }
 
     public XYChart.Data<Number, Number> getDatenpunkt() {
@@ -121,5 +118,13 @@ public class Zaehlerstand implements Comparable<Zaehlerstand> {
     @Override
     public int compareTo(Zaehlerstand o) {
         return this.getDatum().compareTo(o.getDatum());
+    }
+
+    public double getDatumAlsDouble() {
+        return datumAlsDouble.get();
+    }
+
+    public DoubleProperty datumAlsDoubleProperty() {
+        return datumAlsDouble;
     }
 }

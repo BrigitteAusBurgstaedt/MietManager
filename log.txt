@@ -22583,3 +22583,59 @@ Mai 06, 2022 11:39:04 AM jrp.mietmanager.logik.Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
 Mai 06, 2022 11:45:51 AM jrp.mietmanager.logik.Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 6:15:08 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 6:15:28 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 6:16:09 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 6:16:42 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 6:16:49 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 6:17:11 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 7:40:38 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 8:01:05 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 8:01:17 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 8:01:42 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 8:03:13 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 8:06:24 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 8:06:36 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 8:06:49 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 8:06:51 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 8:07:00 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 8:08:54 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 8:09:04 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 8:09:14 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 8:10:46 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 8:10:59 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 8:11:04 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 8:11:20 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 8:13:11 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 8:13:23 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 8:20:54 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 8:21:05 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 08, 2022 8:21:17 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
