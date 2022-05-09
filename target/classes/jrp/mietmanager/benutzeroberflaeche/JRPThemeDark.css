@@ -6,7 +6,7 @@
 	-fx-background-color: #202020;
 
     /* -fx-font-family: sans-serif; */
-	-fx-font-family: "Segoe UI";
+	-fx-font-family: "Helvetica Neue";
 	-fx-font-size: 14px;
 	-fx-text-fill: white;
 
@@ -168,7 +168,7 @@
 .haupttitel-label {
 	-fx-font-size: 50px;
 	-fx-text-fill: white;
-	-fx-font-family: "Wide Latin";
+	-fx-font-weight: bold;
 }
 
 /*******************************************************************************

@@ -15,7 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="MietManager" options="--add-exports javafx.controls/com.sun.javafx.charts=jrp.mietmanager" />
+      <module name="MietManager" options="" />
     </option>
   </component>
 </project>
