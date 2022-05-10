@@ -45,7 +45,7 @@ public class PdfAnsicht extends VBox {
         //
         // Diagrammelemente
         //
-        NumberAxis xAchse = new NumberAxis("Monat", 0.0, 1.0, (1.0/12.0)); // X-Achse mit Datum
+        NumberAxis xAchse = new NumberAxis("EnergieKlassen", 0.0, 1.0, (1.0/12.0)); // X-Achse mit Datum
         NumberAxis yAchse = new NumberAxis(); // Y-Achse mit Zählerwerten
         LineChart<Number, Number> diagramm = new LineChart<>(xAchse, yAchse);
         ObservableList<XYChart.Data<Number, Number>> daten = FXCollections.observableArrayList();
@@ -53,23 +53,27 @@ public class PdfAnsicht extends VBox {
 
         // Füllen der Datenreihe (nötig, wenn zwischen Wohnungen gewechselt wird)
         for (Zaehlerstand z : wohnung.getZaehlerstaende()) {
-            daten.add(z.getDatenpunkt());
-            System.out.println("Datum des Zählerstandes: " + z.getDatenpunkt().XValueProperty().toString());
+            XYChart.Data<Number, Number> datenpunkt = new XYChart.Data<>();
+            datenpunkt.XValueProperty().bind(z.datumAlsDoubleProperty());
+            datenpunkt.YValueProperty().bind(z.wertProperty());
+            daten.add(datenpunkt);
+            System.out.println("Im Loop");
         }
 
         // TODO: 04.05.2022 Durchleuchten (definitiv fehlerhaft)
         wohnung.getZaehlerstaende().addListener((ListChangeListener<Zaehlerstand>) veraenderung -> {
             while (veraenderung.next()) {
 
-                if (veraenderung.wasAdded()) {
+                if (!veraenderung.wasAdded()) {
+                    daten.remove(veraenderung.getFrom());
+                }
+
+                if (!veraenderung.wasRemoved()) {
                     for (Zaehlerstand z : veraenderung.getAddedSubList()) {
-                        daten.add(z.getDatenpunkt());
-                    }
-                } else {
-                    for (int i = veraenderung.getFrom(); veraenderung.getTo() != wohnung.getZaehlerstaende().size() ? i <= veraenderung.getTo() : i < veraenderung.getTo(); i++) {
-                        if (i < wohnung.getZaehlerstaende().size())
-                            daten.remove(i);
-                        daten.add(i, wohnung.getZaehlerstaende().get(i).getDatenpunkt()); // TODO: 08.05.2022 Fix Duplicate data added error 
+                        XYChart.Data<Number, Number> datenpunkt = new XYChart.Data<>();
+                        datenpunkt.XValueProperty().bind(z.datumAlsDoubleProperty());
+                        datenpunkt.YValueProperty().bind(z.wertProperty());
+                        daten.add(datenpunkt);
                     }
                 }
 

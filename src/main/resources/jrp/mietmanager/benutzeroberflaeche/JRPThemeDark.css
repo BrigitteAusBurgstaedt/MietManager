@@ -88,6 +88,10 @@
 	-fx-background-color: #454545;
 }
 
+.zahlenspalte {
+	-fx-alignment: center-right;
+}
+
 /*
 .table-row-cell:filled:selected {
 	-fx-background-color: #454545;

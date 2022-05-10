@@ -110,14 +110,19 @@ public class WohnungsReiter extends Tab {
 
         TableColumn<Zaehlerstand, LocalDate> c1 = new TableColumn<>("Datum");
         c1.setCellValueFactory(zaehlerstandStringCellDataFeatures -> zaehlerstandStringCellDataFeatures.getValue().datumProperty());
+        c1.setSortable(false);
         tabelle.getColumns().add(c1);
 
         TableColumn<Zaehlerstand, Number> c2 = new TableColumn<>("Zählerstand");
         c2.setCellValueFactory(zaehlerstandNumberCellDataFeatures -> zaehlerstandNumberCellDataFeatures.getValue().wertProperty());
+        c2.getStyleClass().add("zahlenspalte");
+        c2.setSortable(false);
         tabelle.getColumns().add(c2);
 
         TableColumn<Zaehlerstand, Number> c3 = new TableColumn<>("Differenz");
         c3.setCellValueFactory(zaehlerstandNumberCellDataFeatures -> zaehlerstandNumberCellDataFeatures.getValue().differenzProperty());
+        c3.getStyleClass().add("zahlenspalte");
+        c3.setSortable(false);
         tabelle.getColumns().add(c3);
 
     }

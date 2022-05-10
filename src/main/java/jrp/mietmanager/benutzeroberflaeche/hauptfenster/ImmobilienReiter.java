@@ -2,7 +2,6 @@ package jrp.mietmanager.benutzeroberflaeche.hauptfenster;
 
 import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.util.converter.NumberStringConverter;
 import jrp.mietmanager.logik.Immobilie;
@@ -43,7 +42,6 @@ public class ImmobilienReiter extends Tab {
         tabelle.setPlaceholder(new Label("Noch keine Wohnungen erstellt."));
         tabelle.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
-        // Callback<TableColumn<Wohnung, String>, TableCell<Wohnung, String>> textFeldZellenFabrik = (TableColumn<Wohnung, String> param) -> new TextFeldZelle();
 
         TableColumn<Wohnung, String> c1 = new TableColumn<>("Bezeichnung");
         c1.setCellValueFactory(wohnungStringCellDataFeatures -> wohnungStringCellDataFeatures.getValue().bezeichnungProperty());
@@ -53,11 +51,13 @@ public class ImmobilienReiter extends Tab {
         TableColumn<Wohnung, Number> c2 = new TableColumn<>("Mieteranzahl");
         c2.setCellValueFactory(wohnungIntegerCellDataFeatures -> wohnungIntegerCellDataFeatures.getValue().mieteranzahlProperty());
         c2.setCellFactory(TextFieldTableCell.forTableColumn(new NumberStringConverter()));
+        c2.getStyleClass().add("zahlenspalte");
         tabelle.getColumns().add(c2);
 
-        TableColumn<Wohnung, Number> c3 = new TableColumn<>("Fläche in m²");
+        TableColumn<Wohnung, Number> c3 = new TableColumn<>("Wohnungsnutzfläche in m²");
         c3.setCellValueFactory(wohnungNumberTableColumn -> wohnungNumberTableColumn.getValue().mieteranzahlProperty());
         c3.setCellFactory(TextFieldTableCell.forTableColumn(new NumberStringConverter()));
+        c3.getStyleClass().add("zahlenspalte");
         tabelle.getColumns().add(c3);
 
         tabelle.setPrefHeight(1080); // TODO: 05.05.2022 bessere Lösung (zeige (wenn möglich) nur die gefüllten Zeilen

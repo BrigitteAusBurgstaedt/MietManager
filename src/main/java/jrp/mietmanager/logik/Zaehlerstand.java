@@ -1,15 +1,8 @@
 package jrp.mietmanager.logik;
 
-import javafx.beans.binding.Bindings;
 import javafx.beans.property.*;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.scene.chart.XYChart;
-import javafx.util.StringConverter;
-import javafx.util.converter.NumberStringConverter;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class Zaehlerstand implements Comparable<Zaehlerstand> {
 
@@ -18,13 +11,11 @@ public class Zaehlerstand implements Comparable<Zaehlerstand> {
     private final DoubleProperty differenz;
     private final DoubleProperty wert;
     private final Zaehlermodus modus;
-    private final XYChart.Data<Number, Number> datenpunkt;
 
     public Zaehlerstand(LocalDate datum, double wert, Zaehlermodus modus) {
         this.datum = new SimpleObjectProperty<>(datum);
         double tageImJahr = datum.isLeapYear() ? 366 : 365;
         this.datumAlsDouble = new SimpleDoubleProperty((double) datum.getYear() + ((double) datum.getDayOfYear() / tageImJahr));
-        System.out.println(datum + "Datum als Double: " + datumAlsDouble.get());
         this.datum.addListener((observableValue, altesDatum, neuesDatum) -> {
             double tageImJahr1 = neuesDatum.isLeapYear() ? 366 : 365;
             this.datumAlsDouble.set((double) neuesDatum.getYear() + ((double) neuesDatum.getDayOfYear() / tageImJahr1));
@@ -34,13 +25,6 @@ public class Zaehlerstand implements Comparable<Zaehlerstand> {
         this.modus = modus;
         this.differenz = new SimpleDoubleProperty();
 
-        this.datenpunkt = new XYChart.Data<>();
-        this.datenpunkt.XValueProperty().bind(datumAlsDoubleProperty());
-        this.datenpunkt.YValueProperty().bind(wertProperty());
-    }
-
-    public XYChart.Data<Number, Number> getDatenpunkt() {
-        return datenpunkt;
     }
 
     public LocalDate getDatum() {

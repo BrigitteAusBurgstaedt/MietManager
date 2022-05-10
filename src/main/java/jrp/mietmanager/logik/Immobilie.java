@@ -43,21 +43,6 @@ public class Immobilie implements Visualisierbar {
             wohnungen.add(new Wohnung("Wohnung " + (i+1), 1, 0));
         }
 
-        /*
-        for (Wohnung w : wohnungen) {
-            w.bezeichnungProperty().addListener((observableValue, oldString, newString) -> {
-                for (Wohnung wl : wohnungen) {
-                    if(wl.toString().equals(newString) && w != wl) {
-                        w.setBezeichnung(oldString);
-                        Alert info = new Alert(Alert.AlertType.INFORMATION, "Wohnungen müssen eineindeutige Namen besitzen.");
-                        info.setHeaderText("Wohnungsumbenennung fehlgeschlagen!");
-                        info.show();
-                    }
-                }
-            });
-        }
-         */
-
     }
 
     @Override

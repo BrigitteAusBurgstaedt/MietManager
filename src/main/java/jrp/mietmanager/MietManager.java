@@ -32,7 +32,7 @@ public class MietManager extends Application {
 
         // Handler einreichen
         ConsoleHandler konsolenSteuerung = new ConsoleHandler();
-        konsolenSteuerung.setLevel(Level.ALL);  // Ausgabe nur von warnenden Nachrichten auf der Konsole
+        konsolenSteuerung.setLevel(Level.ALL);  // Ausgabe von allen Nachrichten auf der Konsole
         log.addHandler(konsolenSteuerung);
 
         try {

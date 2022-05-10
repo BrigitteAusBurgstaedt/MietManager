@@ -7,8 +7,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import jrp.mietmanager.benutzeroberflaeche.hauptfenster.Hauptfenster;
+import jrp.mietmanager.berechnung.Pfeildiagramm;
 import jrp.mietmanager.logik.Immobilie;
 
 import java.util.Objects;
@@ -23,11 +25,17 @@ public class StartfensterController {
     @FXML public TextField anzahlFeld;
     @FXML public ImageView iconAnsicht;
 
+    @FXML public VBox sandkasten;
+
     /**
      * Diese Methode wird automatisch aufgerufen, nachdem der FXML Loader "startansicht.fxml" geladen hat.
      */
     public void initialize() {
         iconAnsicht.setImage(new Image(Objects.requireNonNull(getClass().getResource("iconIM2.png")).toString()));
+
+        Pfeildiagramm pd = new Pfeildiagramm(5);
+
+        sandkasten.getChildren().add(pd);
     }
 
     @FXML
