@@ -45,7 +45,7 @@ public class PdfAnsicht extends VBox {
         //
         // Diagrammelemente
         //
-        NumberAxis xAchse = new NumberAxis("EnergieKlassen", 0.0, 1.0, (1.0/12.0)); // X-Achse mit Datum
+        NumberAxis xAchse = new NumberAxis("Monat", 0.0, 1.0, (1.0/12.0)); // X-Achse mit Datum
         NumberAxis yAchse = new NumberAxis(); // Y-Achse mit Zählerwerten
         LineChart<Number, Number> diagramm = new LineChart<>(xAchse, yAchse);
         ObservableList<XYChart.Data<Number, Number>> daten = FXCollections.observableArrayList();
@@ -60,7 +60,6 @@ public class PdfAnsicht extends VBox {
             System.out.println("Im Loop");
         }
 
-        // TODO: 04.05.2022 Durchleuchten (definitiv fehlerhaft)
         wohnung.getZaehlerstaende().addListener((ListChangeListener<Zaehlerstand>) veraenderung -> {
             while (veraenderung.next()) {
 

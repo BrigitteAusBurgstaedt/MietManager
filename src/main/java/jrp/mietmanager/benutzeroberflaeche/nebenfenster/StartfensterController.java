@@ -1,5 +1,7 @@
 package jrp.mietmanager.benutzeroberflaeche.nebenfenster;
 
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -33,7 +35,10 @@ public class StartfensterController {
     public void initialize() {
         iconAnsicht.setImage(new Image(Objects.requireNonNull(getClass().getResource("iconIM2.png")).toString()));
 
-        Pfeildiagramm pd = new Pfeildiagramm(5);
+        DoubleProperty min = new SimpleDoubleProperty(5.5);
+        DoubleProperty max = new SimpleDoubleProperty(9);
+        DoubleProperty aktuell = new SimpleDoubleProperty(7);
+        Pfeildiagramm pd = new Pfeildiagramm(min.get(), max.get(), aktuell.get(), 5);
 
         sandkasten.getChildren().add(pd);
     }
