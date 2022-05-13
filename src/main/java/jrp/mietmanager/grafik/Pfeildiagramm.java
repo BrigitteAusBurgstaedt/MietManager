@@ -1,10 +1,8 @@
-package jrp.mietmanager.berechnung;
+package jrp.mietmanager.grafik;
 
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.scene.layout.Region;
-import javafx.scene.shape.Polygon;
-import javafx.scene.shape.Rectangle;
 
 public class Pfeildiagramm extends Region {
 

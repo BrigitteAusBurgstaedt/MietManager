@@ -12,9 +12,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import jrp.mietmanager.benutzeroberflaeche.hauptfenster.Hauptfenster;
-import jrp.mietmanager.berechnung.Pfeildiagramm;
+import jrp.mietmanager.grafik.Pfeildiagramm;
 import jrp.mietmanager.logik.Immobilie;
+import jrp.mietmanager.pdf.MonatlicheMieterInformation;
 
+import java.io.FileNotFoundException;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -39,6 +41,11 @@ public class StartfensterController {
         DoubleProperty max = new SimpleDoubleProperty(9);
         DoubleProperty aktuell = new SimpleDoubleProperty(7);
         Pfeildiagramm pd = new Pfeildiagramm(min.get(), max.get(), aktuell.get(), 5);
+        try {
+            new MonatlicheMieterInformation();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
         sandkasten.getChildren().add(pd);
     }

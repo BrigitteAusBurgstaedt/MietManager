@@ -1,4 +1,4 @@
-package jrp.mietmanager.berechnung;
+package jrp.mietmanager.grafik;
 
 import javafx.beans.binding.DoubleBinding;
 import javafx.beans.property.DoubleProperty;

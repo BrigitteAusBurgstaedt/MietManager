@@ -2,7 +2,8 @@ module jrp.mietmanager {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.logging;
-
+    requires kernel;
+    requires layout;
 
     opens jrp.mietmanager to javafx.fxml;
     exports jrp.mietmanager;

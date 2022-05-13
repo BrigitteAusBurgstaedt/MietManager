@@ -1,4 +1,4 @@
-package jrp.mietmanager.berechnung;
+package jrp.mietmanager.grafik;
 
 import javafx.geometry.Orientation;
 import javafx.scene.control.Label;

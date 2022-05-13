@@ -95,8 +95,8 @@ Caused by: java.lang.reflect.InvocationTargetException
 	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2673)
 	... 14 more
 Caused by: java.lang.NullPointerException: Cannot invoke "javafx.scene.control.Label.setText(String)" because "eKlassenSymbole[0]" is null
-	at jrp.mietmanager/jrp.mietmanager.berechnung.Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:47)
-	at jrp.mietmanager/jrp.mietmanager.berechnung.Pfeildiagramm.<init>(Pfeildiagramm.java:28)
+	at jrp.mietmanager/jrp.mietmanager.grafik.Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:47)
+	at jrp.mietmanager/jrp.mietmanager.grafik.Pfeildiagramm.<init>(Pfeildiagramm.java:28)
 	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartfensterController.initialize(StartfensterController.java:36)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	... 21 more
@@ -133,8 +133,8 @@ Caused by: java.lang.reflect.InvocationTargetException
 	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2673)
 	... 14 more
 Caused by: java.lang.NullPointerException: Cannot invoke "javafx.scene.control.Label.setText(String)" because "eKlassenSymbole[0]" is null
-	at jrp.mietmanager/jrp.mietmanager.berechnung.Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:51)
-	at jrp.mietmanager/jrp.mietmanager.berechnung.Pfeildiagramm.<init>(Pfeildiagramm.java:28)
+	at jrp.mietmanager/jrp.mietmanager.grafik.Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:51)
+	at jrp.mietmanager/jrp.mietmanager.grafik.Pfeildiagramm.<init>(Pfeildiagramm.java:28)
 	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartfensterController.initialize(StartfensterController.java:36)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	... 21 more
@@ -174,8 +174,8 @@ Caused by: java.lang.NullPointerException: Children: child node is null: parent 
 	at javafx.graphics/javafx.scene.Parent$3.onProposedChange(Parent.java:542)
 	at javafx.base/com.sun.javafx.collections.VetoableListDecorator.addAll(VetoableListDecorator.java:233)
 	at javafx.base/com.sun.javafx.collections.VetoableListDecorator.addAll(VetoableListDecorator.java:103)
-	at jrp.mietmanager/jrp.mietmanager.berechnung.Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:64)
-	at jrp.mietmanager/jrp.mietmanager.berechnung.Pfeildiagramm.<init>(Pfeildiagramm.java:28)
+	at jrp.mietmanager/jrp.mietmanager.grafik.Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:64)
+	at jrp.mietmanager/jrp.mietmanager.grafik.Pfeildiagramm.<init>(Pfeildiagramm.java:28)
 	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartfensterController.initialize(StartfensterController.java:36)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	... 21 more
@@ -212,8 +212,8 @@ Caused by: java.lang.reflect.InvocationTargetException
 	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2673)
 	... 14 more
 Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 8 out of bounds for length 8
-	at jrp.mietmanager/jrp.mietmanager.berechnung.Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:63)
-	at jrp.mietmanager/jrp.mietmanager.berechnung.Pfeildiagramm.<init>(Pfeildiagramm.java:31)
+	at jrp.mietmanager/jrp.mietmanager.grafik.Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:63)
+	at jrp.mietmanager/jrp.mietmanager.grafik.Pfeildiagramm.<init>(Pfeildiagramm.java:31)
 	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartfensterController.initialize(StartfensterController.java:36)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	... 21 more
@@ -251,6 +251,43 @@ Caused by: java.lang.reflect.InvocationTargetException
 	... 14 more
 Caused by: java.lang.NullPointerException: Cannot invoke "javafx.scene.image.ImageView.setImage(javafx.scene.image.Image)" because "this.iconAnsicht" is null
 	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartfensterController.initialize(StartfensterController.java:36)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	... 21 more
+
+Mai 13, 2022 12:27:08 PM jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster oeffneFenster
+SCHWERWIEGEND: Die Startfensteransicht konnte nicht geladen werden.
+javafx.fxml.LoadException: 
+/F:/Workspace/IDEA-Projects/MietManager/target/classes/jrp/mietmanager/benutzeroberflaeche/nebenfenster/startfensterAnsicht.fxml
+
+	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2707)
+	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2677)
+	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
+	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster.oeffneFenster(Startfenster.java:25)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster.<init>(Startfenster.java:17)
+	at jrp.mietmanager/jrp.mietmanager.MietManager.start(MietManager.java:16)
+	at javafx.graphics@18.0.1/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at javafx.graphics@18.0.1/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at javafx.graphics@18.0.1/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics@18.0.1/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics@18.0.1/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics@18.0.1/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@18.0.1/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:116)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at javafx.base@18.0.1/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml@18.0.1/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2673)
+	... 14 more
+Caused by: java.lang.NullPointerException: Cannot invoke "com.itextpdf.kernel.pdf.PdfDocument.addNewPage()" because "pdf" is null
+	at jrp.mietmanager/jrp.mietmanager.pdf.MonatlicheMieterInformation.<init>(MonatlicheMieterInformation.java:19)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartfensterController.initialize(StartfensterController.java:43)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	... 21 more
 
