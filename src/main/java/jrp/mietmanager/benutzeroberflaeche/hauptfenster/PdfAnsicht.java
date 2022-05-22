@@ -71,7 +71,7 @@ public class PdfAnsicht extends VBox {
                     for (Zaehlerstand z : veraenderung.getAddedSubList()) {
                         XYChart.Data<Number, Number> datenpunkt = new XYChart.Data<>();
                         datenpunkt.XValueProperty().bind(z.datumAlsDoubleProperty());
-                        datenpunkt.YValueProperty().bind(z.wertProperty());
+                        datenpunkt.YValueProperty().bind(z.differenzProperty());
                         daten.add(datenpunkt);
                     }
                 }

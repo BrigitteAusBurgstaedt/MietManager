@@ -291,3 +291,25 @@ Caused by: java.lang.NullPointerException: Cannot invoke "com.itextpdf.kernel.pd
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	... 21 more
 
+Mai 16, 2022 9:45:21 AM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 16, 2022 9:45:31 AM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 16, 2022 9:45:49 AM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 16, 2022 9:45:54 AM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 16, 2022 9:46:07 AM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 16, 2022 9:46:15 AM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 22, 2022 5:57:43 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 22, 2022 5:58:07 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 22, 2022 5:58:30 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 22, 2022 5:59:48 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 22, 2022 6:37:51 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen

@@ -48,14 +48,18 @@ public class ImmobilienReiter extends Tab {
         c1.setCellFactory(TextFieldTableCell.forTableColumn());
         tabelle.getColumns().add(c1);
 
+        /*
+        Wird zum jetzigen Zeitpunkt des Programmes noch nicht benötigt. Die Mieteranzahl kann aber später für die Kostenberechnung wichtig sein
+
         TableColumn<Wohnung, Number> c2 = new TableColumn<>("Mieteranzahl");
         c2.setCellValueFactory(wohnungIntegerCellDataFeatures -> wohnungIntegerCellDataFeatures.getValue().mieteranzahlProperty());
         c2.setCellFactory(TextFieldTableCell.forTableColumn(new NumberStringConverter()));
         c2.getStyleClass().add("zahlenspalte");
         tabelle.getColumns().add(c2);
+         */
 
         TableColumn<Wohnung, Number> c3 = new TableColumn<>("Wohnungsnutzfläche in m²");
-        c3.setCellValueFactory(wohnungNumberTableColumn -> wohnungNumberTableColumn.getValue().mieteranzahlProperty());
+        c3.setCellValueFactory(wohnungNumberTableColumn -> wohnungNumberTableColumn.getValue().flaecheProperty());
         c3.setCellFactory(TextFieldTableCell.forTableColumn(new NumberStringConverter()));
         c3.getStyleClass().add("zahlenspalte");
         tabelle.getColumns().add(c3);
