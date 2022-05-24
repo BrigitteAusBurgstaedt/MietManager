@@ -15,10 +15,10 @@ public class Zaehlerstand implements Comparable<Zaehlerstand> {
     public Zaehlerstand(LocalDate datum, double wert, Zaehlermodus modus) {
         this.datum = new SimpleObjectProperty<>(datum);
         double tageImJahr = datum.isLeapYear() ? 366 : 365;
-        this.datumAlsDouble = new SimpleDoubleProperty((double) datum.getYear() + ((double) datum.getDayOfYear() / tageImJahr));
+        this.datumAlsDouble = new SimpleDoubleProperty(datum.getYear() + (datum.getDayOfYear() / tageImJahr));
         this.datum.addListener((observableValue, altesDatum, neuesDatum) -> {
             double tageImJahr1 = neuesDatum.isLeapYear() ? 366 : 365;
-            this.datumAlsDouble.set((double) neuesDatum.getYear() + ((double) neuesDatum.getDayOfYear() / tageImJahr1));
+            this.datumAlsDouble.set(neuesDatum.getYear() + (neuesDatum.getDayOfYear() / tageImJahr1));
         });
 
         this.wert = new SimpleDoubleProperty(wert);

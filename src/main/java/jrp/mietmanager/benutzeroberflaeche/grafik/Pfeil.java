@@ -1,4 +1,4 @@
-package jrp.mietmanager.grafik;
+package jrp.mietmanager.benutzeroberflaeche.grafik;
 
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -53,12 +53,12 @@ public class Pfeil extends Pane {
 
         // Automatische Anpassung der Pfeilgröße
         generierePunkte();
-        widthProperty().addListener((observableValue, alteBreite, neueBreite) -> {
-            generierePunkte();
-        });
-        heightProperty().addListener((observableValue, alteHoehe, neueHoehe) -> {
-            generierePunkte();
-        });
+        widthProperty().addListener((observableValue, alteBreite, neueBreite) ->
+            generierePunkte()
+        );
+        heightProperty().addListener((observableValue, alteHoehe, neueHoehe) ->
+            generierePunkte()
+        );
 
         // Setzen der optischen Breite
         optischeBreite.bind(widthProperty().add(widthProperty().multiply(SPITZEN_FAKTOR)));

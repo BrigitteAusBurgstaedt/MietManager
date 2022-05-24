@@ -11,4 +11,6 @@ module jrp.mietmanager {
     exports jrp.mietmanager.benutzeroberflaeche.hauptfenster;
     opens jrp.mietmanager.benutzeroberflaeche.nebenfenster to javafx.fxml;
     exports jrp.mietmanager.benutzeroberflaeche.nebenfenster;
+    exports jrp.mietmanager.logik;
+    exports jrp.mietmanager.speicherung;
 }

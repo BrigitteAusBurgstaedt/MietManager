@@ -1,0 +1,7 @@
+
+m
+=.idea/libraries/Maven__org_openjfx_javafx_controls_18_0_1.xml,a\f\af05929a747eaf121c21d76027103b5bc3f7f6e9
+i
+9.idea/libraries/Maven__org_openjfx_javafx_base_18_0_1.xml,4\9\49f9256e0c3000e83b8ad42fc67943088141e2ab
+m
+=.idea/libraries/Maven__org_openjfx_javafx_graphics_18_0_1.xml,e\1\e102deb77a63e5dc3bb4b23898a06c5ba75315e3

@@ -1,4 +1,4 @@
-package jrp.mietmanager.grafik;
+package jrp.mietmanager.benutzeroberflaeche.grafik;
 
 import javafx.geometry.Orientation;
 import javafx.scene.control.Label;

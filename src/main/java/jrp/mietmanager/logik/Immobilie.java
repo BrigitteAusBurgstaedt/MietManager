@@ -9,10 +9,11 @@ import javafx.collections.ObservableList;
 import javafx.scene.layout.VBox;
 import jrp.mietmanager.benutzeroberflaeche.hauptfenster.ImmobilienReiter;
 
+import java.io.Serializable;
 import java.util.logging.Logger;
 
 public class Immobilie implements Visualisierbar {
-    private final static Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    private static final Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     private final StringProperty bezeichnung;
     private final IntegerProperty wohnungsanzahl;

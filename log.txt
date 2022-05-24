@@ -95,8 +95,8 @@ Caused by: java.lang.reflect.InvocationTargetException
 	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2673)
 	... 14 more
 Caused by: java.lang.NullPointerException: Cannot invoke "javafx.scene.control.Label.setText(String)" because "eKlassenSymbole[0]" is null
-	at jrp.mietmanager/jrp.mietmanager.grafik.Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:47)
-	at jrp.mietmanager/jrp.mietmanager.grafik.Pfeildiagramm.<init>(Pfeildiagramm.java:28)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.grafik.Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:47)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.grafik.Pfeildiagramm.<init>(Pfeildiagramm.java:28)
 	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartfensterController.initialize(StartfensterController.java:36)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	... 21 more
@@ -133,8 +133,8 @@ Caused by: java.lang.reflect.InvocationTargetException
 	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2673)
 	... 14 more
 Caused by: java.lang.NullPointerException: Cannot invoke "javafx.scene.control.Label.setText(String)" because "eKlassenSymbole[0]" is null
-	at jrp.mietmanager/jrp.mietmanager.grafik.Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:51)
-	at jrp.mietmanager/jrp.mietmanager.grafik.Pfeildiagramm.<init>(Pfeildiagramm.java:28)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.grafik.Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:51)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.grafik.Pfeildiagramm.<init>(Pfeildiagramm.java:28)
 	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartfensterController.initialize(StartfensterController.java:36)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	... 21 more
@@ -174,8 +174,8 @@ Caused by: java.lang.NullPointerException: Children: child node is null: parent 
 	at javafx.graphics/javafx.scene.Parent$3.onProposedChange(Parent.java:542)
 	at javafx.base/com.sun.javafx.collections.VetoableListDecorator.addAll(VetoableListDecorator.java:233)
 	at javafx.base/com.sun.javafx.collections.VetoableListDecorator.addAll(VetoableListDecorator.java:103)
-	at jrp.mietmanager/jrp.mietmanager.grafik.Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:64)
-	at jrp.mietmanager/jrp.mietmanager.grafik.Pfeildiagramm.<init>(Pfeildiagramm.java:28)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.grafik.Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:64)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.grafik.Pfeildiagramm.<init>(Pfeildiagramm.java:28)
 	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartfensterController.initialize(StartfensterController.java:36)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	... 21 more
@@ -212,8 +212,8 @@ Caused by: java.lang.reflect.InvocationTargetException
 	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2673)
 	... 14 more
 Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 8 out of bounds for length 8
-	at jrp.mietmanager/jrp.mietmanager.grafik.Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:63)
-	at jrp.mietmanager/jrp.mietmanager.grafik.Pfeildiagramm.<init>(Pfeildiagramm.java:31)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.grafik.Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:63)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.grafik.Pfeildiagramm.<init>(Pfeildiagramm.java:31)
 	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartfensterController.initialize(StartfensterController.java:36)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	... 21 more
@@ -312,4 +312,116 @@ INFORMATION: Der ListChangeListener ist angesprungen
 Mai 22, 2022 5:59:48 PM jrp.mietmanager.logik.Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
 Mai 22, 2022 6:37:51 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 24, 2022 1:23:22 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 24, 2022 1:23:31 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 24, 2022 1:32:49 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 24, 2022 1:32:49 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 24, 2022 1:35:01 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 24, 2022 1:35:01 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 24, 2022 1:40:58 PM jrp.mietmanager.benutzeroberflaeche.hauptfenster.Hauptfenster oeffneFenster
+SCHWERWIEGEND: Die Hauptansicht konnte nicht geladen werden.
+javafx.fxml.LoadException: 
+/F:/Workspace/IDEA-Projects/MietManager/target/classes/jrp/mietmanager/benutzeroberflaeche/hauptfenster/hauptansicht.fxml
+
+	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2707)
+	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2677)
+	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
+	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.hauptfenster.Hauptfenster.oeffneFenster(Hauptfenster.java:26)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.hauptfenster.Hauptfenster.<init>(Hauptfenster.java:18)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartfensterController.hauptfensterOeffnen(StartfensterController.java:84)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at javafx.base@18.0.1/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml@18.0.1/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1852)
+	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724)
+	at javafx.base@18.0.1/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@18.0.1/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base@18.0.1/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base@18.0.1/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@18.0.1/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@18.0.1/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@18.0.1/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@18.0.1/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@18.0.1/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@18.0.1/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@18.0.1/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@18.0.1/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@18.0.1/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@18.0.1/javafx.scene.Node.fireEvent(Node.java:8797)
+	at javafx.controls@18.0.1/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@18.0.1/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208)
+	at javafx.controls@18.0.1/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@18.0.1/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@18.0.1/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@18.0.1/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base@18.0.1/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base@18.0.1/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@18.0.1/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@18.0.1/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@18.0.1/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@18.0.1/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@18.0.1/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@18.0.1/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@18.0.1/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@18.0.1/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@18.0.1/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@18.0.1/javafx.scene.Scene$MouseHandler.process(Scene.java:3881)
+	at javafx.graphics@18.0.1/javafx.scene.Scene.processMouseEvent(Scene.java:1874)
+	at javafx.graphics@18.0.1/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2607)
+	at javafx.graphics@18.0.1/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics@18.0.1/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics@18.0.1/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics@18.0.1/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@18.0.1/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics@18.0.1/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics@18.0.1/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics@18.0.1/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@18.0.1/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:116)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at javafx.base@18.0.1/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml@18.0.1/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2673)
+	... 59 more
+Caused by: java.lang.NullPointerException: Cannot invoke "jrp.mietmanager.logik.Immobilie.getWohnungen()" because "this.immobilie" is null
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.hauptfenster.HauptansichtController.pflanzeBaum(HauptansichtController.java:49)
+	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.hauptfenster.HauptansichtController.initialize(HauptansichtController.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	... 66 more
+
+Mai 24, 2022 1:44:40 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 24, 2022 1:44:40 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 24, 2022 1:45:17 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 24, 2022 1:45:23 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 24, 2022 1:46:58 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 24, 2022 1:46:58 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 24, 2022 1:46:58 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 24, 2022 1:46:58 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+INFORMATION: Der ListChangeListener ist angesprungen
+Mai 24, 2022 1:47:24 PM jrp.mietmanager.logik.Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen

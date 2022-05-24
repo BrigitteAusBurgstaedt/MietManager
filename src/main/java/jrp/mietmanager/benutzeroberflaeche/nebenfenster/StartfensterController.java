@@ -12,7 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import jrp.mietmanager.benutzeroberflaeche.hauptfenster.Hauptfenster;
-import jrp.mietmanager.grafik.Pfeildiagramm;
+import jrp.mietmanager.benutzeroberflaeche.grafik.Pfeildiagramm;
 import jrp.mietmanager.logik.Immobilie;
 import jrp.mietmanager.pdf.MonatlicheMieterInformation;
 
@@ -22,7 +22,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class StartfensterController {
-    private final static Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    private static final Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     @FXML public Button immobilieErstellenTaster;
     @FXML public TextField bezeichnungFeld;

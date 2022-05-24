@@ -1,4 +1,4 @@
-package jrp.mietmanager.grafik;
+package jrp.mietmanager.benutzeroberflaeche.grafik;
 
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -7,7 +7,7 @@ import javafx.scene.layout.Region;
 public class Pfeildiagramm extends Region {
 
     private final DoubleProperty min, max, aktuell;
-    private final int HOEHEN_FAKTOR = 10;
+    private static final int HOEHEN_FAKTOR = 10;
 
     private int monat;
 
@@ -17,7 +17,7 @@ public class Pfeildiagramm extends Region {
         this.aktuell = new SimpleDoubleProperty(aktuell);
 
         // minimale Einheit
-        int e = 20;
+        double e = 20;
         setMinHeight(HOEHEN_FAKTOR * e);
         setMinWidth(30 * e);
     }

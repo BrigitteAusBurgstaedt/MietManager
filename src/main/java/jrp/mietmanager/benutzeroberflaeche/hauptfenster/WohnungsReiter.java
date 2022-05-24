@@ -1,17 +1,11 @@
 package jrp.mietmanager.benutzeroberflaeche.hauptfenster;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
-import javafx.scene.chart.LineChart;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.util.StringConverter;
+import jrp.mietmanager.benutzeroberflaeche.Stilklasse;
 import jrp.mietmanager.logik.Wohnung;
 import jrp.mietmanager.logik.Zaehlermodus;
 import jrp.mietmanager.logik.Zaehlerstand;
@@ -21,7 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class WohnungsReiter extends Tab {
-    private final static Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    private static final Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     private final TableView<Zaehlerstand> tabelle = new TableView<>();
     private final Wohnung wohnung;
@@ -50,10 +44,10 @@ public class WohnungsReiter extends Tab {
         HBox fuerEingabe = new HBox();
         HBox fuerTaster = new HBox(5);
 
-        platzhalter.getStyleClass().add("platzhalter");
-        fuerEingabe.getStyleClass().add("platzhalter");
-        fuerTaster.getStyleClass().add("platzhalter");
-        behaelter.getStyleClass().add("behaelter");
+        platzhalter.getStyleClass().add(Stilklasse.PLATZHALTER.toString());
+        fuerEingabe.getStyleClass().add(Stilklasse.PLATZHALTER.toString());
+        fuerTaster.getStyleClass().add(Stilklasse.PLATZHALTER.toString());
+        behaelter.getStyleClass().add(Stilklasse.BEHAELTER.toString());
 
         fuerTaster.setAlignment(Pos.TOP_RIGHT);
 
@@ -81,10 +75,20 @@ public class WohnungsReiter extends Tab {
             }
         });
 
-        // Beim drücken des Entfernen-Tasters wird die Ausgewählte Reihe gelöscht TODO: Ist sie auch als Objekt gelöscht?
+        // Beim drücken des Entfernen-Tasters wird die Ausgewählte Reihe gelöscht
         entfernen.setOnAction(actionEvent -> {
+
+            // Liste aus den ausgewählten Zählerstände in der Tabelle
+            ObservableList<Zaehlerstand> zuEntfernenedeZaehlerstaende = tabelle.getSelectionModel().getSelectedItems();
+
+            // aus der Tabelle entfernen
             tabelle.getItems().removeAll(
-                    tabelle.getSelectionModel().getSelectedItems()
+                    zuEntfernenedeZaehlerstaende
+            );
+
+            // von der Wohnung entfernen
+            wohnung.getZaehlerstaende().removeAll(
+                    zuEntfernenedeZaehlerstaende
             );
         });
 

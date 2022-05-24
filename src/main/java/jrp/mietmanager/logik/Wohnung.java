@@ -13,7 +13,7 @@ import java.util.Collections;
 import java.util.logging.Logger;
 
 public class Wohnung implements Visualisierbar {
-    private final static Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    private static final Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     private final StringProperty bezeichnung;
     private final IntegerProperty mieteranzahl;

@@ -10,6 +10,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.util.StringConverter;
+import jrp.mietmanager.benutzeroberflaeche.Stilklasse;
 import jrp.mietmanager.logik.Wohnung;
 import jrp.mietmanager.logik.Zaehlerstand;
 
@@ -25,9 +26,9 @@ public class PdfAnsicht extends VBox {
         VBox fuerTitel = new VBox();
         Label titel = new Label();
 
-        platzhalter.getStyleClass().add("platzhalter");
-        fuerTitel.getStyleClass().add("behaelter");
-        titel.getStyleClass().add("titel-label");
+        platzhalter.getStyleClass().add(Stilklasse.PLATZHALTER.toString());
+        fuerTitel.getStyleClass().add(Stilklasse.BEHAELTER.toString());
+        titel.getStyleClass().add(Stilklasse.TITEL_LABEL.toString());
 
         fuerTitel.setAlignment(Pos.CENTER);
         titel.textProperty().bind(wohnung.bezeichnungProperty());
@@ -36,7 +37,7 @@ public class PdfAnsicht extends VBox {
         platzhalter.getChildren().add(fuerTitel);
         getChildren().add(platzhalter);
 
-        getStyleClass().add("hauptbehaelter");
+        getStyleClass().add(Stilklasse.HAUPTBEHAELTER.toString());
         erstelleDiagramm();
     }
 
