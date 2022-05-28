@@ -10,6 +10,7 @@ import jrp.mietmanager.benutzeroberflaeche.hauptfenster.PdfAnsicht;
 import jrp.mietmanager.benutzeroberflaeche.hauptfenster.WohnungsReiter;
 
 import java.util.Collections;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Wohnung implements Visualisierbar {
@@ -39,41 +40,75 @@ public class Wohnung implements Visualisierbar {
 
         // Differenzenbildung für die Zählerstände
         zaehlerstaende.addListener((ListChangeListener<Zaehlerstand>) veraenderung -> {
+            log.info("Im List Change Listener für Differenzen");
+            int anzahlVeraenderungen = 1; // Für Log
 
-            // Falls mehrere Veränderungen vorgenommen wurden
-            while (veraenderung.next()) {
 
-                if (veraenderung.wasUpdated())
-                    Collections.sort(zaehlerstaende);
+            while (veraenderung.next()) { // Falls mehrere Veränderungen vorgenommen wurden
+                log.log(Level.INFO,"Veränderung Nr. {0}", anzahlVeraenderungen);
 
-                if (veraenderung.wasUpdated() || veraenderung.wasRemoved() || veraenderung.wasAdded()) {
-                    log.info("Der ListChangeListener ist angesprungen");
-
-                    // Differenzenbildung
-                    for (int i = veraenderung.getFrom(); veraenderung.getTo() != zaehlerstaende.size() ? i <= veraenderung.getTo() : i < veraenderung.getTo(); i++) {
-                        if (i == 0)
-                            zaehlerstaende.get(i).setDifferenz(0); // Der erste Zählerstand erhält die Differenz 0
-                        else
-                            zaehlerstaende.get(i).setDifferenz(
-                                    zaehlerstaende.get(i).getWert() - zaehlerstaende.get(i - 1).getWert()
-                            );
-                    }
-
+                if (veraenderung.wasPermutated()) {
+                    log.severe("Die Liste wurde durcheinander gebracht");
+                    continue;
                 }
+
+                if (veraenderung.wasAdded()) {
+                    log.info("Es wurde etwas hinzugefügt oder ersetzt");
+                    bildeDifferenzen(veraenderung.getFrom(), veraenderung.getTo());
+
+                } else if (veraenderung.wasRemoved()) {
+                    log.info("Es wurde etwas Gelöscht");
+                    if (veraenderung.getRemovedSize() == 1) { // Es wurde nur ein Element gelöscht
+                        bildeDifferenzen(veraenderung.getFrom(), veraenderung.getFrom() + 1);
+                    } else {
+                        bildeDifferenzen(0, zaehlerstaende.size()); // Wenn mehr als ein Element gelöscht wurde, müssen alle Differenzen neu gebildet werden
+                    }
+                }
+
+                if (veraenderung.wasUpdated()) log.warning("Es wurde etwas aktualisiert"); // Sollte nicht vorkommen
+
+                anzahlVeraenderungen++;
             }
         });
+    }
+
+    private void bildeDifferenzen(int von, int bis) {
+        if (zaehlerstaende.isEmpty()) // Wenn Liste leer ist, dann müssen auch keine Differenzen gebildet werden
+            return;
+
+        int anzahlDifferenzenbildung = 0; // Für Log
+
+        if (bis != zaehlerstaende.size()) // Wenn innerhalb der Liste etwas verändert wurde muss auch von bis+1 eine Differenz neu gebildet werden
+            bis++;
+
+        for (int i = von; i < bis; i++) {
+            anzahlDifferenzenbildung++;
+
+            if (i == 0) {
+                zaehlerstaende.get(i).setDifferenz(0); // Der erste Zählerstand erhält die Differenz 0
+                continue;
+            }
+
+            zaehlerstaende.get(i).setDifferenz(zaehlerstaende.get(i).getWert() - zaehlerstaende.get(i - 1).getWert()); // Differenz = Neuer Wert - Alter Wert
+        }
+
+        log.log(Level.INFO, "Es wurden {0} Differenzen gebildet", anzahlDifferenzenbildung);
     }
 
     /**
      * Methode zum Hinzufügen eines Zählerstandes.
      *
-     * @param zaehlerstand Zählerstand welcher hinzugefügt werden soll.
+     * @throws IllegalStateException Wenn der Wert des Zählerstandes geringer ist als der vorhergehende
+     * @param zaehlerstand Zählerstand welcher hinzugefügt werden soll
      */
-    public void hinzufuegen(Zaehlerstand zaehlerstand) {
+    public void hinzufuegen(Zaehlerstand zaehlerstand) throws IllegalStateException {
         int index = Collections.binarySearch(zaehlerstaende, zaehlerstand);
         if (index < 0) index = ~index;
 
-        this.zaehlerstaende.add(index, zaehlerstand);
+        if (index > 0 && zaehlerstaende.get(index - 1).getWert() > zaehlerstand.getWert())
+            throw new IllegalStateException("Der Wert des Zählerstandes darf nicht geringer sein als der vorhergehende!");
+        else
+            this.zaehlerstaende.add(index, zaehlerstand);
     }
 
     @Override
@@ -85,9 +120,9 @@ public class Wohnung implements Visualisierbar {
     }
 
     @Override
-    public VBox oeffnePdfAnsicht() {
+    public VBox oeffnePdfAnsicht(Immobilie immobilie) {
         if (pdfAnsicht == null)
-            pdfAnsicht = new PdfAnsicht(this);
+            pdfAnsicht = new PdfAnsicht(immobilie, this);
         return pdfAnsicht;
     }
 

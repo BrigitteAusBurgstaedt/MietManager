@@ -18,7 +18,7 @@ public interface Visualisierbar {
      *
      * @return Gibt die dazugehörige PDF-Ansicht zurück.
      */
-    VBox oeffnePdfAnsicht();
+    VBox oeffnePdfAnsicht(Immobilie immobilie);
 
     /**
      * Wahrheitswert welcher den Zustand des Tab/Reiters widerspiegelt.

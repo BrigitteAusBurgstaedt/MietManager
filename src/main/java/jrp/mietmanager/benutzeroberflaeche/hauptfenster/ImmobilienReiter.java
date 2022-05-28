@@ -4,11 +4,16 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.VBox;
 import javafx.util.converter.NumberStringConverter;
+import jrp.mietmanager.benutzeroberflaeche.Stilklasse;
 import jrp.mietmanager.logik.Immobilie;
 import jrp.mietmanager.logik.Wohnung;
+import jrp.mietmanager.logik.Zaehlerstand;
+import jrp.mietmanager.logik.ZaehlerstandListe;
+
+import java.time.LocalDate;
 
 public class ImmobilienReiter extends Tab {
-    private final TableView<Wohnung> tabelle = new TableView<>();
+
     private final Immobilie immobilie;
 
     public ImmobilienReiter(Immobilie immobilie) {
@@ -25,18 +30,45 @@ public class ImmobilienReiter extends Tab {
         platzhalter.getStyleClass().add("platzhalter");
         behaelter.getStyleClass().add("behaelter");
 
-        erstelleTabelle();
 
-        behaelter.getChildren().add(tabelle);
+        behaelter.getChildren().add(erstelleTabelle());
         platzhalter.getChildren().add(behaelter);
         setContent(platzhalter);
+
+    }
+
+    private void erstelleTabelle2() {
+        TableView<ZaehlerstandListe> tabelle = new TableView<>();
+
+        tabelle.setItems(immobilie.getZaehlerstaende());
+        tabelle.setEditable(true);
+        tabelle.setPlaceholder(new Label("Noch keine Zählerstände erfasst."));
+        tabelle.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+        TableColumn<ZaehlerstandListe, LocalDate> c1 = new TableColumn<>("Datum");
+        c1.setCellValueFactory(zaehlerstandStringCellDataFeatures -> zaehlerstandStringCellDataFeatures.getValue().datumProperty());
+        c1.setSortable(false);
+        tabelle.getColumns().add(c1);
+
+        TableColumn<ZaehlerstandListe, Number>[] spalten = new TableColumn[immobilie.getWohnungsanzahl()];
+
+        for (int i = 0; i < spalten.length; i++) {
+            spalten[i].textProperty().bind(immobilie.getWohnungen().get(i).bezeichnungProperty());
+            int finalI = i;
+            spalten[i].setCellValueFactory(zaehlerstandListeNumberCellDataFeatures -> zaehlerstandListeNumberCellDataFeatures.getValue().getWerte().get(finalI));
+            spalten[i].getStyleClass().add(Stilklasse.ZAHLENSPALTE.toString());
+            spalten[i].setSortable(false);
+            tabelle.getColumns().add(spalten[i]);
+        }
 
     }
 
     /**
      * Erstellt die Tabelle die alle Wohnungen enthält.
      */
-    private void erstelleTabelle() {
+    private TableView<Wohnung> erstelleTabelle() {
+        TableView<Wohnung> tabelle = new TableView<>();
+
         tabelle.setItems(immobilie.getWohnungen()); // Tabelle soll die Wohnungen der enthalten
         tabelle.setEditable(true); // Die Wohnungen sollen bearbeitbar sein
         tabelle.setPlaceholder(new Label("Noch keine Wohnungen erstellt."));
@@ -61,9 +93,11 @@ public class ImmobilienReiter extends Tab {
         TableColumn<Wohnung, Number> c3 = new TableColumn<>("Wohnungsnutzfläche in m²");
         c3.setCellValueFactory(wohnungNumberTableColumn -> wohnungNumberTableColumn.getValue().flaecheProperty());
         c3.setCellFactory(TextFieldTableCell.forTableColumn(new NumberStringConverter()));
-        c3.getStyleClass().add("zahlenspalte");
+        c3.getStyleClass().add(Stilklasse.ZAHLENSPALTE.toString());
         tabelle.getColumns().add(c3);
 
         tabelle.setPrefHeight(1080); // TODO: 05.05.2022 bessere Lösung (zeige (wenn möglich) nur die gefüllten Zeilen
+
+        return tabelle;
     }
 }

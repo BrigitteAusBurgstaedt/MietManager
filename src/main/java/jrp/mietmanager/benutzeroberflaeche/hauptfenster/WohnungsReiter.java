@@ -81,11 +81,6 @@ public class WohnungsReiter extends Tab {
             // Liste aus den ausgewählten Zählerstände in der Tabelle
             ObservableList<Zaehlerstand> zuEntfernenedeZaehlerstaende = tabelle.getSelectionModel().getSelectedItems();
 
-            // aus der Tabelle entfernen
-            tabelle.getItems().removeAll(
-                    zuEntfernenedeZaehlerstaende
-            );
-
             // von der Wohnung entfernen
             wohnung.getZaehlerstaende().removeAll(
                     zuEntfernenedeZaehlerstaende

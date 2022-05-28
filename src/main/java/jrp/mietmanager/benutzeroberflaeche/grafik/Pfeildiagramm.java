@@ -3,6 +3,8 @@ package jrp.mietmanager.benutzeroberflaeche.grafik;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.scene.layout.Region;
+import jrp.mietmanager.logik.Immobilie;
+import jrp.mietmanager.logik.Wohnung;
 
 public class Pfeildiagramm extends Region {
 
@@ -28,6 +30,20 @@ public class Pfeildiagramm extends Region {
         this.monat = monat;
         erstelleBandtacho();
     }
+
+    /*
+    public Pfeildiagramm(Immobilie immobilie) {
+        bestimmeWerte(immobilie);
+    }
+
+     */
+
+    private void bestimmeWerte(Immobilie immobilie) {
+        for (Wohnung w : immobilie.getWohnungen()) {
+            // TODO: 24.05.2022  bind min, max, aktuell
+        }
+    }
+
 
     private void erstelleBandtacho() {
         Bandtacho bandtacho = new Bandtacho(monat);

@@ -50,13 +50,13 @@ public class HauptansichtController {
             }
 
             // Braucht das Ausgewählte Objekt die PDF-Ansicht? UND Ist diese noch nicht geöffnet?
-            if (newValue.getValue().brauchtPdfAnsicht() && !spaltenfenster.getItems().contains(newValue.getValue().oeffnePdfAnsicht())) {
+            if (newValue.getValue().brauchtPdfAnsicht() && !spaltenfenster.getItems().contains(newValue.getValue().oeffnePdfAnsicht(immobilie))) {
 
                 // Ist bereits eine andere PDF-Ansicht geöffnet?
                 if (spaltenfenster.getItems().size() == 3)
                     spaltenfenster.getItems().remove(2); // dann entferne diese
                 // öffne die PDF-Ansicht
-                spaltenfenster.getItems().add(newValue.getValue().oeffnePdfAnsicht());
+                spaltenfenster.getItems().add(newValue.getValue().oeffnePdfAnsicht(immobilie));
                 spaltenfenster.setDividerPosition(1, 0.55);
             }
         });

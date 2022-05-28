@@ -4,7 +4,8 @@ public enum Stilklasse {
     PLATZHALTER("platzhalter"),
     BEHAELTER("behaelter"),
     TITEL_LABEL("titel-label"),
-    HAUPTBEHAELTER("hauptbehaelter");
+    HAUPTBEHAELTER("hauptbehaelter"),
+    ZAHLENSPALTE("zahlenspalte");
 
     private final String stilklasseCSS;
 

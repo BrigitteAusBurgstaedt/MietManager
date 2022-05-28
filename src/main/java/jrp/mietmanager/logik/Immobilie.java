@@ -9,7 +9,6 @@ import javafx.collections.ObservableList;
 import javafx.scene.layout.VBox;
 import jrp.mietmanager.benutzeroberflaeche.hauptfenster.ImmobilienReiter;
 
-import java.io.Serializable;
 import java.util.logging.Logger;
 
 public class Immobilie implements Visualisierbar {
@@ -55,7 +54,7 @@ public class Immobilie implements Visualisierbar {
     }
 
     @Override
-    public VBox oeffnePdfAnsicht() {
+    public VBox oeffnePdfAnsicht(Immobilie immobilie) {
         return null;
     }
 
