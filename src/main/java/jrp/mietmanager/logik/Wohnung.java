@@ -3,6 +3,7 @@ package jrp.mietmanager.logik;
 
 import javafx.beans.property.*;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.scene.layout.VBox;
 import jrp.mietmanager.benutzeroberflaeche.hauptfenster.PdfAnsicht;
@@ -40,68 +41,7 @@ public class Wohnung implements Visualisierbar {
         this.flaeche = new SimpleDoubleProperty(flaeche);
 
         this.istGeoffnet = false;
-
-        /*
-        // Differenzenbildung für die Zählerstände
-        zaehlerstaende.addListener((ListChangeListener<Zaehlerstand>) veraenderung -> {
-            log.info("Im List Change Listener für Differenzen");
-            int anzahlVeraenderungen = 1; // Für Log
-
-
-            while (veraenderung.next()) { // Falls mehrere Veränderungen vorgenommen wurden
-                log.log(Level.INFO,"Veränderung Nr. {0}", anzahlVeraenderungen);
-
-                if (veraenderung.wasPermutated()) {
-                    log.severe("Die Liste wurde durcheinander gebracht");
-                    continue;
-                }
-
-                if (veraenderung.wasAdded()) {
-                    log.info("Es wurde etwas hinzugefügt oder ersetzt");
-                    bildeDifferenzen(veraenderung.getFrom(), veraenderung.getTo());
-
-                } else if (veraenderung.wasRemoved()) {
-                    log.info("Es wurde etwas Gelöscht");
-                    if (veraenderung.getRemovedSize() == 1) { // Es wurde nur ein Element gelöscht
-                        bildeDifferenzen(veraenderung.getFrom(), veraenderung.getFrom() + 1);
-                    } else {
-                        bildeDifferenzen(0, zaehlerstaende.size()); // Wenn mehr als ein Element gelöscht wurde, müssen alle Differenzen neu gebildet werden
-                    }
-                }
-
-                if (veraenderung.wasUpdated()) log.warning("Es wurde etwas aktualisiert"); // Sollte nicht vorkommen
-
-                anzahlVeraenderungen++;
-            }
-        });
-         */
     }
-
-    /*
-    private void bildeDifferenzen(int von, int bis) {
-        if (zaehlerstaende.isEmpty()) // Wenn Liste leer ist, dann müssen auch keine Differenzen gebildet werden
-            return;
-
-        int anzahlDifferenzenbildung = 0; // Für Log
-
-        if (bis != zaehlerstaende.size()) // Wenn innerhalb der Liste etwas verändert wurde muss auch von bis+1 eine Differenz neu gebildet werden
-            bis++;
-
-        for (int i = von; i < bis; i++) {
-            anzahlDifferenzenbildung++;
-
-            if (i == 0) {
-                zaehlerstaende.get(i).setDifferenz(0); // Der erste Zählerstand erhält die Differenz 0
-                continue;
-            }
-
-            zaehlerstaende.get(i).setDifferenz(zaehlerstaende.get(i).getWert() - zaehlerstaende.get(i - 1).getWert()); // Differenz = Neuer Wert - Alter Wert
-        }
-
-        log.log(Level.INFO, "Es wurden {0} Differenzen gebildet", anzahlDifferenzenbildung);
-    }
-     */
-
 
     public Zaehlerstand hinzufuegen(LocalDate datum, double wert, Zaehlermodus zaehlermodus) throws InstantiationException {
         return new Zaehlerstand(this, datum, wert, zaehlermodus);

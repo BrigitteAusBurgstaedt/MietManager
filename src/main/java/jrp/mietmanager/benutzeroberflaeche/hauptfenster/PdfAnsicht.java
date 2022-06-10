@@ -4,7 +4,6 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import jrp.mietmanager.benutzeroberflaeche.Stilklasse;
-import jrp.mietmanager.benutzeroberflaeche.grafik.Pfeildiagramm;
 import jrp.mietmanager.benutzeroberflaeche.grafik.ZaehlerstandDiagramm;
 import jrp.mietmanager.logik.Immobilie;
 import jrp.mietmanager.logik.Wohnung;
@@ -41,10 +40,8 @@ public class PdfAnsicht extends VBox {
     }
 
     private void erstelleDiagramm() {
-
         ZaehlerstandDiagramm zaehlerstandDiagramm = new ZaehlerstandDiagramm(wohnung);
         // Pfeildiagramm pfeildiagramm = new Pfeildiagramm(immobilie);
-
 
         getChildren().add(zaehlerstandDiagramm);
     }

@@ -1,6 +1,7 @@
 package jrp.mietmanager.logik;
 
 import javafx.beans.property.*;
+import javafx.collections.ListChangeListener;
 import javafx.collections.transformation.SortedList;
 import javafx.scene.control.Alert;
 
@@ -10,7 +11,7 @@ import java.util.logging.Logger;
 
 public class Zaehlerstand implements Comparable<Zaehlerstand> {
     private static final Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-    
+
     private final Wohnung wohnung;
     private Zaehlerstand vorgaenger;
 
@@ -48,6 +49,16 @@ public class Zaehlerstand implements Comparable<Zaehlerstand> {
         this.wohnung.getZaehlerstaende().add(this);             // Eintragen in die Zählerstandliste der Wohnung
 
         bestimmeVorhergehendenZaehlerstand();
+    }
+
+    public void entfernen() {
+        wohnung.getZaehlerstaende().remove(this);
+
+        try {
+            if (vorgaenger != null) vorgaenger.bestimmeVorhergehendenZaehlerstand();
+        } catch (InstantiationException e) {
+            e.printStackTrace();    // Wird nicht passieren
+        }
     }
 
     /*
@@ -124,7 +135,6 @@ public class Zaehlerstand implements Comparable<Zaehlerstand> {
     @Override
     public int compareTo(Zaehlerstand o) {
         return getDatum().compareTo(o.getDatum());
-        // Genauer aber schwieriger bei Veränderungen: return (getDatum().compareTo(o.getDatum()) != 0) ? getDatum().compareTo(o.getDatum()) : ((int) getWert() - (int) o.getWert());
     }
 
     @Override
@@ -132,11 +142,9 @@ public class Zaehlerstand implements Comparable<Zaehlerstand> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         return getDatum().equals(((Zaehlerstand) o).getDatum());
-        // Genauer aber schwieriger bei Veränderungen: return (getDatum().equals(((Zaehlerstand) o).getDatum()) && ((int) getWert() == ((int) ((Zaehlerstand) o).getWert())));
     }
 
     // gewöhnliche Getter und Setter
-
 
     public Wohnung getWohnung() {
         return wohnung;

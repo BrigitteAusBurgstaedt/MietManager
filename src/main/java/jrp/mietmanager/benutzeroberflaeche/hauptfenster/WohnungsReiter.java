@@ -59,7 +59,7 @@ public class WohnungsReiter extends Tab {
         Button hinzufuegen = new Button("Hinzufügen");
         Button entfernen = new Button("Entfernen");
 
-        datumsFeld.setPromptText("tt.mm.jjjj");
+        datumsFeld.setPromptText("TT.MM.JJJJ");
 
         // Beim drücken des Hinzufügen-Tasters werden die eingegeben werte als Objekt erstellt
         hinzufuegen.setOnAction(actionEvent -> {
@@ -77,14 +77,17 @@ public class WohnungsReiter extends Tab {
 
         // Beim drücken des Entfernen-Tasters wird die Ausgewählte Reihe gelöscht
         entfernen.setOnAction(actionEvent -> {
-
             // Liste aus den ausgewählten Zählerstände in der Tabelle
             ObservableList<Zaehlerstand> zuEntfernenedeZaehlerstaende = tabelle.getSelectionModel().getSelectedItems();
+            if (zuEntfernenedeZaehlerstaende == null) return;
 
-            // von der Wohnung entfernen
-            wohnung.getZaehlerstaende().removeAll(
-                    zuEntfernenedeZaehlerstaende
-            );
+            if (wohnung.getZaehlerstaende().size() == 1){ // ich weiß nicht, warum das notwendig ist aber es ist notwendig
+                wohnung.getZaehlerstaende().get(0).entfernen();
+                return;
+            }
+
+            for (Zaehlerstand z : zuEntfernenedeZaehlerstaende)     // Zählerstände von der Wohnung entfernen
+                z.entfernen();
         });
 
         erstelleTabelle();
@@ -109,21 +112,17 @@ public class WohnungsReiter extends Tab {
 
         TableColumn<Zaehlerstand, LocalDate> c1 = new TableColumn<>("Datum");
         c1.setCellValueFactory(zaehlerstandStringCellDataFeatures -> zaehlerstandStringCellDataFeatures.getValue().datumProperty());
-        c1.setSortable(false);
         tabelle.getColumns().add(c1);
 
         TableColumn<Zaehlerstand, Number> c2 = new TableColumn<>("Zählerstand");
         c2.setCellValueFactory(zaehlerstandNumberCellDataFeatures -> zaehlerstandNumberCellDataFeatures.getValue().wertProperty());
         c2.getStyleClass().add("zahlenspalte");
-        c2.setSortable(false);
         tabelle.getColumns().add(c2);
 
         TableColumn<Zaehlerstand, Number> c3 = new TableColumn<>("Differenz");
         c3.setCellValueFactory(zaehlerstandNumberCellDataFeatures -> zaehlerstandNumberCellDataFeatures.getValue().differenzProperty());
         c3.getStyleClass().add("zahlenspalte");
-        c3.setSortable(false);
         tabelle.getColumns().add(c3);
-
     }
 
 }

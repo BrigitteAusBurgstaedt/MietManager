@@ -35,10 +35,6 @@ s
 Csrc/main/java/jrp/mietmanager/benutzeroberflaeche/grafik/Pfeil.java,3\a\3a00bd757dd9c36f863bc469bd4264b3e4d29971
 g
 7src/main/java/jrp/mietmanager/logik/Visualisierbar.java,5\4\5496b8fb5850b7c64920d89f3fe8b5e412b7d63f
-‚
-Rsrc/main/java/jrp/mietmanager/benutzeroberflaeche/grafik/ZaehlerstandDiagramm.java,5\b\5bc9f2534d7987c24727831ff00b4be57a087645
-~
-Nsrc/main/java/jrp/mietmanager/benutzeroberflaeche/hauptfenster/PdfAnsicht.java,4\f\4ffe29a1e6e4c3ff9643c585b5bf69653945f2e6
 q
 Asrc/main/java/jrp/mietmanager/benutzeroberflaeche/Stilklasse.java,4\4\44c67bb3c9ae5924d1678584bcfd846a8d292733
 Š

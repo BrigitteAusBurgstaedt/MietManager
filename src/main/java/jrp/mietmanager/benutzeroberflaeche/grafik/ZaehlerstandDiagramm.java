@@ -8,11 +8,11 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.layout.Region;
 import javafx.util.StringConverter;
-import jrp.mietmanager.logik.Immobilie;
 import jrp.mietmanager.logik.Wohnung;
 import jrp.mietmanager.logik.Zaehlerstand;
 
 import java.text.DecimalFormat;
+import java.util.Collection;
 
 public class ZaehlerstandDiagramm extends Region {
 
@@ -24,45 +24,40 @@ public class ZaehlerstandDiagramm extends Region {
 
     public ZaehlerstandDiagramm(Wohnung wohnung) {
         this.wohnung = wohnung;
-
         daten = FXCollections.observableArrayList();
-
         erstelleDiagramm();
     }
 
     private void erstelleDiagramm() {
-
         LineChart<Number, Number> diagramm = new LineChart<>(xAchse, yAchse);
         XYChart.Series<Number, Number> serie = new XYChart.Series<>(daten);
 
-        // Erstbefüllung der Datenreihe
-        for (Zaehlerstand z : wohnung.getZaehlerstaende()) {
-            verknuepfen(z);
-        }
+        verknuepfenAlle(wohnung.getZaehlerstaende());   // Erstbefüllung der Datenreihe
 
         wohnung.getZaehlerstaende().addListener((ListChangeListener<Zaehlerstand>) veraenderung -> {
             while (veraenderung.next()) {
-
-                if (veraenderung.wasAdded()) {
-                    for (Zaehlerstand z : veraenderung.getAddedSubList()) {
-                        verknuepfen(z);
+                if (veraenderung.wasAdded())
+                    verknuepfenAlle(veraenderung.getAddedSubList());
+                else if (veraenderung.wasRemoved()) {
+                    for (XYChart.Data<Number, Number> d : daten) {
+                        d.XValueProperty().unbind();
+                        d.YValueProperty().unbind();
                     }
-                } else if (veraenderung.wasRemoved()) {
                     daten.clear();
-
-                    for (Zaehlerstand z : wohnung.getZaehlerstaende()) {
-                        verknuepfen(z);
-                    }
+                    verknuepfenAlle(veraenderung.getList());
                 }
-
-                if (!wohnung.getZaehlerstaende().isEmpty()) {
-                    berechneSchwellen();
-                }
-
+                if (!wohnung.getZaehlerstaende().isEmpty()) berechneSchwellen();
             }
         });
 
-        // Beschriftung der Achse
+        setupAchsen();
+
+        serie.setName("Serie 1");
+        diagramm.getData().add(serie);  // Serie hinzufügen
+        getChildren().add(diagramm);
+    }
+
+    private void setupAchsen() {
         xAchse.setTickLabelFormatter(new StringConverter<>() {
             @Override
             public String toString(Number number) {
@@ -93,16 +88,9 @@ public class ZaehlerstandDiagramm extends Region {
         xAchse.setMinorTickCount(4); // pro Woche ein Strich
         yAchse.setForceZeroInRange(false);
         yAchse.setLabel("Zählerwert");
-        serie.setName("Serie 1");
-
-        // Serie hinzufügen
-        diagramm.getData().add(serie);
-
-        getChildren().add(diagramm);
     }
 
     private void berechneSchwellen() {
-        // obere und untere Schwelle angleichen
         double min = wohnung.getZaehlerstaende().get(0).getDatumAlsDouble();
         double max = wohnung.getZaehlerstaende().get(wohnung.getZaehlerstaende().size() - 1).getDatumAlsDouble();
         double obereSchwelle;
@@ -123,5 +111,9 @@ public class ZaehlerstandDiagramm extends Region {
         datenpunkt.XValueProperty().bind(z.datumAlsDoubleProperty());
         datenpunkt.YValueProperty().bind(z.differenzProperty());
         daten.add(datenpunkt);
+    }
+
+    private void verknuepfenAlle(Collection<? extends Zaehlerstand> c) {
+        for (Zaehlerstand z : c) verknuepfen(z);
     }
 }
