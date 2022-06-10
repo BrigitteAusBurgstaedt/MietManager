@@ -1,5 +1,7 @@
 package jrp.mietmanager.benutzeroberflaeche.hauptfenster;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
@@ -38,6 +40,7 @@ public class HauptansichtController {
             TreeItem<Visualisierbar> item = new TreeItem<>();
             item.valueProperty().set(w);
             wurzel.getChildren().add(item);
+            w.bezeichnungProperty().addListener((observableValue, s, t1) -> objektBaum.refresh());
         }
 
         objektBaum.setRoot(wurzel);

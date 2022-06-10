@@ -10,16 +10,13 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class ImmobilieMomentaufnahme implements Serializable {
-
     private final String bezeichnung;
-    private final int wohnungsanzahl;
     private final WohnungMomentaufnahme[] wohnungen;
 
     public ImmobilieMomentaufnahme(Immobilie immobilie) {
-        bezeichnung = immobilie.toString();
-        wohnungsanzahl = immobilie.getWohnungsanzahl();
-
         List<Wohnung> hilfWohnungen = immobilie.getWohnungen();
+
+        bezeichnung = immobilie.toString();
         wohnungen = new WohnungMomentaufnahme[hilfWohnungen.size()];
 
         for (int i = 0; i < hilfWohnungen.size(); i++) {
@@ -29,67 +26,59 @@ public class ImmobilieMomentaufnahme implements Serializable {
     }
 
     public Immobilie getImmobilie() {
-        Immobilie immobilie = new Immobilie(bezeichnung, wohnungsanzahl);
-
-        for (WohnungMomentaufnahme wohnungMomentaufnahmeMomentaufnahme : wohnungen) {
-            immobilie.getWohnungen().add(wohnungMomentaufnahmeMomentaufnahme.getWohnung());
-        }
-
+        Immobilie immobilie = new Immobilie(bezeichnung);
+        for (WohnungMomentaufnahme wohnungMomentaufnahme : wohnungen)
+            wohnungMomentaufnahme.setupWohnung(immobilie);
         return immobilie;
     }
 
 }
 
 class WohnungMomentaufnahme implements Serializable {
-
     private final String bezeichnung;
     private final int mieteranzahl;
     private final double flaeche;
     private final ZaehlerstandMomentaufnahme[] zaehlerstaende;
 
-    public WohnungMomentaufnahme(Wohnung wohnung) {
+    WohnungMomentaufnahme(Wohnung wohnung) {
+        List<Zaehlerstand> hilfZaehlerstaende = wohnung.getZaehlerstaende();
+
         bezeichnung = wohnung.toString();
         mieteranzahl = wohnung.getMieteranzahl();
         flaeche = wohnung.getFlaeche();
 
-        List<Zaehlerstand> hilfZaehlerstaende = wohnung.getZaehlerstaende();
         zaehlerstaende = new ZaehlerstandMomentaufnahme[hilfZaehlerstaende.size()];
 
         for (int i = 0; i < hilfZaehlerstaende.size(); i++) {
             zaehlerstaende[i] = new ZaehlerstandMomentaufnahme(hilfZaehlerstaende.get(i));
         }
-
     }
 
-    public Wohnung getWohnung() {
-        Wohnung wohnung = new Wohnung(bezeichnung, mieteranzahl, flaeche);
-
-        for (ZaehlerstandMomentaufnahme zaehlerstandMomentaufnahme : zaehlerstaende) {
-            wohnung.hinzufuegen(zaehlerstandMomentaufnahme.getZaehlerstand());
-        }
-
-        return wohnung;
+    void setupWohnung(Immobilie immobilie) {
+        Wohnung wohnung = immobilie.hinzufuegen(bezeichnung, mieteranzahl, flaeche);
+        for (ZaehlerstandMomentaufnahme zaehlerstandMomentaufnahme : zaehlerstaende)
+            zaehlerstandMomentaufnahme.setupZaehlerstaende(wohnung);
     }
+
 }
 
 class ZaehlerstandMomentaufnahme implements Serializable {
-
     private final LocalDate datum;
-    private final double differenz;
     private final double wert;
     private final Zaehlermodus modus;
 
-    public ZaehlerstandMomentaufnahme(Zaehlerstand zaehlerstand) {
+    ZaehlerstandMomentaufnahme(Zaehlerstand zaehlerstand) {
         datum = zaehlerstand.getDatum();
-        differenz = zaehlerstand.getDifferenz();
         wert = zaehlerstand.getWert();
         modus = zaehlerstand.getModus();
     }
 
-    public Zaehlerstand getZaehlerstand() {
-        Zaehlerstand zaehlerstand = new Zaehlerstand(datum, wert, modus);
-        zaehlerstand.setDifferenz(differenz);
-        return zaehlerstand;
+    void setupZaehlerstaende(Wohnung wohnung) {
+        try {
+            wohnung.hinzufuegen(datum, wert, modus);
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }
     }
 
 }

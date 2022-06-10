@@ -9,7 +9,7 @@ import java.util.logging.*;
 
 // Alternativer Name: ImmoMa (für Immobilien Manager)
 public class MietManager extends Application {
-    private final static Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    private static final Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     @Override
     public void start(Stage hauptfenster) {

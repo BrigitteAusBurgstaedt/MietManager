@@ -23,10 +23,6 @@ w
 Gsrc/main/java/jrp/mietmanager/benutzeroberflaeche/grafik/Bandtacho.java,e\4\e4f8350dd28435b375589dd5f1a5bc07720482b2
 {
 Ksrc/main/java/jrp/mietmanager/benutzeroberflaeche/grafik/EnergieKlasse.java,f\6\f652ac7b5d22713c092cf1fa9695da78500a2825
-€
-Psrc/main/java/jrp/mietmanager/benutzeroberflaeche/hauptfenster/Hauptfenster.java,9\0\903b4bec44188b9de0158d54adff159370b5613c
-v
-Fsrc/main/java/jrp/mietmanager/speicherung/ImmobilieMomentaufnahme.java,8\6\86f8fc81c5d489dc088a3ed9804cdd82ba40d329
 s
 Csrc/main/java/jrp/mietmanager/benutzeroberflaeche/grafik/Linie.java,5\c\5ccefeb05bba725cd9f537783cbd277615d252dd
 w
@@ -35,7 +31,17 @@ N
 src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
 e
 5src/main/java/jrp/mietmanager/logik/Zaehlermodus.java,b\6\b65e984caba0212a21f3422df391224001578ebb
-m
-=src/main/java/jrp/mietmanager/speicherung/Dateiverwalter.java,d\d\ddfeba5d7d3bbc060d97046890677a4dad8eca14
 s
 Csrc/main/java/jrp/mietmanager/benutzeroberflaeche/grafik/Pfeil.java,3\a\3a00bd757dd9c36f863bc469bd4264b3e4d29971
+g
+7src/main/java/jrp/mietmanager/logik/Visualisierbar.java,5\4\5496b8fb5850b7c64920d89f3fe8b5e412b7d63f
+‚
+Rsrc/main/java/jrp/mietmanager/benutzeroberflaeche/grafik/ZaehlerstandDiagramm.java,5\b\5bc9f2534d7987c24727831ff00b4be57a087645
+~
+Nsrc/main/java/jrp/mietmanager/benutzeroberflaeche/hauptfenster/PdfAnsicht.java,4\f\4ffe29a1e6e4c3ff9643c585b5bf69653945f2e6
+q
+Asrc/main/java/jrp/mietmanager/benutzeroberflaeche/Stilklasse.java,4\4\44c67bb3c9ae5924d1678584bcfd846a8d292733
+Š
+Zsrc/main/java/jrp/mietmanager/benutzeroberflaeche/nebenfenster/StartfensterController.java,2\f\2fa5bcfe2d6b8a3e8b91b293a9e68ae1aa952029
+{
+Ksrc/main/java/jrp/mietmanager/benutzeroberflaeche/grafik/Pfeildiagramm.java,6\7\67ab55499ae9bbd3400e22d47d9ff67486d0cd7b

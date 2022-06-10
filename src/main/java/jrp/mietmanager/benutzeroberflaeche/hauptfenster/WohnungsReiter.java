@@ -65,7 +65,7 @@ public class WohnungsReiter extends Tab {
         hinzufuegen.setOnAction(actionEvent -> {
             try {
                 datumsFeld.setValue(datumsFeld.getConverter().fromString(datumsFeld.getEditor().getText()));
-                wohnung.hinzufuegen(new Zaehlerstand(datumsFeld.getValue(), Double.parseDouble(wertFeld.getText()), Zaehlermodus.HEIZUNG));
+                wohnung.hinzufuegen(datumsFeld.getValue(), Double.parseDouble(wertFeld.getText()), Zaehlermodus.HEIZUNG);
             } catch (Exception e) {
                 log.log(Level.WARNING, "Eingabe ungueltig.", e);
 

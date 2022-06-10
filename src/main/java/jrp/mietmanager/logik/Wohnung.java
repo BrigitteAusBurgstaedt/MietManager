@@ -3,18 +3,18 @@ package jrp.mietmanager.logik;
 
 import javafx.beans.property.*;
 import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.scene.layout.VBox;
 import jrp.mietmanager.benutzeroberflaeche.hauptfenster.PdfAnsicht;
 import jrp.mietmanager.benutzeroberflaeche.hauptfenster.WohnungsReiter;
 
-import java.util.Collections;
-import java.util.logging.Level;
+import java.time.LocalDate;
 import java.util.logging.Logger;
 
 public class Wohnung implements Visualisierbar {
     private static final Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+
+    private final Immobilie immobilie;
 
     private final StringProperty bezeichnung;
     private final IntegerProperty mieteranzahl;
@@ -31,13 +31,17 @@ public class Wohnung implements Visualisierbar {
      * @param mieteranzahl Die Anzahl der Mieter.
      * @param flaeche Die Fläche der Wohnung in Quadratmeter.
      */
-    public Wohnung(String bezeichnung, int mieteranzahl, double flaeche) {
+    protected Wohnung(Immobilie immobilie, String bezeichnung, int mieteranzahl, double flaeche) {
+        this.immobilie = immobilie;                 // Festlegen der dazugehörigen Immobilie
+        this.immobilie.getWohnungen().add(this);    // Eintragen in die Wohnungsliste der Immobilie
+
         this.bezeichnung = new SimpleStringProperty(bezeichnung);
         this.mieteranzahl = new SimpleIntegerProperty(mieteranzahl);
         this.flaeche = new SimpleDoubleProperty(flaeche);
 
         this.istGeoffnet = false;
 
+        /*
         // Differenzenbildung für die Zählerstände
         zaehlerstaende.addListener((ListChangeListener<Zaehlerstand>) veraenderung -> {
             log.info("Im List Change Listener für Differenzen");
@@ -70,8 +74,10 @@ public class Wohnung implements Visualisierbar {
                 anzahlVeraenderungen++;
             }
         });
+         */
     }
 
+    /*
     private void bildeDifferenzen(int von, int bis) {
         if (zaehlerstaende.isEmpty()) // Wenn Liste leer ist, dann müssen auch keine Differenzen gebildet werden
             return;
@@ -94,21 +100,11 @@ public class Wohnung implements Visualisierbar {
 
         log.log(Level.INFO, "Es wurden {0} Differenzen gebildet", anzahlDifferenzenbildung);
     }
-
-    /**
-     * Methode zum Hinzufügen eines Zählerstandes.
-     *
-     * @throws IllegalStateException Wenn der Wert des Zählerstandes geringer ist als der vorhergehende
-     * @param zaehlerstand Zählerstand welcher hinzugefügt werden soll
      */
-    public void hinzufuegen(Zaehlerstand zaehlerstand) throws IllegalStateException {
-        int index = Collections.binarySearch(zaehlerstaende, zaehlerstand);
-        if (index < 0) index = ~index;
 
-        if (index > 0 && zaehlerstaende.get(index - 1).getWert() > zaehlerstand.getWert())
-            throw new IllegalStateException("Der Wert des Zählerstandes darf nicht geringer sein als der vorhergehende!");
-        else
-            this.zaehlerstaende.add(index, zaehlerstand);
+
+    public Zaehlerstand hinzufuegen(LocalDate datum, double wert, Zaehlermodus zaehlermodus) throws InstantiationException {
+        return new Zaehlerstand(this, datum, wert, zaehlermodus);
     }
 
     @Override
@@ -142,6 +138,10 @@ public class Wohnung implements Visualisierbar {
     }
 
     // Getter und Setter
+
+    public Immobilie getImmobilie() {
+        return immobilie;
+    }
 
     @Override
     public String toString() {

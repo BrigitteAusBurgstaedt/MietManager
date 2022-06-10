@@ -1,9 +1,6 @@
 package jrp.mietmanager.logik;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.layout.VBox;
@@ -15,10 +12,16 @@ public class Immobilie implements Visualisierbar {
     private static final Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     private final StringProperty bezeichnung;
-    private final IntegerProperty wohnungsanzahl;
-    private final ObservableList<Wohnung> wohnungen = FXCollections.observableArrayList();
+    private final ObservableList<Wohnung> wohnungen;
 
     private boolean istGeoeffnet;
+
+    public Immobilie(String bezeichnung) {
+        this.bezeichnung = new SimpleStringProperty(bezeichnung);
+        this.wohnungen = FXCollections.observableArrayList();
+
+        istGeoeffnet = false;
+    }
 
     /**
      * Konstruktor für die erst Erstellung des Objektes.
@@ -26,23 +29,22 @@ public class Immobilie implements Visualisierbar {
      * @param wohnungsanzahl Anzahl der Wohnungen in der Immobilie
      */
     public Immobilie(String bezeichnung, int wohnungsanzahl) {
-        this.bezeichnung = new SimpleStringProperty(bezeichnung);
-        this.wohnungsanzahl = new SimpleIntegerProperty(wohnungsanzahl);
+        this(bezeichnung);
 
-        istGeoeffnet = false;
-
-        erstelleWohnungen();
+        erstelleWohnungen(wohnungsanzahl);
     }
 
     /**
-     * Erstellt die im Konstruktor angegebene Anzahl an Wohnungen mit standardisiertem Namen.
+     * Erstellt die im Konstruktor angegebene Anzahl an Wohnungen mit standardisierten Werten.
      */
-    private void erstelleWohnungen() {
-
-        for (int i = 0; i < getWohnungsanzahl(); i++) {
-            wohnungen.add(new Wohnung("Wohnung " + (i+1), 1, 0));
+    private void erstelleWohnungen(int wohnungsanzahl) {
+        for (int i = 0; i < wohnungsanzahl; i++) {
+            new Wohnung(this, "Wohnung " + (i+1), 1, 0);
         }
+    }
 
+    public Wohnung hinzufuegen(String bezeichnung, int mieteranzahl, double flaeche) {
+        return new Wohnung(this, bezeichnung, mieteranzahl, flaeche);
     }
 
     @Override
@@ -83,19 +85,8 @@ public class Immobilie implements Visualisierbar {
         this.bezeichnung.set(bezeichnung);
     }
 
-    public int getWohnungsanzahl() {
-        return wohnungsanzahl.get();
-    }
-
-    public IntegerProperty wohnungsanzahlProperty() {
-        return wohnungsanzahl;
-    }
-
-    public void setWohnungsanzahl(int wohnungsanzahl) {
-        this.wohnungsanzahl.set(wohnungsanzahl);
-    }
-
     public ObservableList<Wohnung> getWohnungen() {
         return wohnungen;
     }
+
 }

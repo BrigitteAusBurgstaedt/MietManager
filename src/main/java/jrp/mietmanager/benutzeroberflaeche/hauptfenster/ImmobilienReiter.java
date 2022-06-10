@@ -1,5 +1,7 @@
 package jrp.mietmanager.benutzeroberflaeche.hauptfenster;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.VBox;
@@ -7,7 +9,6 @@ import javafx.util.converter.NumberStringConverter;
 import jrp.mietmanager.benutzeroberflaeche.Stilklasse;
 import jrp.mietmanager.logik.Immobilie;
 import jrp.mietmanager.logik.Wohnung;
-import jrp.mietmanager.logik.Zaehlerstand;
 import jrp.mietmanager.logik.ZaehlerstandListe;
 
 import java.time.LocalDate;
@@ -37,8 +38,12 @@ public class ImmobilienReiter extends Tab {
 
     }
 
-    private void erstelleTabelle2() {
+    // TODO: 02.06.2022 fix
+    /*
+    private TableView<ZaehlerstandListe> erstelleTabelle2() {
         TableView<ZaehlerstandListe> tabelle = new TableView<>();
+
+        ZaehlerstandListe liste = new ZaehlerstandListe(immobilie);
 
         tabelle.setItems(immobilie.getZaehlerstaende());
         tabelle.setEditable(true);
@@ -60,8 +65,12 @@ public class ImmobilienReiter extends Tab {
             spalten[i].setSortable(false);
             tabelle.getColumns().add(spalten[i]);
         }
+        
+        return tabelle;
 
     }
+
+     */
 
     /**
      * Erstellt die Tabelle die alle Wohnungen enthält.
