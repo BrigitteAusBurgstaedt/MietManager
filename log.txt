@@ -1,10 +1,10 @@
-Mai 09, 2022 6:12:43 PM jrp.mietmanager.benutzeroberflaeche.hauptfenster.WohnungsReiter lambda$erzeugeReiter$0
+Mai 09, 2022 6:12:43 PM WohnungsReiter lambda$erzeugeReiter$0
 WARNUNG: Eingabe ungueltig.
 java.lang.NumberFormatException: For input string: "3423wrew"
 	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2054)
 	at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
 	at java.base/java.lang.Double.parseDouble(Double.java:651)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.hauptfenster.WohnungsReiter.lambda$erzeugeReiter$0(WohnungsReiter.java:74)
+	at com.mietmanager/WohnungsReiter.lambda$erzeugeReiter$0(WohnungsReiter.java:74)
 	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
 	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
 	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
@@ -59,22 +59,22 @@ java.lang.NumberFormatException: For input string: "3423wrew"
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 
-Mai 09, 2022 6:12:48 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 09, 2022 6:12:48 PM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 09, 2022 6:15:55 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 09, 2022 6:15:55 PM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 10, 2022 2:00:14 AM jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster oeffneFenster
+Mai 10, 2022 2:00:14 AM Startfenster oeffneFenster
 SCHWERWIEGEND: Die Startfensteransicht konnte nicht geladen werden.
 javafx.fxml.LoadException: 
-/F:/Workspace/IDEA-Projects/MietManager/target/classes/jrp/mietmanager/benutzeroberflaeche/nebenfenster/startfensterAnsicht.fxml
+/F:/Workspace/IDEA-Projects/MietManager/target/classes/com/mietmanager/benutzeroberflaeche/nebenfenster/startfensterAnsicht.fxml
 
 	at javafx.fxml/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2707)
 	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2677)
 	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
 	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster.oeffneFenster(Startfenster.java:25)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster.<init>(Startfenster.java:17)
-	at jrp.mietmanager/jrp.mietmanager.MietManager.start(MietManager.java:16)
+	at com.mietmanager/Startfenster.oeffneFenster(Startfenster.java:25)
+	at com.mietmanager/Startfenster.<init>(Startfenster.java:17)
+	at com.mietmanager/MietManager.start(MietManager.java:16)
 	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
 	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
 	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
@@ -95,24 +95,24 @@ Caused by: java.lang.reflect.InvocationTargetException
 	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2673)
 	... 14 more
 Caused by: java.lang.NullPointerException: Cannot invoke "javafx.scene.control.Label.setText(String)" because "eKlassenSymbole[0]" is null
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.grafik.Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:47)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.grafik.Pfeildiagramm.<init>(Pfeildiagramm.java:28)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartansichtController.initialize(StartfensterController.java:36)
+	at com.mietmanager/Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:47)
+	at com.mietmanager/Pfeildiagramm.<init>(Pfeildiagramm.java:28)
+	at com.mietmanager/StartansichtController.initialize(StartfensterController.java:36)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	... 21 more
 
-Mai 10, 2022 2:02:34 AM jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster oeffneFenster
+Mai 10, 2022 2:02:34 AM Startfenster oeffneFenster
 SCHWERWIEGEND: Die Startfensteransicht konnte nicht geladen werden.
 javafx.fxml.LoadException: 
-/F:/Workspace/IDEA-Projects/MietManager/target/classes/jrp/mietmanager/benutzeroberflaeche/nebenfenster/startfensterAnsicht.fxml
+/F:/Workspace/IDEA-Projects/MietManager/target/classes/com/mietmanager/benutzeroberflaeche/nebenfenster/startfensterAnsicht.fxml
 
 	at javafx.fxml/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2707)
 	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2677)
 	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
 	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster.oeffneFenster(Startfenster.java:25)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster.<init>(Startfenster.java:17)
-	at jrp.mietmanager/jrp.mietmanager.MietManager.start(MietManager.java:16)
+	at com.mietmanager/Startfenster.oeffneFenster(Startfenster.java:25)
+	at com.mietmanager/Startfenster.<init>(Startfenster.java:17)
+	at com.mietmanager/MietManager.start(MietManager.java:16)
 	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
 	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
 	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
@@ -133,24 +133,24 @@ Caused by: java.lang.reflect.InvocationTargetException
 	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2673)
 	... 14 more
 Caused by: java.lang.NullPointerException: Cannot invoke "javafx.scene.control.Label.setText(String)" because "eKlassenSymbole[0]" is null
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.grafik.Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:51)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.grafik.Pfeildiagramm.<init>(Pfeildiagramm.java:28)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartansichtController.initialize(StartfensterController.java:36)
+	at com.mietmanager/Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:51)
+	at com.mietmanager/Pfeildiagramm.<init>(Pfeildiagramm.java:28)
+	at com.mietmanager/StartansichtController.initialize(StartfensterController.java:36)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	... 21 more
 
-Mai 10, 2022 2:03:44 AM jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster oeffneFenster
+Mai 10, 2022 2:03:44 AM Startfenster oeffneFenster
 SCHWERWIEGEND: Die Startfensteransicht konnte nicht geladen werden.
 javafx.fxml.LoadException: 
-/F:/Workspace/IDEA-Projects/MietManager/target/classes/jrp/mietmanager/benutzeroberflaeche/nebenfenster/startfensterAnsicht.fxml
+/F:/Workspace/IDEA-Projects/MietManager/target/classes/com/mietmanager/benutzeroberflaeche/nebenfenster/startfensterAnsicht.fxml
 
 	at javafx.fxml/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2707)
 	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2677)
 	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
 	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster.oeffneFenster(Startfenster.java:25)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster.<init>(Startfenster.java:17)
-	at jrp.mietmanager/jrp.mietmanager.MietManager.start(MietManager.java:16)
+	at com.mietmanager/Startfenster.oeffneFenster(Startfenster.java:25)
+	at com.mietmanager/Startfenster.<init>(Startfenster.java:17)
+	at com.mietmanager/MietManager.start(MietManager.java:16)
 	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
 	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
 	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
@@ -174,24 +174,24 @@ Caused by: java.lang.NullPointerException: Children: child node is null: parent 
 	at javafx.graphics/javafx.scene.Parent$3.onProposedChange(Parent.java:542)
 	at javafx.base/com.sun.javafx.collections.VetoableListDecorator.addAll(VetoableListDecorator.java:233)
 	at javafx.base/com.sun.javafx.collections.VetoableListDecorator.addAll(VetoableListDecorator.java:103)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.grafik.Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:64)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.grafik.Pfeildiagramm.<init>(Pfeildiagramm.java:28)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartansichtController.initialize(StartfensterController.java:36)
+	at com.mietmanager/Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:64)
+	at com.mietmanager/Pfeildiagramm.<init>(Pfeildiagramm.java:28)
+	at com.mietmanager/StartansichtController.initialize(StartfensterController.java:36)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	... 21 more
 
-Mai 10, 2022 12:26:52 PM jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster oeffneFenster
+Mai 10, 2022 12:26:52 PM Startfenster oeffneFenster
 SCHWERWIEGEND: Die Startfensteransicht konnte nicht geladen werden.
 javafx.fxml.LoadException: 
-/F:/Workspace/IDEA-Projects/MietManager/target/classes/jrp/mietmanager/benutzeroberflaeche/nebenfenster/startfensterAnsicht.fxml
+/F:/Workspace/IDEA-Projects/MietManager/target/classes/com/mietmanager/benutzeroberflaeche/nebenfenster/startfensterAnsicht.fxml
 
 	at javafx.fxml/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2707)
 	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2677)
 	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
 	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster.oeffneFenster(Startfenster.java:25)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster.<init>(Startfenster.java:17)
-	at jrp.mietmanager/jrp.mietmanager.MietManager.start(MietManager.java:16)
+	at com.mietmanager/Startfenster.oeffneFenster(Startfenster.java:25)
+	at com.mietmanager/Startfenster.<init>(Startfenster.java:17)
+	at com.mietmanager/MietManager.start(MietManager.java:16)
 	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
 	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
 	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
@@ -212,24 +212,24 @@ Caused by: java.lang.reflect.InvocationTargetException
 	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2673)
 	... 14 more
 Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 8 out of bounds for length 8
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.grafik.Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:63)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.grafik.Pfeildiagramm.<init>(Pfeildiagramm.java:31)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartansichtController.initialize(StartfensterController.java:36)
+	at com.mietmanager/Pfeildiagramm.erstelleBandtacho(Pfeildiagramm.java:63)
+	at com.mietmanager/Pfeildiagramm.<init>(Pfeildiagramm.java:31)
+	at com.mietmanager/StartansichtController.initialize(StartfensterController.java:36)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	... 21 more
 
-Mai 10, 2022 4:25:58 PM jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster oeffneFenster
+Mai 10, 2022 4:25:58 PM Startfenster oeffneFenster
 SCHWERWIEGEND: Die Startfensteransicht konnte nicht geladen werden.
 javafx.fxml.LoadException: 
-/F:/Workspace/IDEA-Projects/MietManager/target/classes/jrp/mietmanager/benutzeroberflaeche/nebenfenster/startfensterAnsicht.fxml
+/F:/Workspace/IDEA-Projects/MietManager/target/classes/com/mietmanager/benutzeroberflaeche/nebenfenster/startfensterAnsicht.fxml
 
 	at javafx.fxml/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2707)
 	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2677)
 	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
 	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster.oeffneFenster(Startfenster.java:25)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster.<init>(Startfenster.java:17)
-	at jrp.mietmanager/jrp.mietmanager.MietManager.start(MietManager.java:16)
+	at com.mietmanager/Startfenster.oeffneFenster(Startfenster.java:25)
+	at com.mietmanager/Startfenster.<init>(Startfenster.java:17)
+	at com.mietmanager/MietManager.start(MietManager.java:16)
 	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
 	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
 	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
@@ -250,22 +250,22 @@ Caused by: java.lang.reflect.InvocationTargetException
 	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2673)
 	... 14 more
 Caused by: java.lang.NullPointerException: Cannot invoke "javafx.scene.image.ImageView.setImage(javafx.scene.image.Image)" because "this.iconAnsicht" is null
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartansichtController.initialize(StartfensterController.java:36)
+	at com.mietmanager/StartansichtController.initialize(StartfensterController.java:36)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	... 21 more
 
-Mai 13, 2022 12:27:08 PM jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster oeffneFenster
+Mai 13, 2022 12:27:08 PM Startfenster oeffneFenster
 SCHWERWIEGEND: Die Startfensteransicht konnte nicht geladen werden.
 javafx.fxml.LoadException: 
-/F:/Workspace/IDEA-Projects/MietManager/target/classes/jrp/mietmanager/benutzeroberflaeche/nebenfenster/startfensterAnsicht.fxml
+/F:/Workspace/IDEA-Projects/MietManager/target/classes/com/mietmanager/benutzeroberflaeche/nebenfenster/startfensterAnsicht.fxml
 
 	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2707)
 	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2677)
 	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
 	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster.oeffneFenster(Startfenster.java:25)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.Startfenster.<init>(Startfenster.java:17)
-	at jrp.mietmanager/jrp.mietmanager.MietManager.start(MietManager.java:16)
+	at com.mietmanager/Startfenster.oeffneFenster(Startfenster.java:25)
+	at com.mietmanager/Startfenster.<init>(Startfenster.java:17)
+	at com.mietmanager/MietManager.start(MietManager.java:16)
 	at javafx.graphics@18.0.1/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
 	at javafx.graphics@18.0.1/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
 	at javafx.graphics@18.0.1/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
@@ -286,57 +286,57 @@ Caused by: java.lang.reflect.InvocationTargetException
 	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2673)
 	... 14 more
 Caused by: java.lang.NullPointerException: Cannot invoke "com.itextpdf.kernel.pdf.PdfDocument.addNewPage()" because "pdf" is null
-	at jrp.mietmanager/jrp.mietmanager.pdf.MonatlicheMieterInformation.<init>(MonatlicheMieterInformation.java:19)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartansichtController.initialize(StartfensterController.java:43)
+	at com.mietmanager/MonatlicheMieterInformation.<init>(MonatlicheMieterInformation.java:19)
+	at com.mietmanager/StartansichtController.initialize(StartfensterController.java:43)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	... 21 more
 
-Mai 16, 2022 9:45:21 AM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 16, 2022 9:45:21 AM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 16, 2022 9:45:31 AM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 16, 2022 9:45:31 AM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 16, 2022 9:45:49 AM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 16, 2022 9:45:49 AM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 16, 2022 9:45:54 AM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 16, 2022 9:45:54 AM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 16, 2022 9:46:07 AM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 16, 2022 9:46:07 AM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 16, 2022 9:46:15 AM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 16, 2022 9:46:15 AM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 22, 2022 5:57:43 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 22, 2022 5:57:43 PM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 22, 2022 5:58:07 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 22, 2022 5:58:07 PM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 22, 2022 5:58:30 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 22, 2022 5:58:30 PM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 22, 2022 5:59:48 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 22, 2022 5:59:48 PM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 22, 2022 6:37:51 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 22, 2022 6:37:51 PM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 24, 2022 1:23:22 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 1:23:22 PM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 24, 2022 1:23:31 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 1:23:31 PM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 24, 2022 1:32:49 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 1:32:49 PM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 24, 2022 1:32:49 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 1:32:49 PM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 24, 2022 1:35:01 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 1:35:01 PM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 24, 2022 1:35:01 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 1:35:01 PM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 24, 2022 1:40:58 PM jrp.mietmanager.benutzeroberflaeche.hauptfenster.Hauptfenster oeffneFenster
+Mai 24, 2022 1:40:58 PM Hauptfenster oeffneFenster
 SCHWERWIEGEND: Die Hauptansicht konnte nicht geladen werden.
 javafx.fxml.LoadException: 
-/F:/Workspace/IDEA-Projects/MietManager/target/classes/jrp/mietmanager/benutzeroberflaeche/hauptfenster/hauptansicht.fxml
+/F:/Workspace/IDEA-Projects/MietManager/target/classes/com/mietmanager/benutzeroberflaeche/hauptfenster/hauptansicht.fxml
 
 	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2707)
 	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2677)
 	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
 	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.hauptfenster.Hauptfenster.oeffneFenster(Hauptfenster.java:26)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.hauptfenster.Hauptfenster.<init>(Hauptfenster.java:18)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.nebenfenster.StartansichtController.hauptfensterOeffnen(StartfensterController.java:84)
+	at com.mietmanager/Hauptfenster.oeffneFenster(Hauptfenster.java:26)
+	at com.mietmanager/Hauptfenster.<init>(Hauptfenster.java:18)
+	at com.mietmanager/StartansichtController.hauptfensterOeffnen(StartfensterController.java:84)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
@@ -401,181 +401,181 @@ Caused by: java.lang.reflect.InvocationTargetException
 	at javafx.fxml@18.0.1/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
 	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2673)
 	... 59 more
-Caused by: java.lang.NullPointerException: Cannot invoke "jrp.mietmanager.logik.Immobilie.getWohnungen()" because "this.immobilie" is null
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.hauptfenster.HauptansichtController.pflanzeBaum(HauptansichtController.java:49)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.hauptfenster.HauptansichtController.initialize(HauptansichtController.java:34)
+Caused by: java.lang.NullPointerException: Cannot invoke "Immobilie.getWohnungen()" because "this.immobilie" is null
+	at com.mietmanager/HauptansichtController.pflanzeBaum(HauptansichtController.java:49)
+	at com.mietmanager/HauptansichtController.initialize(HauptansichtController.java:34)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	... 66 more
 
-Mai 24, 2022 1:44:40 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 1:44:40 PM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 24, 2022 1:44:40 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 1:44:40 PM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 24, 2022 1:45:17 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 1:45:17 PM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 24, 2022 1:45:23 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 1:45:23 PM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 24, 2022 1:46:58 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 1:46:58 PM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 24, 2022 1:46:58 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 1:46:58 PM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 24, 2022 1:46:58 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 1:46:58 PM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 24, 2022 1:46:58 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 1:46:58 PM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 24, 2022 1:47:24 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 1:47:24 PM Wohnung lambda$new$0
 INFORMATION: Der ListChangeListener ist angesprungen
-Mai 24, 2022 4:44:21 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:44:21 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener
-Mai 24, 2022 4:44:21 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:44:21 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 4:44:21 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:44:21 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas hinzugefügt oder ersetzt
-Mai 24, 2022 4:44:21 PM jrp.mietmanager.logik.Wohnung bildeDifferenzen
+Mai 24, 2022 4:44:21 PM Wohnung bildeDifferenzen
 INFORMATION: Es wurden 1 Differenzen gebildet
-Mai 24, 2022 4:44:40 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:44:40 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener
-Mai 24, 2022 4:44:40 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:44:40 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 4:44:40 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:44:40 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas hinzugefügt oder ersetzt
-Mai 24, 2022 4:44:40 PM jrp.mietmanager.logik.Wohnung bildeDifferenzen
+Mai 24, 2022 4:44:40 PM Wohnung bildeDifferenzen
 INFORMATION: Es wurden 2 Differenzen gebildet
-Mai 24, 2022 4:45:14 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:45:14 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener
-Mai 24, 2022 4:45:14 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:45:14 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 4:45:14 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:45:14 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas Gelöscht
-Mai 24, 2022 4:45:14 PM jrp.mietmanager.logik.Wohnung bildeDifferenzen
+Mai 24, 2022 4:45:14 PM Wohnung bildeDifferenzen
 INFORMATION: Es wurden 1 Differenzen gebildet
-Mai 24, 2022 4:45:14 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:45:14 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener
-Mai 24, 2022 4:45:14 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:45:14 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 4:45:14 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:45:14 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas Gelöscht
-Mai 24, 2022 4:45:21 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:45:21 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener
-Mai 24, 2022 4:45:21 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:45:21 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 4:45:21 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:45:21 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas hinzugefügt oder ersetzt
-Mai 24, 2022 4:45:21 PM jrp.mietmanager.logik.Wohnung bildeDifferenzen
+Mai 24, 2022 4:45:21 PM Wohnung bildeDifferenzen
 INFORMATION: Es wurden 1 Differenzen gebildet
-Mai 24, 2022 4:45:34 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:45:34 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener
-Mai 24, 2022 4:45:34 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:45:34 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 4:45:34 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:45:34 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas hinzugefügt oder ersetzt
-Mai 24, 2022 4:45:34 PM jrp.mietmanager.logik.Wohnung bildeDifferenzen
+Mai 24, 2022 4:45:34 PM Wohnung bildeDifferenzen
 INFORMATION: Es wurden 1 Differenzen gebildet
-Mai 24, 2022 4:46:07 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:46:07 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener
-Mai 24, 2022 4:46:07 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:46:07 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 4:46:07 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:46:07 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas hinzugefügt oder ersetzt
-Mai 24, 2022 4:46:07 PM jrp.mietmanager.logik.Wohnung bildeDifferenzen
+Mai 24, 2022 4:46:07 PM Wohnung bildeDifferenzen
 INFORMATION: Es wurden 1 Differenzen gebildet
-Mai 24, 2022 4:46:45 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:46:45 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener
-Mai 24, 2022 4:46:45 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:46:45 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 4:46:45 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:46:45 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas Gelöscht
-Mai 24, 2022 4:46:45 PM jrp.mietmanager.logik.Wohnung bildeDifferenzen
+Mai 24, 2022 4:46:45 PM Wohnung bildeDifferenzen
 INFORMATION: Es wurden 1 Differenzen gebildet
-Mai 24, 2022 4:46:45 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:46:45 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener
-Mai 24, 2022 4:46:45 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:46:45 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 4:46:45 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:46:45 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas Gelöscht
-Mai 24, 2022 4:46:45 PM jrp.mietmanager.logik.Wohnung bildeDifferenzen
+Mai 24, 2022 4:46:45 PM Wohnung bildeDifferenzen
 INFORMATION: Es wurden 1 Differenzen gebildet
-Mai 24, 2022 4:53:37 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:53:37 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener
-Mai 24, 2022 4:53:37 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:53:37 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 4:53:37 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:53:37 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas hinzugefügt oder ersetzt
-Mai 24, 2022 4:53:37 PM jrp.mietmanager.logik.Wohnung bildeDifferenzen
+Mai 24, 2022 4:53:37 PM Wohnung bildeDifferenzen
 INFORMATION: Es wurden 1 Differenzen gebildet
-Mai 24, 2022 4:53:43 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:53:43 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener
-Mai 24, 2022 4:53:43 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:53:43 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 4:53:43 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:53:43 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas Gelöscht
-Mai 24, 2022 4:56:54 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:56:54 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener
-Mai 24, 2022 4:56:54 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:56:54 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 4:56:54 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:56:54 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas hinzugefügt oder ersetzt
-Mai 24, 2022 4:56:54 PM jrp.mietmanager.logik.Wohnung bildeDifferenzen
+Mai 24, 2022 4:56:54 PM Wohnung bildeDifferenzen
 INFORMATION: Es wurden 1 Differenzen gebildet
-Mai 24, 2022 4:57:07 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:57:07 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener
-Mai 24, 2022 4:57:07 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:57:07 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 4:57:07 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:57:07 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas hinzugefügt oder ersetzt
-Mai 24, 2022 4:57:07 PM jrp.mietmanager.logik.Wohnung bildeDifferenzen
+Mai 24, 2022 4:57:07 PM Wohnung bildeDifferenzen
 INFORMATION: Es wurden 1 Differenzen gebildet
-Mai 24, 2022 4:57:13 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:57:13 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener
-Mai 24, 2022 4:57:13 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:57:13 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 4:57:13 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:57:13 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas Gelöscht
-Mai 24, 2022 4:57:13 PM jrp.mietmanager.logik.Wohnung bildeDifferenzen
+Mai 24, 2022 4:57:13 PM Wohnung bildeDifferenzen
 INFORMATION: Es wurden 1 Differenzen gebildet
-Mai 24, 2022 4:57:13 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:57:13 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener
-Mai 24, 2022 4:57:13 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:57:13 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 4:57:13 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 4:57:13 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas Gelöscht
-Mai 24, 2022 6:07:32 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:07:32 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener für Differenzen
-Mai 24, 2022 6:07:32 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:07:32 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 6:07:32 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:07:32 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas hinzugefügt oder ersetzt
-Mai 24, 2022 6:07:32 PM jrp.mietmanager.logik.Wohnung bildeDifferenzen
+Mai 24, 2022 6:07:32 PM Wohnung bildeDifferenzen
 INFORMATION: Es wurden 1 Differenzen gebildet
-Mai 24, 2022 6:07:51 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:07:51 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener für Differenzen
-Mai 24, 2022 6:07:51 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:07:51 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 6:07:51 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:07:51 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas hinzugefügt oder ersetzt
-Mai 24, 2022 6:07:51 PM jrp.mietmanager.logik.Wohnung bildeDifferenzen
+Mai 24, 2022 6:07:51 PM Wohnung bildeDifferenzen
 INFORMATION: Es wurden 1 Differenzen gebildet
-Mai 24, 2022 6:08:12 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:08:12 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener für Differenzen
-Mai 24, 2022 6:08:12 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:08:12 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 6:08:12 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:08:12 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas hinzugefügt oder ersetzt
-Mai 24, 2022 6:08:12 PM jrp.mietmanager.logik.Wohnung bildeDifferenzen
+Mai 24, 2022 6:08:12 PM Wohnung bildeDifferenzen
 INFORMATION: Es wurden 1 Differenzen gebildet
-Mai 24, 2022 6:08:39 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:08:39 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener für Differenzen
-Mai 24, 2022 6:08:39 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:08:39 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 6:08:39 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:08:39 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas hinzugefügt oder ersetzt
-Mai 24, 2022 6:08:39 PM jrp.mietmanager.logik.Wohnung bildeDifferenzen
+Mai 24, 2022 6:08:39 PM Wohnung bildeDifferenzen
 INFORMATION: Es wurden 1 Differenzen gebildet
-Mai 24, 2022 6:08:56 PM jrp.mietmanager.benutzeroberflaeche.hauptfenster.WohnungsReiter lambda$erzeugeReiter$0
+Mai 24, 2022 6:08:56 PM WohnungsReiter lambda$erzeugeReiter$0
 WARNUNG: Eingabe ungueltig.
 java.lang.IllegalStateException: Der Wert des Zählerstandes darf nicht geringer sein als der vorhergehende!
-	at jrp.mietmanager/jrp.mietmanager.logik.Wohnung.hinzufuegen(Wohnung.java:109)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.hauptfenster.WohnungsReiter.lambda$erzeugeReiter$0(WohnungsReiter.java:68)
+	at com.mietmanager/Wohnung.hinzufuegen(Wohnung.java:109)
+	at com.mietmanager/WohnungsReiter.lambda$erzeugeReiter$0(WohnungsReiter.java:68)
 	at javafx.base@18.0.1/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
 	at javafx.base@18.0.1/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
 	at javafx.base@18.0.1/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
@@ -630,72 +630,72 @@ java.lang.IllegalStateException: Der Wert des Zählerstandes darf nicht geringer
 	at javafx.graphics@18.0.1/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 
-Mai 24, 2022 6:09:28 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:09:28 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener für Differenzen
-Mai 24, 2022 6:09:28 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:09:28 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 6:09:28 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:09:28 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas Gelöscht
-Mai 24, 2022 6:09:28 PM jrp.mietmanager.logik.Wohnung bildeDifferenzen
+Mai 24, 2022 6:09:28 PM Wohnung bildeDifferenzen
 INFORMATION: Es wurden 2 Differenzen gebildet
-Mai 24, 2022 6:09:28 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:09:28 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener für Differenzen
-Mai 24, 2022 6:09:28 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:09:28 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 6:09:28 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:09:28 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas Gelöscht
-Mai 24, 2022 6:09:28 PM jrp.mietmanager.logik.Wohnung bildeDifferenzen
+Mai 24, 2022 6:09:28 PM Wohnung bildeDifferenzen
 INFORMATION: Es wurden 2 Differenzen gebildet
-Mai 24, 2022 6:09:38 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:09:38 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener für Differenzen
-Mai 24, 2022 6:09:38 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:09:38 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 6:09:38 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:09:38 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas Gelöscht
-Mai 24, 2022 6:09:38 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:09:38 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener für Differenzen
-Mai 24, 2022 6:09:38 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:09:38 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 6:09:38 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 6:09:38 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas Gelöscht
-Mai 24, 2022 10:02:49 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 10:02:49 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener für Differenzen
-Mai 24, 2022 10:02:49 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 10:02:49 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 10:02:49 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 10:02:49 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas hinzugefügt oder ersetzt
-Mai 24, 2022 10:02:49 PM jrp.mietmanager.logik.Wohnung bildeDifferenzen
+Mai 24, 2022 10:02:49 PM Wohnung bildeDifferenzen
 INFORMATION: Es wurden 1 Differenzen gebildet
-Mai 24, 2022 10:03:02 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 10:03:02 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener für Differenzen
-Mai 24, 2022 10:03:02 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 10:03:02 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 10:03:02 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 10:03:02 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas hinzugefügt oder ersetzt
-Mai 24, 2022 10:03:02 PM jrp.mietmanager.logik.Wohnung bildeDifferenzen
+Mai 24, 2022 10:03:02 PM Wohnung bildeDifferenzen
 INFORMATION: Es wurden 1 Differenzen gebildet
-Mai 24, 2022 10:03:05 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 10:03:05 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener für Differenzen
-Mai 24, 2022 10:03:05 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 10:03:05 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 10:03:05 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 10:03:05 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas Gelöscht
-Mai 24, 2022 10:03:05 PM jrp.mietmanager.logik.Wohnung bildeDifferenzen
+Mai 24, 2022 10:03:05 PM Wohnung bildeDifferenzen
 INFORMATION: Es wurden 1 Differenzen gebildet
-Mai 24, 2022 10:03:12 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 10:03:12 PM Wohnung lambda$new$0
 INFORMATION: Im List Change Listener für Differenzen
-Mai 24, 2022 10:03:12 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 10:03:12 PM Wohnung lambda$new$0
 INFORMATION: Veränderung Nr. 1
-Mai 24, 2022 10:03:12 PM jrp.mietmanager.logik.Wohnung lambda$new$0
+Mai 24, 2022 10:03:12 PM Wohnung lambda$new$0
 INFORMATION: Es wurde etwas Gelöscht
-Jun 10, 2022 4:41:50 PM jrp.mietmanager.benutzeroberflaeche.hauptfenster.WohnungsReiter lambda$erzeugeReiter$0
+Jun 10, 2022 4:41:50 PM WohnungsReiter lambda$erzeugeReiter$0
 WARNUNG: Eingabe ungueltig.
 java.lang.InstantiationException: Der Vorhergehende Zählerstand kann nicht größer sein
-	at jrp.mietmanager/jrp.mietmanager.logik.Zaehlerstand.setVorgaenger(Zaehlerstand.java:73)
-	at jrp.mietmanager/jrp.mietmanager.logik.Zaehlerstand.bestimmeVorhergehendenZaehlerstand(Zaehlerstand.java:66)
-	at jrp.mietmanager/jrp.mietmanager.logik.Zaehlerstand.<init>(Zaehlerstand.java:50)
-	at jrp.mietmanager/jrp.mietmanager.logik.Wohnung.hinzufuegen(Wohnung.java:107)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.hauptfenster.WohnungsReiter.lambda$erzeugeReiter$0(WohnungsReiter.java:68)
+	at com.mietmanager/Zaehlerstand.setVorgaenger(Zaehlerstand.java:73)
+	at com.mietmanager/Zaehlerstand.bestimmeVorhergehendenZaehlerstand(Zaehlerstand.java:66)
+	at com.mietmanager/Zaehlerstand.<init>(Zaehlerstand.java:50)
+	at com.mietmanager/Wohnung.hinzufuegen(Wohnung.java:107)
+	at com.mietmanager/WohnungsReiter.lambda$erzeugeReiter$0(WohnungsReiter.java:68)
 	at javafx.base@18.0.1/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
 	at javafx.base@18.0.1/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
 	at javafx.base@18.0.1/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
@@ -750,14 +750,14 @@ java.lang.InstantiationException: Der Vorhergehende Zählerstand kann nicht grö
 	at javafx.graphics@18.0.1/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 
-Jun 10, 2022 7:54:48 PM jrp.mietmanager.benutzeroberflaeche.hauptfenster.WohnungsReiter lambda$erzeugeReiter$0
+Jun 10, 2022 7:54:48 PM WohnungsReiter lambda$erzeugeReiter$0
 WARNUNG: Eingabe ungueltig.
 java.lang.InstantiationException: Der Vorhergehende Zählerstand kann nicht größer sein
-	at jrp.mietmanager/jrp.mietmanager.logik.Zaehlerstand.setVorgaenger(Zaehlerstand.java:73)
-	at jrp.mietmanager/jrp.mietmanager.logik.Zaehlerstand.bestimmeVorhergehendenZaehlerstand(Zaehlerstand.java:66)
-	at jrp.mietmanager/jrp.mietmanager.logik.Zaehlerstand.<init>(Zaehlerstand.java:50)
-	at jrp.mietmanager/jrp.mietmanager.logik.Wohnung.hinzufuegen(Wohnung.java:47)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.hauptfenster.WohnungsReiter.lambda$erzeugeReiter$0(WohnungsReiter.java:68)
+	at com.mietmanager/Zaehlerstand.setVorgaenger(Zaehlerstand.java:73)
+	at com.mietmanager/Zaehlerstand.bestimmeVorhergehendenZaehlerstand(Zaehlerstand.java:66)
+	at com.mietmanager/Zaehlerstand.<init>(Zaehlerstand.java:50)
+	at com.mietmanager/Wohnung.hinzufuegen(Wohnung.java:47)
+	at com.mietmanager/WohnungsReiter.lambda$erzeugeReiter$0(WohnungsReiter.java:68)
 	at javafx.base@18.0.1/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
 	at javafx.base@18.0.1/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
 	at javafx.base@18.0.1/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
@@ -812,14 +812,14 @@ java.lang.InstantiationException: Der Vorhergehende Zählerstand kann nicht grö
 	at javafx.graphics@18.0.1/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 
-Jun 10, 2022 10:55:03 PM jrp.mietmanager.benutzeroberflaeche.hauptfenster.WohnungsReiter lambda$erzeugeReiter$0
+Jun 10, 2022 10:55:03 PM WohnungsReiter lambda$erzeugeReiter$0
 WARNUNG: Eingabe ungueltig.
 java.lang.InstantiationException: Der Vorhergehende Zählerstand kann nicht größer sein
-	at jrp.mietmanager/jrp.mietmanager.logik.Zaehlerstand.setVorgaenger(Zaehlerstand.java:84)
-	at jrp.mietmanager/jrp.mietmanager.logik.Zaehlerstand.bestimmeVorhergehendenZaehlerstand(Zaehlerstand.java:77)
-	at jrp.mietmanager/jrp.mietmanager.logik.Zaehlerstand.<init>(Zaehlerstand.java:51)
-	at jrp.mietmanager/jrp.mietmanager.logik.Wohnung.hinzufuegen(Wohnung.java:47)
-	at jrp.mietmanager/jrp.mietmanager.benutzeroberflaeche.hauptfenster.WohnungsReiter.lambda$erzeugeReiter$0(WohnungsReiter.java:68)
+	at com.mietmanager/Zaehlerstand.setVorgaenger(Zaehlerstand.java:84)
+	at com.mietmanager/Zaehlerstand.bestimmeVorhergehendenZaehlerstand(Zaehlerstand.java:77)
+	at com.mietmanager/Zaehlerstand.<init>(Zaehlerstand.java:51)
+	at com.mietmanager/Wohnung.hinzufuegen(Wohnung.java:47)
+	at com.mietmanager/WohnungsReiter.lambda$erzeugeReiter$0(WohnungsReiter.java:68)
 	at javafx.base@18.0.1/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
 	at javafx.base@18.0.1/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
 	at javafx.base@18.0.1/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
@@ -873,4 +873,41 @@ java.lang.InstantiationException: Der Vorhergehende Zählerstand kann nicht grö
 	at javafx.graphics@18.0.1/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
 	at javafx.graphics@18.0.1/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
 	at java.base/java.lang.Thread.run(Thread.java:833)
+
+Jul 24, 2022 11:01:28 PM com.mietmanager.MietManager start
+SCHWERWIEGEND: Startfenster konnte nicht geöffnet werden
+javafx.fxml.LoadException: 
+/F:/Workspace/IDEA-Projects/MietManager/target/classes/com/mietmanager/gbo/startansicht.fxml
+
+	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2707)
+	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2677)
+	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
+	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516)
+	at com.mietmanager/com.mietmanager.gbo.FensterGenerator.oeffneFenster(FensterGenerator.java:48)
+	at com.mietmanager/com.mietmanager.gbo.FensterGenerator.<init>(FensterGenerator.java:32)
+	at com.mietmanager/com.mietmanager.MietManager.start(MietManager.java:31)
+	at javafx.graphics@18.0.1/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at javafx.graphics@18.0.1/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at javafx.graphics@18.0.1/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics@18.0.1/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics@18.0.1/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics@18.0.1/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@18.0.1/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:116)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at javafx.base@18.0.1/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml@18.0.1/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml@18.0.1/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2673)
+	... 14 more
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
+	at com.mietmanager/com.mietmanager.gbo.StartansichtController.initialize(StartansichtController.java:37)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	... 21 more
 

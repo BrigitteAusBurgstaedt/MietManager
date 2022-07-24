@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox stylesheets="@JRPThemeDark.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mietmanager.gbo.PdfErstellenAnsichtController">
+   <children>
+      <VBox styleClass="platzhalter">
+         <children>
+            <Label prefWidth="600.0" styleClass="titel-label" text="Geben Sie Wohnung, Monat und Jahr an, um die jeweilige monatliche Übersicht zu erstellen. " textAlignment="CENTER" wrapText="true" />
+         </children>
+      </VBox>
+      <VBox styleClass="hauptbehaelter">
+         <children>
+            <VBox styleClass="placeholder">
+               <children>
+                  <VBox fx:id="behaelter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="10.0" styleClass="behaelter">
+                     <children>
+                        <TextField fx:id="monat" promptText="Monat" />
+                        <TextField fx:id="jahr" promptText="Jahr" />
+                        <Button onAction="#pdfErstellen" mnemonicParsing="false" text="Erstellen" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>

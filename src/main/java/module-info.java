@@ -1,4 +1,4 @@
-module jrp.mietmanager {
+module com.mietmanager {
     requires javafx.swing;
     requires javafx.fxml;
     requires java.logging;
@@ -7,12 +7,10 @@ module jrp.mietmanager {
     requires io;
     requires javafx.controls;
 
-    opens jrp.mietmanager to javafx.fxml;
-    exports jrp.mietmanager;
-    opens jrp.mietmanager.benutzeroberflaeche.hauptfenster to javafx.fxml;
-    exports jrp.mietmanager.benutzeroberflaeche.hauptfenster;
-    opens jrp.mietmanager.benutzeroberflaeche.nebenfenster to javafx.fxml;
-    exports jrp.mietmanager.benutzeroberflaeche.nebenfenster;
-    exports jrp.mietmanager.logik;
-    exports jrp.mietmanager.speicherung;
+    opens com.mietmanager to javafx.fxml;
+    exports com.mietmanager;
+    exports com.mietmanager.logik;
+    exports com.mietmanager.speicherung;
+    exports com.mietmanager.gbo;
+    opens com.mietmanager.gbo to javafx.fxml;
 }
