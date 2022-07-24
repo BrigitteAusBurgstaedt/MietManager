@@ -1,0 +1,9 @@
+
+]
+java:S2094"BRemove this empty class, write its code or make it an "interface".(÷ÝÅùýÿÿÿÿ
+\
+java:S1128"ARemove this unused import 'javafx.beans.property.ObjectProperty'.(ÃÚô¯þÿÿÿÿ
+Y
+java:S1128">Remove this unused import 'javafx.collections.ObservableList'.(ÄÜ€éüÿÿÿÿ
+K
+java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬èýÿÿÿÿ

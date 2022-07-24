@@ -10,13 +10,30 @@ import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Ist das Fenster, welches zum Programmstart geöffnet wird.
+ *
+ * @since       1.0
+ * @author      John Robin Pfeifer
+ */
 public class Startfenster extends Stage {
-    private final static Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    private static final Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
+    /**
+     * Ruft die Methode {@link #oeffneFenster()} auf.
+     *
+     * @see #oeffneFenster()
+     */
     public Startfenster() {
         oeffneFenster();
     }
 
+    /**
+     * Lädt die {@link Scene} vom Startfenster aus startfensterAnsicht.fxml und aktiviert den
+     * {@link StartansichtController}. Zudem werden Icon und Titel des Fensters gesetzt.
+     *
+     * @see StartansichtController
+     */
     private void oeffneFenster() {
         FXMLLoader startfensterAnsichtLader = new FXMLLoader(getClass().getResource("startfensterAnsicht.fxml"));
 

@@ -3,7 +3,6 @@ package jrp.mietmanager.logik;
 
 import javafx.beans.property.*;
 import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.scene.layout.VBox;
 import jrp.mietmanager.benutzeroberflaeche.hauptfenster.PdfAnsicht;
@@ -12,6 +11,16 @@ import jrp.mietmanager.benutzeroberflaeche.hauptfenster.WohnungsReiter;
 import java.time.LocalDate;
 import java.util.logging.Logger;
 
+/**
+ * Ein Datenmodell einer Wohneinheit. Beinhaltet alle wichtigen Informationen, die das Programm über eine Wohnung wissen
+ * muss. Eine Wohnung befindet sich in genau einer {@link Immobilie} und kann mehrere Instanzen vom Typ
+ * {@link Zaehlerstand} haben.
+ *
+ * @since       1.0
+ * @see         Immobilie
+ * @see         Zaehlerstand
+ * @author      John Robin Pfeifer
+ */
 public class Wohnung implements Visualisierbar {
     private static final Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
@@ -28,9 +37,9 @@ public class Wohnung implements Visualisierbar {
     /**
      * Konstruktor der Wohnung.
      *
-     * @param bezeichnung Die Bezeichnung der Wohnung.
-     * @param mieteranzahl Die Anzahl der Mieter.
-     * @param flaeche Die Fläche der Wohnung in Quadratmeter.
+     * @param bezeichnung   die Bezeichnung der Wohnung.
+     * @param mieteranzahl  die Anzahl der Mieter.
+     * @param flaeche       die Fläche der Wohnung in Quadratmeter.
      */
     protected Wohnung(Immobilie immobilie, String bezeichnung, int mieteranzahl, double flaeche) {
         this.immobilie = immobilie;                 // Festlegen der dazugehörigen Immobilie
@@ -58,7 +67,7 @@ public class Wohnung implements Visualisierbar {
     @Override
     public VBox oeffnePdfAnsicht(Immobilie immobilie) {
         if (pdfAnsicht == null)
-            pdfAnsicht = new PdfAnsicht(immobilie, this);
+            pdfAnsicht = new PdfAnsicht(this);
         return pdfAnsicht;
     }
 
@@ -75,6 +84,18 @@ public class Wohnung implements Visualisierbar {
     @Override
     public boolean brauchtPdfAnsicht() {
         return true;
+    }
+
+    public double getZaehlerstandWertProFlaeche(int monat, int jahr) {
+        double summe = 0.0;
+        int anzahl = 0;
+        for (Zaehlerstand z : zaehlerstaende) {
+            if (z.getDatum().getMonthValue() == monat && z.getDatum().getYear() == jahr) {
+                summe += z.getDifferenzProFlaeche();
+                anzahl++;
+            }
+        }
+        return summe / anzahl;
     }
 
     // Getter und Setter
@@ -124,4 +145,14 @@ public class Wohnung implements Visualisierbar {
         return zaehlerstaende;
     }
 
+    public Zaehlerstand getZaehlerstand(int monat, int jahr) {
+
+        for (int i = zaehlerstaende.size() - 1; i >= 0; i--) {
+            Zaehlerstand aktuell = zaehlerstaende.get(i);
+            if(aktuell.getDatum().getYear() == jahr && aktuell.getDatum().getMonthValue() == monat)
+                return aktuell;
+        }
+
+        return null;
+    }
 }

@@ -31,19 +31,6 @@ public class Pfeildiagramm extends Region {
         erstelleBandtacho();
     }
 
-    /*
-    public Pfeildiagramm(Immobilie immobilie) {
-        bestimmeWerte(immobilie);
-    }
-
-     */
-
-    private void bestimmeWerte(Immobilie immobilie) {
-        for (Wohnung w : immobilie.getWohnungen()) {
-            // TODO: 24.05.2022  bind min, max, aktuell
-        }
-    }
-
 
     private void erstelleBandtacho() {
         Bandtacho bandtacho = new Bandtacho(monat);

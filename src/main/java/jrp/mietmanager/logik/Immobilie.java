@@ -8,6 +8,14 @@ import jrp.mietmanager.benutzeroberflaeche.hauptfenster.ImmobilienReiter;
 
 import java.util.logging.Logger;
 
+/**
+ * Ein Datenmodell einer Immobilie. Beinhaltet alle wichtigen Informationen, die das Programm über eine Immobilie wissen
+ * muss. Eine Immobilie kann mehrere Instanzen vom Typ {@link Wohnung} haben.
+ *
+ * @since       1.0
+ * @see         Wohnung
+ * @author      John Robin Pfeifer
+ */
 public class Immobilie implements Visualisierbar {
     private static final Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
@@ -25,13 +33,37 @@ public class Immobilie implements Visualisierbar {
 
     /**
      * Konstruktor für die erst Erstellung des Objektes.
-     * @param bezeichnung Name der Immobilie
-     * @param wohnungsanzahl Anzahl der Wohnungen in der Immobilie
+     * @param bezeichnung name der Immobilie
+     * @param wohnungsanzahl anzahl der Wohnungen in der Immobilie
      */
     public Immobilie(String bezeichnung, int wohnungsanzahl) {
         this(bezeichnung);
-
         erstelleWohnungen(wohnungsanzahl);
+    }
+
+    public double[] bestimmeMinAvgMax(int monat, int jahr) {
+        int anzahlVorhandener = 0;
+        double summeDifferenzProFlaeche = 0.0;
+        double min = Double.MAX_VALUE;
+        double max = 0.0;
+        for (Wohnung w : wohnungen) {
+            if (w.getFlaeche() <= 0.0) return new double[0];                    // Mindestens eine Wohnung hat noch keine gesetzte Fläche, das Verfahren war nicht erfolgreich
+            boolean enthalten = false;
+            for (Zaehlerstand z : w.getZaehlerstaende()) {
+                if ((z.getDatum().getMonthValue() == monat) && (z.getDatum().getYear() == jahr)) {
+                    double akt = z.getDifferenzProFlaeche();
+                    min = Math.min(akt, min);
+                    max = Math.max(akt, max);
+
+                    summeDifferenzProFlaeche += akt;
+                    anzahlVorhandener++;
+                    enthalten = true;
+                }
+            }
+            if (!enthalten) return new double[0];                               // Mindestens eine Wohnung hat keinen passenden Zählerstand, das Verfahren war nicht erfolgreich
+        }
+
+        return new double[]{min, summeDifferenzProFlaeche / anzahlVorhandener, max};                                    // Es gibt zu jeder Wohnung mindestens einen passenden Wert und min, max, avg konnten bestimmt werden
     }
 
     /**

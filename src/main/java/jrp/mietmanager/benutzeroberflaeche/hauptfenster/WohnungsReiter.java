@@ -44,10 +44,10 @@ public class WohnungsReiter extends Tab {
         HBox fuerEingabe = new HBox();
         HBox fuerTaster = new HBox(5);
 
-        platzhalter.getStyleClass().add(Stilklasse.PLATZHALTER.toString());
-        fuerEingabe.getStyleClass().add(Stilklasse.PLATZHALTER.toString());
-        fuerTaster.getStyleClass().add(Stilklasse.PLATZHALTER.toString());
-        behaelter.getStyleClass().add(Stilklasse.BEHAELTER.toString());
+        platzhalter.getStyleClass().add(Stilklasse.PLATZHALTER);
+        fuerEingabe.getStyleClass().add(Stilklasse.PLATZHALTER);
+        fuerTaster.getStyleClass().add(Stilklasse.PLATZHALTER);
+        behaelter.getStyleClass().add(Stilklasse.BEHAELTER);
 
         fuerTaster.setAlignment(Pos.TOP_RIGHT);
 

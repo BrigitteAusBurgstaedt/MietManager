@@ -6,3 +6,10 @@ public class Linie extends Polyline {
 
 
 }
+
+enum Linientyp {
+    NORMAL,
+    GESTRICHELT,
+    PFEIL,
+    DOPPELPFEIL
+}

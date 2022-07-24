@@ -102,7 +102,7 @@ public class ImmobilienReiter extends Tab {
         TableColumn<Wohnung, Number> c3 = new TableColumn<>("Wohnungsnutzfläche in m²");
         c3.setCellValueFactory(wohnungNumberTableColumn -> wohnungNumberTableColumn.getValue().flaecheProperty());
         c3.setCellFactory(TextFieldTableCell.forTableColumn(new NumberStringConverter()));
-        c3.getStyleClass().add(Stilklasse.ZAHLENSPALTE.toString());
+        c3.getStyleClass().add(Stilklasse.ZAHLENSPALTE);
         tabelle.getColumns().add(c3);
 
         tabelle.setPrefHeight(1080); // TODO: 05.05.2022 bessere Lösung (zeige (wenn möglich) nur die gefüllten Zeilen

@@ -5,7 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Separator;
 import javafx.scene.layout.Pane;
 
-public class Bandtacho extends Pane {
+class Bandtacho extends Pane {
     private final int monat;
 
     public Bandtacho(int monat) {

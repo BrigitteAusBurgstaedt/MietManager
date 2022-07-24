@@ -3,7 +3,7 @@ package jrp.mietmanager.benutzeroberflaeche.grafik;
 import javafx.beans.binding.DoubleBinding;
 import javafx.beans.property.DoubleProperty;
 
-public enum EnergieKlasse {
+enum EnergieKlasse {
 
     A1A     ("A+", "#82c042", 5.1, 4.5, 3.9, 2.4, 1.2, 0.9, 2.4, 3.6, 4.8),
     AB      ("A", "#a4cc41", 8.5, 7.5, 6.5, 4.0, 2.0, 1.5, 4.0, 6.0, 8.0),

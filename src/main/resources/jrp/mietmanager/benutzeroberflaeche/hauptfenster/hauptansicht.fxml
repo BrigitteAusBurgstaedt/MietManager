@@ -13,11 +13,11 @@
     <MenuBar>
         <Menu mnemonicParsing="false" text="Datei">
             <MenuItem onAction="#speichernUnter" mnemonicParsing="false" text="Speichern unter" />
-            <MenuItem mnemonicParsing="false" text="Speichern" />
+            <MenuItem onAction="#speichern" mnemonicParsing="false" text="Speichern" />
             <MenuItem onAction="#oeffnen" mnemonicParsing="false" text="Öffnen" />
         </Menu>
         <Menu mnemonicParsing="false" text="PDF">
-            <MenuItem mnemonicParsing="false" text="Erstellen" />
+            <MenuItem onAction="#pdfErstellen" mnemonicParsing="false" text="Erstellen" />
         </Menu>
         <Menu mnemonicParsing="false" text="Hilfe">
             <MenuItem mnemonicParsing="false" text="Über" />

@@ -8,14 +8,34 @@ import java.io.IOException;
 import java.util.logging.*;
 
 // Alternativer Name: ImmoMa (für Immobilien Manager)
+
+/**
+ * Startpunkt der Anwendung.
+ *
+ * @since       1.0
+ * @see         Startfenster
+ * @author      John Robin Pfeifer
+ */
 public class MietManager extends Application {
     private static final Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
+    /**
+     * Öffnet das {@link Startfenster}.
+     *
+     * @param hauptfenster  Das von der Anwendung erzeugte Hauptfenster. (ignoriert)
+     * @see                 Startfenster
+     */
     @Override
     public void start(Stage hauptfenster) {
         new Startfenster();
     }
 
+    /**
+     * Konfiguriert zunächst den Logger und startet dann die Anwendung.
+     *
+     * @param args  Von der Konsole übergebene Parameter. (ignoriert)
+     * @see         #konfiguriereLogger()
+     */
     public static void main(String[] args) {
         konfiguriereLogger();
         launch();
@@ -24,6 +44,8 @@ public class MietManager extends Application {
     /**
      * Konfiguration des Loggers. Es wird ein File Handler und ein Console Handler eingerichtet,
      * sowie die Warnstufen eingestellt. Das Logbuch wird als "log.txt" gespeichert.
+     *
+     * @see Logger
      */
     private static void konfiguriereLogger() {
 

@@ -1,7 +1,6 @@
 package jrp.mietmanager.logik;
 
 import javafx.beans.property.*;
-import javafx.collections.ListChangeListener;
 import javafx.collections.transformation.SortedList;
 import javafx.scene.control.Alert;
 
@@ -9,6 +8,14 @@ import java.time.LocalDate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Ein Datenmodell eines Zählerstandes. Beinhaltet alle wichtigen Informationen, die das Programm von einem Zählerstand
+ * wissen muss. Ein Zählerstand gehört zu genau einer {@link Wohnung}.
+ *
+ * @since       1.0
+ * @see         Wohnung
+ * @author      John Robin Pfeifer
+ */
 public class Zaehlerstand implements Comparable<Zaehlerstand> {
     private static final Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
@@ -87,6 +94,7 @@ public class Zaehlerstand implements Comparable<Zaehlerstand> {
 
     private void bestimmeDifferenz() {
         if (vorgaenger == null) {
+            if (differenz.isBound()) differenz.unbind();
             differenz.set(0);       // Die erste Differenz soll Null sein
         } else {
             if (differenz.isBound()) differenz.unbind();
@@ -142,6 +150,10 @@ public class Zaehlerstand implements Comparable<Zaehlerstand> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         return getDatum().equals(((Zaehlerstand) o).getDatum());
+    }
+
+    public double getDifferenzProFlaeche() {
+        return differenz.get() / wohnung.getFlaeche();
     }
 
     // gewöhnliche Getter und Setter

@@ -6,6 +6,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -25,7 +26,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.8.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.8.2" level="project" />
     <orderEntry type="library" name="Maven: com.itextpdf:barcodes:7.2.2" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.36" level="project" />
     <orderEntry type="library" name="Maven: com.itextpdf:font-asian:7.2.2" level="project" />
     <orderEntry type="library" name="Maven: com.itextpdf:forms:7.2.2" level="project" />
     <orderEntry type="library" name="Maven: com.itextpdf:hyph:7.2.2" level="project" />
@@ -40,5 +40,9 @@
     <orderEntry type="library" name="Maven: com.itextpdf:sign:7.2.2" level="project" />
     <orderEntry type="library" name="Maven: com.itextpdf:styled-xml-parser:7.2.2" level="project" />
     <orderEntry type="library" name="Maven: com.itextpdf:svg:7.2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-simple:1.7.36" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.36" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-swing:18" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-swing:win:18" level="project" />
   </component>
 </module>

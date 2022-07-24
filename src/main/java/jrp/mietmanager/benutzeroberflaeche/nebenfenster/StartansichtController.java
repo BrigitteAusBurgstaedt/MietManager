@@ -16,12 +16,13 @@ import jrp.mietmanager.benutzeroberflaeche.grafik.Pfeildiagramm;
 import jrp.mietmanager.logik.Immobilie;
 import jrp.mietmanager.pdf.MonatlicheMieterInformation;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class StartfensterController {
+public class StartansichtController {
     private static final Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     @FXML public Button immobilieErstellenTaster;
@@ -41,11 +42,6 @@ public class StartfensterController {
         DoubleProperty max = new SimpleDoubleProperty(9);
         DoubleProperty aktuell = new SimpleDoubleProperty(7);
         Pfeildiagramm pd = new Pfeildiagramm(min.get(), max.get(), aktuell.get(), 5);
-        try {
-            new MonatlicheMieterInformation();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
 
         sandkasten.getChildren().add(pd);
     }

@@ -1,24 +1,24 @@
 package jrp.mietmanager.benutzeroberflaeche.hauptfenster;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import jrp.mietmanager.benutzeroberflaeche.nebenfenster.PdfErstellenFenster;
 import jrp.mietmanager.logik.Immobilie;
 import jrp.mietmanager.logik.Visualisierbar;
 import jrp.mietmanager.logik.Wohnung;
 import jrp.mietmanager.speicherung.Dateiverwalter;
 import java.io.File;
 
-
+/**
+ * Controller für hauptansicht.fxml.
+ */
 public class HauptansichtController {
 
-    // Model
     private Immobilie immobilie;
-
     private Stage fenster;
+    private File datei;
 
     // View Nodes
     @FXML private TabPane objektReiterMeister;
@@ -40,7 +40,7 @@ public class HauptansichtController {
             TreeItem<Visualisierbar> item = new TreeItem<>();
             item.valueProperty().set(w);
             wurzel.getChildren().add(item);
-            w.bezeichnungProperty().addListener((observableValue, s, t1) -> objektBaum.refresh());
+            w.bezeichnungProperty().addListener((b, a, n) -> objektBaum.refresh());
         }
 
         objektBaum.setRoot(wurzel);
@@ -73,11 +73,19 @@ public class HauptansichtController {
         dateiWaehler.setTitle("Speichern unter");
         dateiWaehler.getExtensionFilters().add(filter);
 
-        File ausgewaelteDatei = dateiWaehler.showSaveDialog(fenster);
-        if (ausgewaelteDatei != null) {
-            Dateiverwalter.speichern(ausgewaelteDatei, immobilie);
+        datei = dateiWaehler.showSaveDialog(fenster);
+        if (datei != null) {
+            Dateiverwalter.speichern(datei, immobilie);
         }
 
+    }
+
+    public void speichern() {
+        if (datei != null) {
+            Dateiverwalter.speichern(datei, immobilie);
+        } else {
+            speichernUnter();
+        }
     }
 
     public void oeffnen() {
@@ -87,14 +95,20 @@ public class HauptansichtController {
         dateiWaehler.setTitle("Öffnen");
         dateiWaehler.getExtensionFilters().add(filter);
 
-        File ausgewaelteDatei = dateiWaehler.showOpenDialog(fenster);
-        if (ausgewaelteDatei != null) {
-            new Hauptfenster(Dateiverwalter.lesen(ausgewaelteDatei));
+        datei = dateiWaehler.showOpenDialog(fenster);
+        if (datei != null) {
+            new Hauptfenster(Dateiverwalter.lesen(datei));
         }
+    }
+
+    public void pdfErstellen() {
+        new PdfErstellenFenster(immobilie);
     }
 
     public void uebergeben(Stage fenster, Immobilie immobilie) {
         this.fenster = fenster;
         this.immobilie = immobilie;
     }
+
+
 }
