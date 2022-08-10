@@ -33,7 +33,8 @@
                   <MenuItem mnemonicParsing="false" onAction="#pdfErstellen" text="Erstellen" />
               </Menu>
               <Menu mnemonicParsing="false" text="Hilfe">
-                  <MenuItem mnemonicParsing="false" text="Über" />
+               <MenuItem mnemonicParsing="false" onAction="#oeffneJavaDoc" text="JavaDoc" />
+                  <MenuItem mnemonicParsing="false" onAction="#oeffneGitHub" text="GitHub" />
               </Menu>
           </MenuBar>
          <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="IMMA – " HBox.hgrow="ALWAYS" />

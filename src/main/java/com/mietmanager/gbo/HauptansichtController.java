@@ -2,16 +2,21 @@ package com.mietmanager.gbo;
 
 import com.mietmanager.logik.Immobilie;
 import com.mietmanager.speicherung.Dateiverwalter;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import com.mietmanager.logik.Visualisierbar;
 import com.mietmanager.logik.Wohnung;
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -137,4 +142,19 @@ public class HauptansichtController implements Controller {
     }
 
 
+    public void oeffneJavaDoc() {
+        try {
+            Desktop.getDesktop().browse(new URI("https://github.com/BrigitteAusBurgstaedt/MietManager")); // TODO: 10.08.2022 Javadoc 
+        } catch (IOException | URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void oeffneGitHub() {
+        try {
+            Desktop.getDesktop().browse(new URI("https://github.com/BrigitteAusBurgstaedt/MietManager"));
+        } catch (IOException | URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
 }
