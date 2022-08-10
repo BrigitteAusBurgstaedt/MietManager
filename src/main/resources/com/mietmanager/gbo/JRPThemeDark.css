@@ -10,7 +10,7 @@
 	-fx-font-size: 14px;
 	-fx-text-fill: white;
 
-	-fx-accent: #76b9ed;
+	-fx-accent: #46ae55;
 	-fx-focus-color: transparent;
 }
 
@@ -24,8 +24,15 @@
 	-fx-background-color: #202020;
 }
 
+.context-menu {
+	-fx-background-color: #2d2d2d;
+}
+
 .menu:hover {
 	-fx-background-color: #2d2d2d;
+	-fx-border-color: transparent transparent white transparent;
+	-fx-border-width: 0 0 3px 0;
+	-fx-border-insets: 0 0 -3px 0;
 }
 
 .menu-item {
@@ -56,7 +63,7 @@
 
 .tree-cell:filled:selected {
 	-fx-background-color: #454545;
-	-fx-text-fill: #76b9ed;
+	-fx-text-fill: #46ae55;
 }
 
 /*******************************************************************************
@@ -129,7 +136,7 @@
 
 .tab:selected {
 	-fx-background-color: #454545;
-	-fx-text-fill: #76b9ed;
+	-fx-text-fill: #46ae55;
 }
 
 .tab-label {
@@ -143,13 +150,13 @@
  ******************************************************************************/
 
 .split-pane-divider {
-	-fx-background-color: #202020;
+	-fx-background-color: inherit;
 	-fx-background-radius: 5px 5px 0px 0px;
 	-fx-background-insets: 0px 5px 0px 5px;
 	-fx-pref-width: 18px;
 }
 
-.split-pane-divider:hover {
+.split-pane-divider:hover, .split-pane-divider:pressed {
 	-fx-background-color: #2d2d2d;
 }
 
@@ -165,12 +172,12 @@
 
 .titel-label {
 	-fx-font-size: 22px;
-	-fx-text-fill: #76b9ed;
+	-fx-text-fill: #46ae55;
 	-fx-font-weight: bold;
 }
 
 .haupttitel-label {
-	-fx-font-size: 50px;
+	-fx-font-size: 55px;
 	-fx-text-fill: white;
 	-fx-font-weight: bold;
 }
@@ -183,20 +190,40 @@
 
 .button {
 	-fx-pref-with: 100px;
-	-fx-background-color: #76b9ed;
+	-fx-background-color: #46ae55;
 	-fx-border-radius: 10px;
 	-fx-background-radius: 10px;
 	-fx-effect: dropshadow(gaussian, black, 5, 0.0, 0, 1);
 }
 
 .button:hover {
-	-fx-background-color: #8cbfe8;
+	-fx-background-color: #64ad6f;
 }
 
 .button:pressed {
-	-fx-background-color: #4fa7e5;
+	-fx-background-color: #31833e;
 	-fx-translate-y: 1;
 	-fx-effect: dropshadow(gaussian, black, 5, 0.0, 0, 0);
+}
+
+.taster-fenster {
+	-fx-text-fill: white;
+	-fx-pref-width: 50px;
+	-fx-pref-height: 50px;
+	-fx-background-color: transparent;
+	-fx-border-radius: 0px;
+	-fx-background-radius: 0px;
+	-fx-effect: null;
+}
+
+.taster-fenster:hover {
+	-fx-background-color: #2d2d2d;
+}
+
+.taster-fenster:pressed {
+	-fx-background-color: transparent;
+	-fx-translate-y: 0;
+	-fx-effect: null;
 }
 
 /*******************************************************************************
@@ -230,12 +257,8 @@
  *                                                                             *
  ******************************************************************************/
 
-.platzhalter {
-	-fx-padding: 2px 2px 5px 2px;
-}
-
 .hauptbehaelter {
-	-fx-padding: 10px;
+	-fx-padding: 10px 10px 0px 10px;
 	-fx-background-color: #272727;
 	-fx-background-radius: 10px 10px 0px 0px;
 }
@@ -244,12 +267,13 @@
 	-fx-background-color: #323232;
 	-fx-background-radius: 10px;
 	-fx-border-radius: 10px;
-	-fx-padding: 10px;
+	-fx-padding: 12px 12px 15px 12px;
 	-fx-effect: dropshadow(gaussian, black, 5, 0.0, 0, 1);
+	-fx-background-insets: 2px 2px 5px 2px;
 }
 
 
 /* Sachen die keiner sehen möchte */
-.tree-cell, .column-header, .placeholder, .filler, .tab-header-background, .split-pane, .platzhalter {
+.tree-cell, .column-header, .placeholder, .filler, .tab-header-background, .split-pane {
 	-fx-background-color: transparent;
 }

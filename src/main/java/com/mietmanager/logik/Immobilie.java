@@ -3,8 +3,6 @@ package com.mietmanager.logik;
 import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.layout.VBox;
-import com.mietmanager.gbo.ImmobilienReiter;
 
 import java.util.logging.Logger;
 
@@ -22,13 +20,9 @@ public class Immobilie implements Visualisierbar {
     private final StringProperty bezeichnung;
     private final ObservableList<Wohnung> wohnungen;
 
-    private boolean istGeoeffnet;
-
     public Immobilie(String bezeichnung) {
         this.bezeichnung = new SimpleStringProperty(bezeichnung);
         this.wohnungen = FXCollections.observableArrayList();
-
-        istGeoeffnet = false;
     }
 
     /**
@@ -77,29 +71,6 @@ public class Immobilie implements Visualisierbar {
 
     public Wohnung hinzufuegen(String bezeichnung, int mieteranzahl, double flaeche) {
         return new Wohnung(this, bezeichnung, mieteranzahl, flaeche);
-    }
-
-    @Override
-    public ImmobilienReiter oeffneReiter() {
-        ImmobilienReiter ir = new ImmobilienReiter(this);
-        ir.setOnClosed(event -> istGeoeffnet = false);
-        istGeoeffnet = true;
-        return ir;
-    }
-
-    @Override
-    public VBox oeffnePdfAnsicht(Immobilie immobilie) {
-        return null;
-    }
-
-    @Override
-    public boolean istGeoeffnet() {
-        return istGeoeffnet;
-    }
-
-    @Override
-    public boolean brauchtPdfAnsicht() {
-        return false;
     }
 
     // Getter und Setter

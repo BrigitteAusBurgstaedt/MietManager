@@ -9,6 +9,13 @@ import javafx.scene.layout.Pane;
 import javafx.scene.shape.Polygon;
 import javafx.scene.transform.Rotate;
 
+/**
+ * Pfeil ist der obere Teil des Pfeildiagramms.
+ *
+ * @author John Robin Pfeifer
+ * @see Pfeildiagramm
+ * @since 1.0.0
+ */
 class Pfeil extends Pane {
     private static final int MIN_BREITE = 100;
     private static final int MIN_HOEHE = 10;

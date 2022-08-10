@@ -9,9 +9,5 @@ o
 ?.idea/libraries/Maven__com_itextpdf_styled_xml_parser_7_2_2.xml,2\a\2af16bc428a66d5f55d81bda99c9157ffd32a8d0
 a
 1.idea/libraries/Maven__com_itextpdf_svg_7_2_2.xml,3\7\373073df1acc4acf2c55d9166722b294601e3216
-t
-Dsrc/main/java/com/mietmanager/gbo/hauptfenster/ImmobilienReiter.java,f\d\fd30fafaa39f69c154c4f05acd62b3b0137dd666
-n
->src/main/java/com/mietmanager/gbo/hauptfenster/PdfAnsicht.java,3\6\36dfac3e02e6037c30ab518f17756b9764b06ee9
-r
-Bsrc/main/java/com/mietmanager/gbo/hauptfenster/WohnungsReiter.java,e\e\eed6a0d4ab596e2857648fc4ccc68aa5d5898a01
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d

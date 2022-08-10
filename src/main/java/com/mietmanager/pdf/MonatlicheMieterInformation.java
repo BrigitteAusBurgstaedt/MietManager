@@ -15,6 +15,12 @@ import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
 
+/**
+ * Klasse zur Erstellung der monatlichen Mieterinformationen als PDF.
+ *
+ * @author John Robin Pfeifer
+ * @since 1.0.0
+ */
 public class MonatlicheMieterInformation {
 
     private final String verzeichnispfad;
@@ -23,6 +29,15 @@ public class MonatlicheMieterInformation {
     private final int monat;
     private final int jahr;
 
+    /**
+     * Erstellt für jede Wohnung in der Immobilie eine monatliche Mieterinformation.
+     *
+     * @param verzeichnispfad der Pfad zum Ordner wo die Dokumente gespeichert werden sollen
+     * @param immobilie die Immobilie für die die Dokumente erstellt werden sollen
+     * @param monat der Monat der Mieterinformation
+     * @param jahr das Jahr der Mieterinformation
+     * @throws IOException wenn es probleme mit dem PDF-Writer oder dem Foto gibt
+     */
     public MonatlicheMieterInformation(String verzeichnispfad, Immobilie immobilie, int monat, int jahr) throws IOException {
         this.verzeichnispfad = verzeichnispfad;
         this.datum = LocalDate.now().toString();
@@ -36,6 +51,12 @@ public class MonatlicheMieterInformation {
 
     }
 
+    /**
+     * Erstellt für die angegebene Wohnung eine monatliche Mieterinformation
+     *
+     * @param wohnung die gewünschte Wohnung
+     * @throws IOException wenn es probleme mit dem PDF-Writer oder dem Foto gibt
+     */
     private void dokumentErstellen(Wohnung wohnung) throws IOException {
         File datei = new File(verzeichnispfad, wohnung.toString() + "_" + monat + "_" + jahr + ".pdf");
         PdfDocument pdf = new PdfDocument(new PdfWriter(datei));
@@ -67,8 +88,6 @@ public class MonatlicheMieterInformation {
             Pfeildiagramm pfeildiagramm = new Pfeildiagramm(minAvgMax[0], minAvgMax[2], wohnung.getZaehlerstand(monat, jahr).getDifferenz(),  monat);
             pfeildiagrammFoto = Werkzeugkasten.erstelleFoto(pfeildiagramm);
         }
-
-
 
         dokument.add(ueberschrift);
         dokument.add(paragraf);

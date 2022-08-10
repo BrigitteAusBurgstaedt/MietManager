@@ -14,6 +14,13 @@ import com.mietmanager.logik.Wohnung;
 import java.text.DecimalFormat;
 import java.util.Collection;
 
+/**
+ * Das Zählerstanddiagramm stell den Verlauf der Zählerstanddifferenzen dar.
+ *
+ * @author John Robin Pfeifer
+ * @see Zaehlerstand
+ * @since 1.0.0
+ */
 public class ZaehlerstandDiagramm extends Region {
 
     private final ObservableList<XYChart.Data<Number, Number>> daten;
@@ -52,8 +59,8 @@ public class ZaehlerstandDiagramm extends Region {
 
         setupAchsen();
 
-        serie.setName("Serie 1");
         diagramm.getData().add(serie);  // Serie hinzufügen
+        diagramm.setLegendVisible(false);
         getChildren().add(diagramm);
     }
 

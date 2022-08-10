@@ -13,7 +13,7 @@ import java.io.IOException;
 /**
  * Sammlung von nicht-kohäsiven/statischen Methoden.
  *
- * @since 1.0
+ * @since 1.0.0
  * @author John Robin Pfeifer
  */
 public final class Werkzeugkasten {

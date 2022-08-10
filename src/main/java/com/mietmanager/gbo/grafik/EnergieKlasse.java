@@ -3,6 +3,9 @@ package com.mietmanager.gbo.grafik;
 import javafx.beans.binding.DoubleBinding;
 import javafx.beans.property.DoubleProperty;
 
+/**
+ * Datenblatt für die Energieklassen.
+ */
 enum EnergieKlasse {
 
     A1A     ("A+", "#82c042", 5.1, 4.5, 3.9, 2.4, 1.2, 0.9, 2.4, 3.6, 4.8),

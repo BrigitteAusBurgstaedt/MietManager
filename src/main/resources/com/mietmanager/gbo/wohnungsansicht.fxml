@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" stylesheets="@JRPThemeDark.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mietmanager.gbo.WohnungsansichtController">
+   <HBox styleClass="behaelter">
+      <Label fx:id="titel" alignment="TOP_LEFT" maxWidth="1.7976931348623157E308" styleClass="titel-label" text="Wohnung 1" HBox.hgrow="ALWAYS" />
+      <Label fx:id="flaeche" styleClass="titel-label" text="0.0" />
+      <Label alignment="TOP_LEFT" styleClass="titel-label" text=" m²" />
+   </HBox>
+   <SplitPane dividerPositions="0.5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+      <VBox spacing="10.0">
+         <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" styleClass="behaelter">
+            <TableView fx:id="tabelle" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+            <HBox>
+               <DatePicker fx:id="datumsFeld" />
+               <TextField fx:id="wertFeld" />
+            </HBox>
+            <HBox alignment="TOP_RIGHT" spacing="10.0">
+               <Button mnemonicParsing="false" onAction="#hinzufuegen" text="Hinzufügen" />
+               <Button mnemonicParsing="false" onAction="#entfernen" text="Entfernen" />
+            </HBox>
+         </VBox>
+      </VBox>
+      <VBox spacing="10.0">
+         <VBox fx:id="zaehlerstandDiagrammBehaelter" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="behaelter" />
+         <VBox fx:id="bandtachobehaelter" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" styleClass="behaelter">
+            <TextField fx:id="monat" promptText="Monat" />
+            <TextField fx:id="jahr" promptText="Jahr" />
+            <HBox alignment="TOP_RIGHT" spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#erzeugeDiagramm" text="Bandtacho erstellen" />
+               </children>
+            </HBox>
+         </VBox>
+      </VBox>
+   </SplitPane>
+</VBox>

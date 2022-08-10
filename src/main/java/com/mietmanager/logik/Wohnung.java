@@ -1,12 +1,8 @@
 package com.mietmanager.logik;
 
-
-import com.mietmanager.gbo.PdfAnsicht;
-import com.mietmanager.gbo.WohnungsReiter;
 import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.layout.VBox;
 
 import java.time.LocalDate;
 import java.util.logging.Logger;
@@ -31,9 +27,6 @@ public class Wohnung implements Visualisierbar {
     private final DoubleProperty flaeche;
     private final ObservableList<Zaehlerstand> zaehlerstaende = FXCollections.observableArrayList();
 
-    private PdfAnsicht pdfAnsicht;
-    private boolean istGeoffnet;
-
     /**
      * Konstruktor der Wohnung.
      *
@@ -48,42 +41,10 @@ public class Wohnung implements Visualisierbar {
         this.bezeichnung = new SimpleStringProperty(bezeichnung);
         this.mieteranzahl = new SimpleIntegerProperty(mieteranzahl);
         this.flaeche = new SimpleDoubleProperty(flaeche);
-
-        this.istGeoffnet = false;
     }
 
     public Zaehlerstand hinzufuegen(LocalDate datum, double wert, Zaehlermodus zaehlermodus) throws InstantiationException {
         return new Zaehlerstand(this, datum, wert, zaehlermodus);
-    }
-
-    @Override
-    public WohnungsReiter oeffneReiter() {
-        WohnungsReiter wr = new WohnungsReiter(this);
-        wr.setOnClosed(event -> istGeoffnet = false);
-        istGeoffnet = true;
-        return wr;
-    }
-
-    @Override
-    public VBox oeffnePdfAnsicht(Immobilie immobilie) {
-        if (pdfAnsicht == null)
-            pdfAnsicht = new PdfAnsicht(this);
-        return pdfAnsicht;
-    }
-
-    @Override
-    public boolean istGeoeffnet() {
-        return istGeoffnet;
-    }
-
-    /**
-     * Wahrheitswert welcher widerspiegelt, ob ein PDF gezeigt werden soll.
-     *
-     * @return Gibt wahr zurück, wenn eine PDF-Ansicht benötigt wird.
-     */
-    @Override
-    public boolean brauchtPdfAnsicht() {
-        return true;
     }
 
     public double getZaehlerstandWertProFlaeche(int monat, int jahr) {

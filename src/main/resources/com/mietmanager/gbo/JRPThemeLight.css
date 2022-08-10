@@ -1,107 +1,279 @@
-.root {
-    -fx-font-family: sans-serif;
-	-fx-font-size: 14px;
+/*
+ * Helles Design inspiriert vom Windows 11 Anwendungen.
+ */
 
-	-fx-background-color: radial-gradient(focus-angle 270deg, focus-distance 60%, center 50% 30%, radius 100%, #ffffff, #82a2c4);
-	
-	-fx-accent: #8282ce;
+.root {
+	-fx-background-color: #818181;
+
+	/* -fx-font-family: sans-serif; */
+	-fx-font-family: "Helvetica Neue";
+	-fx-font-size: 14px;
+	-fx-text-fill: black;
+
+	-fx-accent: #46ae55;
 	-fx-focus-color: transparent;
 }
 
+/*******************************************************************************
+ *                                                                             *
+ * Menü Leiste                                                                 *
+ *                                                                             *
+ ******************************************************************************/
+
+.menu-bar {
+	-fx-background-color: #818181;
+}
+
+.context-menu {
+	-fx-background-color: #b6b6b6;
+}
+
+.menu:hover {
+	-fx-background-color: #b6b6b6;
+	-fx-border-color: transparent transparent black transparent;
+	-fx-border-width: 0 0 3px 0;
+	-fx-border-insets: 0 0 -3px 0;
+}
+
+.menu-item {
+	-fx-background-color: #818181;
+}
+
+.menu-item:hover {
+	-fx-background-color: #b6b6b6;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Verzeichnisbaum                                                             *
+ *                                                                             *
+ ******************************************************************************/
+
 .tree-view {
+	-fx-background-color: #818181;
+}
+
+.tree-cell {
+	-fx-text-fill: black;
+}
+
+.tree-cell:filled:hover {
+	-fx-background-color: #b6b6b6;
+}
+
+.tree-cell:filled:selected {
 	-fx-background-color: white;
-	-fx-padding: 5px;
-	-fx-background-radius: 10px;
-	-fx-effect: dropshadow(gaussian, grey, 10, 0.0, 0, 5);
+	-fx-text-fill: #46ae55;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Tabelle                                                                     *
+ *                                                                             *
+ ******************************************************************************/
+
+.column-header-background {
+	-fx-background-color: #818181;
 }
 
 .table-view {
-	-fx-background-radius: 10px;
-	-fx-effect: dropshadow(gaussian, grey, 10, 0.0, 0, 5);
+	-fx-background-color: #b6b6b6;
 }
 
-.table-row-cell:even:filled {
-	-fx-background-color: #a8a8d9;
+.table-cell {
+	-fx-background-color: white;
+	-fx-border-color: white
 }
 
-.column-header {
-	-fx-background-radius: 10px;
+.table-cell:filled {
+	-fx-background-color: white;
+	-fx-border-color: #818181;
+	-fx-text-fill: black;
 }
 
-.column-header-background {
-	-fx-background-color: linear-gradient(#a8a8d9, white);
-	-fx-background-radius: 10px 10px 0px 0px;
+.table-row-cell:filled:selected .table-cell {
+	-fx-background-color: white;
 }
 
-.column-overlay {
-	-fx-background-color: rgba(128, 128, 128, 0.8);
+.zahlenspalte {
+	-fx-alignment: center-right;
 }
 
-.menu-bar {
-	-fx-background-color: linear-gradient(to bottom right, #5c5cd3, #8282ce);
-	-fx-background-radius: 10px;
-	-fx-effect: dropshadow(gaussian, grey, 10, 0.0, 0, 5);
+/*
+.table-row-cell:filled:selected {
+	-fx-background-color: #454545;
 }
+
+.table-row-cell:filled:even {
+	-fx-background-color: transparent;
+}
+ */
+
+/*******************************************************************************
+ *                                                                             *
+ * Reiter                                                                      *
+ *                                                                             *
+ ******************************************************************************/
 
 .tab-header-area {
-	-fx-padding: 0px 5px 0px 5px;
+	-fx-padding: 0px 5px 0px 0px;
 }
 
 .tab {
-	-fx-background-color: linear-gradient(to bottom right, #5c5cd3, #8282ce);
+	-fx-background-color: #b6b6b6;
 	-fx-border-radius: 10px 10px 10px 10px;
 	-fx-background-radius: 10px 10px 10px 10px;
-	-fx-background-insets: 5px 0px 5px 5px;
+	-fx-background-insets: 2px 2px 5px 2px;
 	-fx-pref-height: 40px;
-	-fx-padding: 10px 10px 10px 15px;
-	-fx-effect: dropshadow(gaussian, grey, 10, 0.0, 0, 2);
+	-fx-padding: 10px 10px 13px 10px;
+	-fx-effect: dropshadow(gaussian, #7e7e7e, 5, 0.0, 0, 1);
 }
 
-.label {
+.tab:pressed {
+	-fx-background-color: #b6b6b6;
+	-fx-translate-y: 3px;
 }
+
+.tab:selected {
+	-fx-background-color: white;
+	-fx-text-fill: #46ae55;
+}
+
+.tab-label {
+	-fx-text-fill: black;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Spaltenfenster                                                              *
+ *                                                                             *
+ ******************************************************************************/
 
 .split-pane-divider {
-	-fx-background-color: #5c5cd3;
-	-fx-background-radius: 5px;
-	-fx-effect: dropshadow(gaussian, grey, 10, 0.0, 0, 5);
+	-fx-background-color: inherit;
+	-fx-background-radius: 5px 5px 0px 0px;
 	-fx-background-insets: 0px 5px 0px 5px;
 	-fx-pref-width: 18px;
 }
 
-.title-label {
-	-fx-font-size: 20px;
-	-fx-text-fill: #ff7716;
+.split-pane-divider:hover, .split-pane-divider:pressed {
+	-fx-background-color: #b6b6b6;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Label                                                                       *
+ *                                                                             *
+ ******************************************************************************/
+
+.label {
+	-fx-text-fill: black;
+}
+
+.titel-label {
+	-fx-font-size: 22px;
+	-fx-text-fill: #46ae55;
 	-fx-font-weight: bold;
 }
 
+.haupttitel-label {
+	-fx-font-size: 55px;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Taster                                                                      *
+ *                                                                             *
+ ******************************************************************************/
+
 .button {
 	-fx-pref-with: 100px;
-	-fx-background-color: #5c5cd3;
-	-fx-border-radius: 25px;
-	-fx-background-radius: 25px;
-	-fx-effect: dropshadow(gaussian, grey, 10, 0.0, 0, 5);
+	-fx-background-color: #46ae55;
+	-fx-border-radius: 10px;
+	-fx-background-radius: 10px;
+	-fx-effect: dropshadow(gaussian, #7e7e7e, 5, 0.0, 0, 1);
 }
 
 .button:hover {
-	-fx-background-color: #5c5cd3;
+	-fx-background-color: #64ad6f;
 }
 
 .button:pressed {
-	-fx-background-color: #5c5cd3;
+	-fx-background-color: #31833e;
+	-fx-translate-y: 1;
+	-fx-effect: dropshadow(gaussian, #7e7e7e, 5, 0.0, 0, 0);
 }
 
+.taster-fenster {
+	-fx-text-fill: white;
+	-fx-pref-width: 50px;
+	-fx-pref-height: 50px;
+	-fx-background-color: transparent;
+	-fx-border-radius: 0px;
+	-fx-background-radius: 0px;
+	-fx-effect: null;
+}
+
+.taster-fenster:hover {
+	-fx-background-color: #b6b6b6;
+}
+
+.taster-fenster:pressed {
+	-fx-background-color: transparent;
+	-fx-translate-y: 0;
+	-fx-effect: null;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Textfeld                                                                    *
+ *                                                                             *
+ ******************************************************************************/
+
 .text-field {
-	-fx-border-color: white;
+	-fx-border-color: #818181;
 	-fx-border-width: 1px;
 	-fx-border-radius: 0px;
 	-fx-background-radius: 0px;
 	-fx-pref-column-count: 20;
 }
 
-.tree-cell, .column-header, .placeholder, .filler, .tab-header-background, .split-pane, .behaelter {
-	-fx-background-color: transparent;
+/*******************************************************************************
+ *                                                                             *
+ * Diagramme                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.separator *.line {
+	-fx-border-color: black;
+	-fx-border-width: 1px;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Behälter und Platzhalter                                                    *
+ *                                                                             *
+ ******************************************************************************/
+
+.hauptbehaelter {
+	-fx-padding: 10px 10px 0px 10px;
+	-fx-background-color: #a2a2a2;
+	-fx-background-radius: 10px 10px 0px 0px;
 }
 
 .behaelter {
-	-fx-padding: 5px;
+	-fx-background-color: white;
+	-fx-background-radius: 10px;
+	-fx-border-radius: 10px;
+	-fx-padding: 12px 12px 15px 12px;
+	-fx-effect: dropshadow(gaussian, #7e7e7e, 5, 0.0, 0, 1);
+	-fx-background-insets: 2px 2px 5px 2px;
+}
+
+
+/* Sachen die keiner sehen möchte */
+.tree-cell, .column-header, .placeholder, .filler, .tab-header-background, .split-pane {
+	-fx-background-color: transparent;
 }

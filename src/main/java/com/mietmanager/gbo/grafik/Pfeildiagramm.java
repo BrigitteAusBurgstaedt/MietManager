@@ -4,6 +4,12 @@ import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.scene.layout.Region;
 
+/**
+ * Das Pfeildiagramm stellt die Spanne der Energieverbräuche einer ganzen Wohnung dar.
+ *
+ * @author John Robin Pfeifer
+ * @since 1.0.0
+ */
 public class Pfeildiagramm extends Region {
 
     private final DoubleProperty min, max, aktuell;

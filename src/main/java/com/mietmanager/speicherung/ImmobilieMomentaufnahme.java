@@ -9,6 +9,13 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * Helfer für die Serialisierung einer Immobilie.
+ *
+ * @author John Robin Pfeifer
+ * @see Immobilie
+ * @since 1.0.0
+ */
 public class ImmobilieMomentaufnahme implements Serializable {
     private final String bezeichnung;
     private final WohnungMomentaufnahme[] wohnungen;

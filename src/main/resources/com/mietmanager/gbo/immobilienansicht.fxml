@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" stylesheets="@JRPThemeDark.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mietmanager.gbo.ImmobilienansichtController">
+   <children>
+      <HBox styleClass="behaelter">
+         <children>
+            <Label fx:id="titel" alignment="TOP_LEFT" maxWidth="1.7976931348623157E308" styleClass="titel-label" text="Immobilie" HBox.hgrow="ALWAYS" />
+            <Label fx:id="wohnungsanzahl" styleClass="titel-label" text="10" />
+            <Label alignment="TOP_LEFT" styleClass="titel-label" text=" Wohnungen" />
+         </children>
+      </HBox>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="behaelter">
+         <children>
+            <TableView fx:id="tabelle" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+         </children>
+      </VBox>
+      <VBox fx:id="gesamteingabe" alignment="TOP_RIGHT" spacing="10.0" styleClass="behaelter" />
+   </children>
+</VBox>

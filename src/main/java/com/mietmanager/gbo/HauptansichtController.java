@@ -1,11 +1,10 @@
 package com.mietmanager.gbo;
 
-import com.mietmanager.gbo.Controller;
-import com.mietmanager.gbo.FensterGenerator;
 import com.mietmanager.logik.Immobilie;
 import com.mietmanager.speicherung.Dateiverwalter;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import com.mietmanager.logik.Visualisierbar;
@@ -18,24 +17,28 @@ import java.util.logging.Logger;
 
 /**
  * Controller für hauptansicht.fxml.
+ *
+ *  @since       1.0.0
+ *  @author      John Robin Pfeifer
  */
 public class HauptansichtController implements Controller {
     private static final Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
+    // Modell
     private Immobilie immobilie;
-    private Stage fenster;
     private File datei;
 
     // View Nodes
-    @FXML private TabPane objektReiterMeister;
     @FXML private TreeView<Visualisierbar> objektBaum;
-    @FXML private SplitPane spaltenfenster;
+    @FXML private VBox objektansicht;
+    @FXML private Label titel;
+
+    private Stage fenster;
 
     /**
      * Füllt den Tree View mit Tree Items.
      */
     public void pflanzeBaum() {
-
         // Die Wurzel ist das oberste Tree Item
         TreeItem<Visualisierbar> wurzel = new TreeItem<>();
         wurzel.setExpanded(true);
@@ -52,21 +55,21 @@ public class HauptansichtController implements Controller {
         objektBaum.setRoot(wurzel);
 
         // Reiter öffnen bei Auswahl
-        objektBaum.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, newValue) -> {
-            // Fragt, ob das Objekt welches im Objektbaum ausgewählt wurde schon geöffnet ist
-            if (!newValue.getValue().istGeoeffnet()) {
-                objektReiterMeister.getTabs().add(newValue.getValue().oeffneReiter()); // Erstellt Reiter und fügt ihn dem Objektreitermeister hinzu
-            }
-
-            // Braucht das Ausgewählte Objekt die PDF-Ansicht? UND Ist diese noch nicht geöffnet?
-            if (newValue.getValue().brauchtPdfAnsicht() && !spaltenfenster.getItems().contains(newValue.getValue().oeffnePdfAnsicht(immobilie))) {
-
-                // Ist bereits eine andere PDF-Ansicht geöffnet?
-                if (spaltenfenster.getItems().size() == 3)
-                    spaltenfenster.getItems().remove(2); // dann entferne diese
-                // öffne die PDF-Ansicht
-                spaltenfenster.getItems().add(newValue.getValue().oeffnePdfAnsicht(immobilie));
-                spaltenfenster.setDividerPosition(1, 0.55);
+        objektBaum.getSelectionModel().selectedItemProperty().addListener((beobachtbarerWert, alterWert, neuerWert) -> {
+            if (neuerWert.getValue() instanceof Immobilie) {
+                try {
+                    objektansicht.getChildren().clear();
+                    objektansicht.getChildren().add(FXMLHelper.laden("immobilienansicht.fxml", neuerWert.getValue()));
+                } catch (IOException e) {
+                    log.log(Level.SEVERE, "Immobilienansicht konnte nicht geladen werden", e);
+                }
+            } else if (neuerWert.getValue() instanceof Wohnung) {
+                try {
+                    objektansicht.getChildren().clear();
+                    objektansicht.getChildren().add(FXMLHelper.laden("wohnungsansicht.fxml", neuerWert.getValue()));
+                } catch (IOException e) {
+                    log.log(Level.SEVERE, "Wohnungsansicht konnte nicht geladen werden", e);
+                }
             }
         });
 
@@ -105,7 +108,7 @@ public class HauptansichtController implements Controller {
         if (datei != null) {
             Immobilie neueImmobilie = Dateiverwalter.lesen(datei);
             try {
-                new FensterGenerator("hauptansicht.fxml", "MietManager - " + neueImmobilie, "iconIMsmall.png", neueImmobilie);
+                FXMLHelper.oeffneFenster("hauptansicht.fxml", "IMMA – " + neueImmobilie, "iconIMsmall.png", neueImmobilie);
             } catch (IOException ioe) {
                 log.log(Level.SEVERE, "Hauptfenster konnte nicht geöffnet werden", ioe);
             }
@@ -114,7 +117,7 @@ public class HauptansichtController implements Controller {
 
     public void pdfErstellen() {
         try {
-            new FensterGenerator("pdfErstellenAnsicht.fxml", "MietManager - PDF erstellen", "iconIMsmall.png", immobilie);
+            FXMLHelper.oeffneFenster("pdfErstellenAnsicht.fxml", "IMMA – PDF erstellen", "iconIMsmall.png", immobilie);
         } catch (IOException ioe) {
             log.log(Level.SEVERE, "PDF-Erstellen-Ansicht konnte nicht geöffnet werden", ioe);
         }
@@ -123,7 +126,13 @@ public class HauptansichtController implements Controller {
     public void uebergeben(Object... daten) {
         this.immobilie = (Immobilie) daten[0];
         this.fenster = (Stage) daten[1];
+        einrichten();
+    }
+
+    private void einrichten() {
+        titel.textProperty().bind(immobilie.bezeichnungProperty());
         fenster.setMaximized(true);
+
         pflanzeBaum();
     }
 

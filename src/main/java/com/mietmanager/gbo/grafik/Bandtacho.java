@@ -5,6 +5,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Separator;
 import javafx.scene.layout.Pane;
 
+/**
+ * Der Bandtacho ist der untere Teil des Pfeildiagramms und spiegelt die Energieklassen wider.
+ *
+ * @author John Robin Pfeifer
+ * @see Pfeildiagramm
+ * @see EnergieKlasse
+ * @since 1.0.0
+ */
 class Bandtacho extends Pane {
     private final int monat;
 

@@ -7,7 +7,6 @@ module com.mietmanager {
     requires io;
     requires javafx.controls;
 
-    opens com.mietmanager to javafx.fxml;
     exports com.mietmanager;
     exports com.mietmanager.logik;
     exports com.mietmanager.speicherung;

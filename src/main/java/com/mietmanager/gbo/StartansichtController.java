@@ -9,32 +9,32 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Controller für startansicht.fxml.
+ *
+ *  @since       1.0.0
+ *  @author      John Robin Pfeifer
+ */
 public class StartansichtController {
     private static final Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
+    // Ansicht
     @FXML public Button immobilieErstellenTaster;
     @FXML public TextField bezeichnungFeld;
     @FXML public TextField anzahlFeld;
-    @FXML public ImageView iconAnsicht;
-
     @FXML public VBox sandkasten;
 
     /**
      * Diese Methode wird automatisch aufgerufen, nachdem der FXML Loader "startansicht.fxml" geladen hat.
      */
     public void initialize() {
-        iconAnsicht.setImage(new Image(Objects.requireNonNull(getClass().getResource("iconIM2.png")).toString()));
-
         DoubleProperty min = new SimpleDoubleProperty(5.5);
         DoubleProperty max = new SimpleDoubleProperty(9);
         DoubleProperty aktuell = new SimpleDoubleProperty(7);
@@ -43,7 +43,6 @@ public class StartansichtController {
         sandkasten.getChildren().add(pd);
     }
 
-    @FXML
     public void hauptfensterOeffnen(ActionEvent actionEvent) {
 
         // Neue Immobilie Anlegen
@@ -75,7 +74,7 @@ public class StartansichtController {
 
         // Das Hauptfenster öffnen
         try {
-            new FensterGenerator("hauptansicht.fxml", "MietManager - " + immobilie, "iconIMsmall.png", immobilie);
+            FXMLHelper.oeffneFenster("hauptansicht.fxml", "IMMA – Hauptfenster", "iconIMsmall.png", immobilie);
         } catch (IOException ioe) {
             log.log(Level.SEVERE, "Hauptfenster konnte nicht geöffnet werden", ioe);
         }

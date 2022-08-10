@@ -1,6 +1,6 @@
 package com.mietmanager;
 
-import com.mietmanager.gbo.FensterGenerator;
+import com.mietmanager.gbo.FXMLHelper;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -22,12 +22,12 @@ public class MietManager extends Application {
      * Öffnet das Startfenster.
      *
      * @param hauptfenster Das von der Anwendung erzeugte Hauptfenster. (ignoriert)
-     * @see FensterGenerator
+     * @see com.mietmanager.gbo.FXMLHelper
      */
     @Override
     public void start(Stage hauptfenster) {
         try {
-            new FensterGenerator("startansicht.fxml", "MietManager - Startfenster", "iconIMsmall.png", null);
+            FXMLHelper.oeffneFenster("startansicht.fxml", "IMMA – Startfenster", "iconIMsmall.png", null);
         } catch (IOException ioe) {
             log.log(Level.SEVERE, "Startfenster konnte nicht geöffnet werden", ioe);
         }
