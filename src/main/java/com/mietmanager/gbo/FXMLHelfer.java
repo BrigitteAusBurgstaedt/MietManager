@@ -16,12 +16,12 @@ import java.util.Objects;
  * @see Controller
  * @since 1.0.1
  */
-public final class FXMLHelper {
+public final class FXMLHelfer {
 
     /**
      * Privater Konstruktor da es sich um eine Werkzeugklasse handelt.
      */
-    private FXMLHelper(){}
+    private FXMLHelfer(){}
 
     /**
      * Lädt die {@link Scene} vom Fenster aus einer FXML-Datei und aktiviert den
@@ -41,10 +41,12 @@ public final class FXMLHelper {
         if (daten != null) {
             datenMitFenster = Arrays.copyOf(daten, daten.length + 1);
             datenMitFenster[daten.length] = fenster;
+        } else {
+            datenMitFenster = new Object[]{fenster};
         }
-        Scene ansicht = new Scene(FXMLHelper.laden(fxmlDatei, datenMitFenster));
+        Scene ansicht = new Scene(FXMLHelfer.laden(fxmlDatei, datenMitFenster));
 
-        fenster.getIcons().add(new Image(Objects.requireNonNull(FXMLHelper.class.getResource(icon)).toString()));
+        fenster.getIcons().add(new Image(Objects.requireNonNull(FXMLHelfer.class.getResource(icon)).toString()));
         fenster.setTitle(titel);
         fenster.setScene(ansicht);
         fenster.show();
@@ -64,7 +66,7 @@ public final class FXMLHelper {
      * @since 1.0.3
      */
     public static <T> T laden(String fxmlDatei, Object... daten) throws IOException {
-        FXMLLoader ansichtlader = new FXMLLoader(FXMLHelper.class.getResource(fxmlDatei));
+        FXMLLoader ansichtlader = new FXMLLoader(FXMLHelfer.class.getResource(fxmlDatei));
         T ansicht = ansichtlader.load();
         if (daten != null) {
             ((Controller) ansichtlader.getController()).uebergeben(daten);

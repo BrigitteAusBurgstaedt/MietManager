@@ -28,13 +28,9 @@ public final class Dateiverwalter {
      * @param immobilie die zu speichernde Immobilie
      */
     public static void speichern(File datei, Immobilie immobilie) {
-
         try (FileOutputStream fos = new FileOutputStream(datei)) {
-
             ObjectOutputStream oos = new ObjectOutputStream(fos);
-
             oos.writeObject(new ImmobilieMomentaufnahme(immobilie));
-
         } catch (IOException e) {
             log.log(Level.SEVERE, "Speichern fehlgeschlagen", e);
         }
@@ -48,19 +44,13 @@ public final class Dateiverwalter {
      * @see Immobilie
      */
     public static Immobilie lesen(File datei) {
-
         try (FileInputStream fis = new FileInputStream(datei)) {
-
             ObjectInputStream ois = new ObjectInputStream(fis);
-
             ImmobilieMomentaufnahme momentaufnahme = (ImmobilieMomentaufnahme) ois.readObject();
-
             return momentaufnahme.getImmobilie();
-
         } catch (IOException | ClassNotFoundException e) {
             log.log(Level.SEVERE, "Lesen fehlgeschlagen", e);
         }
-
         return null;
     }
 

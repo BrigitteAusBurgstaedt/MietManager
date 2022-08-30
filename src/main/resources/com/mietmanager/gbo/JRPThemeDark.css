@@ -258,7 +258,7 @@
  ******************************************************************************/
 
 .hauptbehaelter {
-	-fx-padding: 10px 10px 0px 10px;
+	-fx-padding: 10px 10px 10px 10px;
 	-fx-background-color: #272727;
 	-fx-background-radius: 10px 10px 0px 0px;
 }

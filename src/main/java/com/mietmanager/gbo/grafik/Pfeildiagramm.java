@@ -7,17 +7,27 @@ import javafx.scene.layout.Region;
 /**
  * Das Pfeildiagramm stellt die Spanne der Energieverbräuche einer ganzen Wohnung dar.
  *
+ * @see Bandtacho
+ * @see Pfeil
  * @author John Robin Pfeifer
  * @since 1.0.0
  */
 public class Pfeildiagramm extends Region {
-
-    private final DoubleProperty min, max, aktuell;
     private static final int HOEHEN_FAKTOR = 10;
+    private final DoubleProperty min;
+    private final DoubleProperty max;
+    private final DoubleProperty aktuell;
+    private final int monat;
 
-    private int monat;
-
-    public Pfeildiagramm(double min, double max, double aktuell) {
+    /**
+     * Erstellt das Fertige Pfeildiagramm aus Pfeil und Bandtacho.
+     *
+     * @param min der Minimale Verbrauch
+     * @param max der Maximale Verbrauch
+     * @param aktuell der Aktuelle Verbrauch
+     * @param monat der Monat, für dem das Diagramm erzeugt werden soll
+     */
+    public Pfeildiagramm(double min, double max, double aktuell, int monat) {
         this.min = new SimpleDoubleProperty(min);
         this.max = new SimpleDoubleProperty(max);
         this.aktuell = new SimpleDoubleProperty(aktuell);
@@ -26,17 +36,15 @@ public class Pfeildiagramm extends Region {
         double e = 20;
         setMinHeight(HOEHEN_FAKTOR * e);
         setMinWidth(30 * e);
-    }
-
-    public Pfeildiagramm(double min, double max, double aktuell, int monat) {
-        this(min, max, aktuell);
 
         this.monat = monat;
-        erstelleBandtacho();
+        erstellePfeildiagrammMitBandtacho();
     }
 
-
-    private void erstelleBandtacho() {
+    /**
+     * Erstellt das Fertige Pfeildiagramm aus Pfeil und Bandtacho.
+     */
+    private void erstellePfeildiagrammMitBandtacho() {
         Bandtacho bandtacho = new Bandtacho(monat);
         Pfeil pfeil = new Pfeil(min.get(), max.get(), aktuell.get(), bandtacho);
 
@@ -55,9 +63,7 @@ public class Pfeildiagramm extends Region {
         getChildren().addAll(bandtacho, pfeil);
     }
 
-    private void erstellePfeil() {
-
-    }
+    // TODO: 10.08.2022 Nur Pfeil erstellen
 
     // Getter und Setter
     public double getMin() {

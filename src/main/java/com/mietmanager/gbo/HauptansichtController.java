@@ -2,7 +2,7 @@ package com.mietmanager.gbo;
 
 import com.mietmanager.logik.Immobilie;
 import com.mietmanager.speicherung.Dateiverwalter;
-import javafx.event.ActionEvent;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.Label;
@@ -64,14 +64,14 @@ public class HauptansichtController implements Controller {
             if (neuerWert.getValue() instanceof Immobilie) {
                 try {
                     objektansicht.getChildren().clear();
-                    objektansicht.getChildren().add(FXMLHelper.laden("immobilienansicht.fxml", neuerWert.getValue()));
+                    objektansicht.getChildren().add(FXMLHelfer.laden("immobilienansicht.fxml", neuerWert.getValue()));
                 } catch (IOException e) {
                     log.log(Level.SEVERE, "Immobilienansicht konnte nicht geladen werden", e);
                 }
             } else if (neuerWert.getValue() instanceof Wohnung) {
                 try {
                     objektansicht.getChildren().clear();
-                    objektansicht.getChildren().add(FXMLHelper.laden("wohnungsansicht.fxml", neuerWert.getValue()));
+                    objektansicht.getChildren().add(FXMLHelfer.laden("wohnungsansicht.fxml", neuerWert.getValue()));
                 } catch (IOException e) {
                     log.log(Level.SEVERE, "Wohnungsansicht konnte nicht geladen werden", e);
                 }
@@ -113,7 +113,7 @@ public class HauptansichtController implements Controller {
         if (datei != null) {
             Immobilie neueImmobilie = Dateiverwalter.lesen(datei);
             try {
-                FXMLHelper.oeffneFenster("hauptansicht.fxml", "IMMA – " + neueImmobilie, "iconIMsmall.png", neueImmobilie);
+                FXMLHelfer.oeffneFenster("hauptansicht.fxml", "IMMA – " + neueImmobilie, "iconIMsmall.png", neueImmobilie);
             } catch (IOException ioe) {
                 log.log(Level.SEVERE, "Hauptfenster konnte nicht geöffnet werden", ioe);
             }
@@ -122,7 +122,7 @@ public class HauptansichtController implements Controller {
 
     public void pdfErstellen() {
         try {
-            FXMLHelper.oeffneFenster("pdfErstellenAnsicht.fxml", "IMMA – PDF erstellen", "iconIMsmall.png", immobilie);
+            FXMLHelfer.oeffneFenster("pdfErstellenAnsicht.fxml", "IMMA – PDF erstellen", "iconIMsmall.png", immobilie);
         } catch (IOException ioe) {
             log.log(Level.SEVERE, "PDF-Erstellen-Ansicht konnte nicht geöffnet werden", ioe);
         }
@@ -141,10 +141,9 @@ public class HauptansichtController implements Controller {
         pflanzeBaum();
     }
 
-
     public void oeffneJavaDoc() {
         try {
-            Desktop.getDesktop().browse(new URI("https://github.com/BrigitteAusBurgstaedt/MietManager")); // TODO: 10.08.2022 Javadoc 
+            Desktop.getDesktop().browse(new URI("https://brigitteausburgstaedt.github.io/MietManager/"));
         } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
         }

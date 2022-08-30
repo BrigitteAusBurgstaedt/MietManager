@@ -133,7 +133,6 @@ public class Zaehlerstand implements Comparable<Zaehlerstand> {
      * @throws NullPointerException if the specified object is null
      * @throws ClassCastException   if the specified object's type prevents it
      *                              from being compared to this object.
-     * @apiNote It is strongly recommended, but <i>not</i> strictly required that
      * {@code (x.compareTo(y)==0) == (x.equals(y))}.  Generally speaking, any
      * class that implements the {@code Comparable} interface and violates
      * this condition should clearly indicate this fact.  The recommended

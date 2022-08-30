@@ -1,13 +1,9 @@
 package com.mietmanager.gbo;
 
-import com.mietmanager.gbo.Controller;
 import com.mietmanager.logik.Immobilie;
 import com.mietmanager.pdf.MonatlicheMieterInformation;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.VBox;
 import javafx.stage.DirectoryChooser;
@@ -15,8 +11,11 @@ import javafx.stage.Stage;
 import com.mietmanager.logik.Wohnung;
 
 import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class PdfErstellenAnsichtController implements Controller {
+    private static final Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     private Immobilie immobilie;
     private Stage fenster;
@@ -56,9 +55,13 @@ public class PdfErstellenAnsichtController implements Controller {
             try {
                 new MonatlicheMieterInformation(verzeichnis.getAbsolutePath(), immobilie, Integer.parseInt(monat.getText()), Integer.parseInt(jahr.getText()));
             } catch (Exception e) {
-                e.printStackTrace();
+                log.log(Level.WARNING, "Die monatliche Mieterinformation konnte nicht generiert werden", e);
             }
-        } // TODO: 22.07.2022 else : Alert kein Verzeichnis ausgewählt
+        } else {
+            Alert info = new Alert(Alert.AlertType.INFORMATION, "Es wurde kein Verzeichnis für die Speicherung der PDFs gewählt.");
+            info.setHeaderText("Bitte geben Sie ein Verzeichnis an.");
+            info.show();
+        }
 
         fenster.close();
     }

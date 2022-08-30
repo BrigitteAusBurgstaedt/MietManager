@@ -22,6 +22,11 @@ class Bandtacho extends Pane {
         erstelleBandtacho();
     }
 
+    /**
+     * Der Farbverlauf, die Symbole und Separatoren werden anhand des Monats an die richtige stelle platziert.
+     *
+     * @see EnergieKlasse
+     */
     private void erstelleBandtacho() {
         Label[] eKlassenSymbole = new Label[9];
         Separator[] separators = new Separator[8];

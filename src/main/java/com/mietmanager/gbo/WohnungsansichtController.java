@@ -7,7 +7,6 @@ import com.mietmanager.logik.Zaehlermodus;
 import com.mietmanager.logik.Zaehlerstand;
 import javafx.beans.binding.Bindings;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
@@ -110,7 +109,7 @@ public class WohnungsansichtController implements Controller {
         tabelle.getColumns().add(c3);
     }
 
-    public void erzeugeDiagramm(ActionEvent event) {
+    public void erzeugeDiagramm() {
         int m = Integer.parseInt(monat.getText());
         int j = Integer.parseInt(jahr.getText());
         double[] minAvgMax = wohnung.getImmobilie().bestimmeMinAvgMax(m, j);
