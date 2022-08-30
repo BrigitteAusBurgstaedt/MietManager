@@ -22,7 +22,6 @@ import java.time.LocalDate;
  * @since 1.0.0
  */
 public class MonatlicheMieterInformation {
-
     private final String verzeichnispfad;
     private final String datum;
     private final double[] minAvgMax;
@@ -95,5 +94,6 @@ public class MonatlicheMieterInformation {
 
         }
     }
+
 
 }
