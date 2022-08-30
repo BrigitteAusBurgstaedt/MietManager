@@ -107,7 +107,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.mietmanager.MietManager</mainClass>
+                            <mainClass>com.mietmanager.Starter</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

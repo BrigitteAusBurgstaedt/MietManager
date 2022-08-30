@@ -1,0 +1,36 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MietManager:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MietManager_jar</output-path>
+    <root id="archive" name="MietManager.jar">
+      <element id="module-output" name="MietManager" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/18.0.2/javafx-controls-18.0.2-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/18.0.2/javafx-graphics-18.0.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/bouncycastle/bcpkix-jdk15on/1.70/bcpkix-jdk15on-1.70.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/18.0.2/javafx-base-18.0.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/18.0.2/javafx-fxml-18.0.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/2.0.0/slf4j-api-2.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-swing/18.0.2/javafx-swing-18.0.2-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/18.0.2/javafx-controls-18.0.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/18.0.2/javafx-fxml-18.0.2-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/23.0.0/annotations-23.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/bouncycastle/bcutil-jdk15on/1.70/bcutil-jdk15on-1.70.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/18.0.2/javafx-base-18.0.2-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/slf4j/slf4j-simple/2.0.0/slf4j-simple-2.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/bouncycastle/bcprov-jdk15on/1.70/bcprov-jdk15on-1.70.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-swing/18.0.2/javafx-swing-18.0.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/18.0.2/javafx-graphics-18.0.2-win.jar" path-in-jar="/" />
+      <element id="library" level="project" name="Maven: com.itextpdf:barcodes:7.2.3" />
+      <element id="library" level="project" name="Maven: com.itextpdf:commons:7.2.3" />
+      <element id="library" level="project" name="Maven: com.itextpdf:font-asian:7.2.3" />
+      <element id="library" level="project" name="Maven: com.itextpdf:forms:7.2.3" />
+      <element id="library" level="project" name="Maven: com.itextpdf:hyph:7.2.3" />
+      <element id="library" level="project" name="Maven: com.itextpdf:io:7.2.3" />
+      <element id="library" level="project" name="Maven: com.itextpdf:kernel:7.2.3" />
+      <element id="library" level="project" name="Maven: com.itextpdf:layout:7.2.3" />
+      <element id="library" level="project" name="Maven: com.itextpdf:pdfa:7.2.3" />
+      <element id="library" level="project" name="Maven: com.itextpdf:sign:7.2.3" />
+      <element id="library" level="project" name="Maven: com.itextpdf:styled-xml-parser:7.2.3" />
+      <element id="library" level="project" name="Maven: com.itextpdf:svg:7.2.3" />
+    </root>
+  </artifact>
+</component>

@@ -15,8 +15,6 @@ a
 ,.idea/inspectionProfiles/Project_Default.xml,4\9\496a238a6afa168dbaf6efd37bb459331589579c
 k
 ;.idea/libraries/Maven__org_jetbrains_annotations_23_0_0.xml,8\7\877e8c733679754fe7676ba55ae5007f227e5b3d
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 C
 docs/stylesheet.css,1\9\193346e8c0df760ab2759d3d688d4c5d0f5fe97a
 L
